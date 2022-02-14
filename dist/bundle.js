@@ -10,23 +10,63 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./App.js":
-/*!****************!*\
-  !*** ./App.js ***!
-  \****************/
+/***/ "./client/App.js":
+/*!***********************!*\
+  !*** ./client/App.js ***!
+  \***********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n\n\nconst App = () => {\n  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"div\", null, \"Hello, World!\");\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (App);\n\n//# sourceURL=webpack://package.json/./App.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var _components_Questions_and_answers_Questions_and_answers_jsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/Questions-and-answers/Questions-and-answers.jsx */ \"./client/components/Questions-and-answers/Questions-and-answers.jsx\");\n/* harmony import */ var _components_Overview_Overview_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/Overview/Overview.jsx */ \"./client/components/Overview/Overview.jsx\");\n/* harmony import */ var _components_Ratings_and_reviews_Ratings_and_reviews_jsx__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/Ratings-and-reviews/Ratings-and-reviews.jsx */ \"./client/components/Ratings-and-reviews/Ratings-and-reviews.jsx\");\n/* harmony import */ var _components_Related_items_and_comparisons_Related_items_and_comparisons_jsx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/Related-items-and-comparisons/Related-items-and-comparisons.jsx */ \"./client/components/Related-items-and-comparisons/Related-items-and-comparisons.jsx\");\n //components\n\n\n\n\n\n\nconst App = () => {\n  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"div\", null, \"Hello, World!\"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_Overview_Overview_jsx__WEBPACK_IMPORTED_MODULE_2__[\"default\"], null));\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (App);\n\n//# sourceURL=webpack://package.json/./client/App.js?");
 
 /***/ }),
 
-/***/ "./index.js":
-/*!******************!*\
-  !*** ./index.js ***!
-  \******************/
+/***/ "./client/components/Overview/Overview.jsx":
+/*!*************************************************!*\
+  !*** ./client/components/Overview/Overview.jsx ***!
+  \*************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ \"./node_modules/react-dom/index.js\");\n/* harmony import */ var _App_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./App.js */ \"./App.js\");\n/* harmony import */ var _styles_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./styles.css */ \"./styles.css\");\n\n\n\n\nreact_dom__WEBPACK_IMPORTED_MODULE_1__.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_App_js__WEBPACK_IMPORTED_MODULE_2__[\"default\"], null), document.getElementById(\"root\"));\n\n//# sourceURL=webpack://package.json/./index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n\n\nconst Overview = () => {\n  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"div\", null, \"This is from Overview's Component!\");\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Overview);\n\n//# sourceURL=webpack://package.json/./client/components/Overview/Overview.jsx?");
+
+/***/ }),
+
+/***/ "./client/components/Questions-and-answers/Questions-and-answers.jsx":
+/*!***************************************************************************!*\
+  !*** ./client/components/Questions-and-answers/Questions-and-answers.jsx ***!
+  \***************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n\n\nconst QuestionsAndAnswers = () => {// content\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (QuestionsAndAnswers);\n\n//# sourceURL=webpack://package.json/./client/components/Questions-and-answers/Questions-and-answers.jsx?");
+
+/***/ }),
+
+/***/ "./client/components/Ratings-and-reviews/Ratings-and-reviews.jsx":
+/*!***********************************************************************!*\
+  !*** ./client/components/Ratings-and-reviews/Ratings-and-reviews.jsx ***!
+  \***********************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n\n\nconst RatingsAndReviews = () => {// content\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (RatingsAndReviews);\n\n//# sourceURL=webpack://package.json/./client/components/Ratings-and-reviews/Ratings-and-reviews.jsx?");
+
+/***/ }),
+
+/***/ "./client/components/Related-items-and-comparisons/Related-items-and-comparisons.jsx":
+/*!*******************************************************************************************!*\
+  !*** ./client/components/Related-items-and-comparisons/Related-items-and-comparisons.jsx ***!
+  \*******************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n\n\nconst RelatedItemsAndComparisons = () => {// content\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (RelatedItemsAndComparisons);\n\n//# sourceURL=webpack://package.json/./client/components/Related-items-and-comparisons/Related-items-and-comparisons.jsx?");
+
+/***/ }),
+
+/***/ "./client/index.js":
+/*!*************************!*\
+  !*** ./client/index.js ***!
+  \*************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ \"./node_modules/react-dom/index.js\");\n/* harmony import */ var _App_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./App.js */ \"./client/App.js\");\n/* harmony import */ var _styles_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../styles.css */ \"./styles.css\");\n\n\n\n\nreact_dom__WEBPACK_IMPORTED_MODULE_1__.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_App_js__WEBPACK_IMPORTED_MODULE_2__[\"default\"], null), document.getElementById(\"root\"));\n\n//# sourceURL=webpack://package.json/./client/index.js?");
 
 /***/ }),
 
@@ -292,7 +332,7 @@ eval("\n\n/* istanbul ignore next  */\nfunction styleTagTransform(css, styleElem
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module can't be inlined because the eval devtool is used.
-/******/ 	var __webpack_exports__ = __webpack_require__("./index.js");
+/******/ 	var __webpack_exports__ = __webpack_require__("./client/index.js");
 /******/ 	
 /******/ })()
 ;
