@@ -1,0 +1,11 @@
+# Bundle packages (both bundle.js and index.html in dist)
+
+dist/
+
+# Node modules
+
+node_modules/
+
+# config.js
+
+config.js
