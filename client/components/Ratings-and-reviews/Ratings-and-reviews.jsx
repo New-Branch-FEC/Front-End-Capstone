@@ -2,14 +2,10 @@ import React from 'react';
 import axios from 'axios';
 import RatingsList from './Ratings-list.jsx';
 import RatingsSidebar from './Ratings-sidebar.jsx';
-import {receiveProducts} from '../../index.js';
 
 const RatingsAndReviews = () => {
   return (
     <div className="row RR-header">
-      {receiveProducts(() => {
-        console.log('receiveProducts called from Ratings-and-reviews!');
-      })}
       <RatingsList />
       <RatingsSidebar />
     </div>
