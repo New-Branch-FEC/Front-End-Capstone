@@ -17,9 +17,9 @@ const RatingsSidebar = () => {
             <li>1 stars</li>
           </div>
           <div className="RR-characteristics">
-            <p className="RR-characteristics-entry">size</p>
+            <p className="RR-characteristics-entry">size (mapped)</p>
             <img src="https://cdn.iconscout.com/icon/premium/png-256-thumb/graph-2300680-1917645.png" alt="img placeholder"></img>
-            <p className="RR-characteristics-entry">comfort</p>
+            <p className="RR-characteristics-entry">comfort (mapped)</p>
             <img src="https://cdn.iconscout.com/icon/premium/png-256-thumb/graph-2300680-1917645.png" alt="img placeholder"></img>
           </div>
         </div>

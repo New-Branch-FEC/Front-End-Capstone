@@ -6,10 +6,10 @@ const RatingsListEntry = () => {
       <div className="RR-list-entry">
         <div className="column-L">⭐⭐⭐⭐⭐</div>
         <div className="column-R RR-user-date">User and Date Posted Goes Here (Month, DD, YYYY)</div>
-        <div>Review Summary Goes Here</div>
-        <div>Review Body Goes Here</div>
-        <div>Recommended?</div>
-        <div>Seller Response?</div>
+        <div className="RR-summary">Review Summary Goes Here</div>
+        <div className="RR-body">Review Body Goes Here</div>
+        <div>✔ Recommended (optional)</div>
+        <div>Seller Response (optional)</div>
         <div className="RR-feedback">Review Feedback Goes Here
           <p>Helpful?</p>
           <button>Yes</button>
