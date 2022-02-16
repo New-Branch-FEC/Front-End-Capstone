@@ -8,19 +8,20 @@ import App from "./App.js";
 import "../styles.css";
 
 
-const receiveProducts = () => {
+const receiveProducts = (callback) => {
   axios.get('https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/products', {
     headers: {
       'Authorization': token
     }
   })
   .then(response => {
-    console.log(response.data);
+    callback(null, response.data)
   })
   .catch(error => {
-    console.log(error);
+    callback(error, null)
   })
 }
+
 
 ReactDOM.render(<App />, document.getElementById("root"));
 
