@@ -9,6 +9,8 @@ import Comparison from './Comparison.jsx';
 const Card = () => {
 
   //if(props.title === "RELATED PRODUCTS")
+
+
 }
 
 export default Card;
