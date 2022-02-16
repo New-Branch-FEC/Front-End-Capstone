@@ -1,5 +1,5 @@
 import React from 'react';
-import {receiveProducts} from '../../index.js';
+// import {receiveProducts} from '../../index.js'; <-- move this
 
 const Overview = () => {
   return <div> This is from Overview's Component!

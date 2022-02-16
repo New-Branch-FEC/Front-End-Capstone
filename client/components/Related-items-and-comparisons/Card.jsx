@@ -1,6 +1,6 @@
 import React from "react";
 import axios from 'axios';
-import ReactDOM from 'react-DOM';
+import ReactDOM from 'react-dom';
 
 import Stars from './Stars.jsx';
 import Comparison from './Comparison.jsx';

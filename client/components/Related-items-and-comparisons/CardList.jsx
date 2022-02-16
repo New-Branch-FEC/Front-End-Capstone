@@ -1,6 +1,6 @@
 import React from "react";
 import axios from 'axios';
-import ReactDOM from 'react-DOM';
+import ReactDOM from 'react-dom';
 
 import Card from './Card.jsx';
 
@@ -16,6 +16,8 @@ const CardList = () => {
   //   if (card array index is its length -1, toggle arrow to "HIDE"
 
   //if(props.title === "RELATED PRODUCTS") ?
+
+
 
 }
 

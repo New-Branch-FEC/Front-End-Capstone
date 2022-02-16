@@ -1,6 +1,6 @@
 import React from "react";
 import axios from 'axios';
-import ReactDOM from 'react-DOM';
+import ReactDOM from 'react-dom';
 
 const Comparison = () => {
   // Upon click event, the user will see this comparison card, which takes the card's product and compares it to the currentProduct.
