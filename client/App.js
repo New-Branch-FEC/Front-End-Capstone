@@ -19,14 +19,10 @@ const App = () => {
       console.log('res: ', res);
       setCurrentProduct(res.data)
     })
-    .then(() => {
-      console.log('currentProduct after initial load: ', currentProduct);
-    })
     .catch(error => {
       console.log(error);
     })
   }, []);
-
 
   return (
      <>
@@ -35,7 +31,6 @@ const App = () => {
      <RelatedItemsAndComparisons />
      {/* <QuestionsAndAnswers /> */}
      <RatingsAndReviews />
-
      </>
    )
 };
