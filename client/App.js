@@ -27,7 +27,7 @@ const App = () => {
    return (
      <>
      <div>Hello, World!</div>
-     {/* <Overview /> */}
+     <Overview currentProduct={currentProduct} setCurrentProduct={setCurrentProduct}/>
      <RelatedItemsAndComparisons />
      {/* <QuestionsAndAnswers />
      <RatingsAndReviews /> */}

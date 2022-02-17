@@ -1,17 +1,26 @@
-import React from 'react';
-// import {receiveProducts} from '../../index.js'; <-- move this
+import React, { useState, useEffect } from 'react';
+import ReactDOM from 'react-dom';
 
-const Overview = () => {
-  return <div>
-    miau
-  {receiveProducts((err, data) => {
-    if (err) {
-      console.log(err);
-    } else {
-      console.log(data);
-    }
-  })}
+const axios = require('axios')
+
+const Overview = (props) => {
+
+  axios.get('', (req, res) => {})
+  .then(res => {
+    console.log(res);
+  })
+  .catch(error => {
+      console.log('i cannot believe this', error);
+  })
+
+  return (
+  <div>
+  <h1>this will be the title </h1>
+  <div>
   </div>
+  </div>
+  )
 };
 
+ReactDOM.render(<Overview />, document.getElementById("root"));
 export default Overview;
