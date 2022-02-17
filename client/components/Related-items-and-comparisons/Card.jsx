@@ -11,6 +11,20 @@ const Card = () => {
   //if(props.title === "RELATED PRODUCTS")
 
 
+  return (
+    <>
+
+    <div class="card">
+      <div class="container">
+        <div>CATEGORY</div>
+        <div>Expanded Product Name with Extra Text</div>
+        <div>$123</div>
+        <div> ☆ ☆ ☆ ☆ ☆</div>
+      </div>
+    </div>
+    </>
+  )
+
 }
 
 export default Card;
