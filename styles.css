@@ -20,3 +20,55 @@
 .container {
   padding: 2px 16px;
 }
+
+body {
+  padding: 10px;
+  background-color: antiquewhite;
+}
+
+.column-L {
+  float: left;
+  width: 25%;
+  border: dashed;
+}
+
+.column-R {
+  float: right;
+  width: 73%;
+  border: dashed;
+}
+
+.RR-sidebar {
+  padding: 3px;
+  background-color: rgb(241, 241, 241)
+}
+
+.RR-ratings-list {
+  padding: 3px;
+  background-color: rgb(241, 241, 241);
+}
+
+.RR-list-entry {
+  padding: 3px;
+  background-color: rgba(192, 192, 192, 0.781);
+  border: 5px;
+  border: solid;
+}
+
+.RR-user-date {
+  text-align: right;
+  font-size: larger;
+  height: 32px;
+}
+
+.RR-feedback {
+  padding: 3px;
+  border: 5px;
+  border: inset;
+  border-color: black;
+  background-color: gray;
+}
+
+button {
+  padding: 3px;
+}

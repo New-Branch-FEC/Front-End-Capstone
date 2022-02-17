@@ -30,3 +30,5 @@ app.get('/products/:product_id', (req, res) => {
       res.status(500).send(error);
    })
 })
+
+// TODO: app.get('/products/reviews/:product_id') => https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/reviews?product_id=37312
