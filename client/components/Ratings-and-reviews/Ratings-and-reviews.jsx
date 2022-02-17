@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import axios from 'axios';
 import RatingsList from './Ratings-list.jsx';
 import RatingsSidebar from './Ratings-sidebar.jsx';

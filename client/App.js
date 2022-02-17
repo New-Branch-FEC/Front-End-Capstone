@@ -4,9 +4,9 @@ import ReactDOM from 'react-dom';
 
 //components
 import QuestionsAndAnswers from "./components/Questions-and-answers/Questions-and-answers.jsx";
-// import Overview from "./components/Overview/Overview.jsx";
+import Overview from "./components/Overview/Overview.jsx";
 import RatingsAndReviews from "./components/Ratings-and-reviews/Ratings-and-reviews.jsx";
-// import RelatedItemsAndComparisons from "./components/Related-items-and-comparisons/RelatedItemsAndComparisons.jsx";
+import RelatedItemsAndComparisons from "./components/Related-items-and-comparisons/RelatedItemsAndComparisons.jsx";
 
 const App = () => {
 
@@ -19,17 +19,21 @@ const App = () => {
       console.log('res: ', res);
       setCurrentProduct(res.data)
     })
+    .then(() => {
+      console.log('currentProduct after initial load: ', currentProduct);
+    })
     .catch(error => {
       console.log(error);
     })
   }, []);
 
-   return (
+
+  return (
      <>
      <div>Hello, World!</div>
-     {/* <Overview /> */}
-     {/* <RelatedItemsAndComparisons /> */}
-     {/* <QuestionsAndAnswers /> */}
+     <Overview />
+     <RelatedItemsAndComparisons />
+     <QuestionsAndAnswers />
      <RatingsAndReviews />
 
      </>
