@@ -24,14 +24,13 @@ const App = () => {
     })
   }, []);
 
-   return (
+  return (
      <>
      <div>Hello, World!</div>
-     <Overview currentProduct={currentProduct} setCurrentProduct={setCurrentProduct}/>
+     <Overview />
      <RelatedItemsAndComparisons />
-     {/* <QuestionsAndAnswers />
-     <RatingsAndReviews /> */}
-
+     {/* <QuestionsAndAnswers /> */}
+     <RatingsAndReviews />
      </>
    )
 };

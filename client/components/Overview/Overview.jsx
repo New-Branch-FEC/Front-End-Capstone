@@ -16,11 +16,8 @@ const Overview = (props) => {
   return (
   <div>
   <h1>this will be the title </h1>
-  <div>
-  </div>
   </div>
   )
 };
 
-ReactDOM.render(<Overview />, document.getElementById("root"));
 export default Overview;
