@@ -17,12 +17,12 @@ const CardList = (props) => {
 
   //if(props.title === "RELATED PRODUCTS") ?
 
+
+
   return (
     <>
     <h2>{props.title}</h2>
-    <Card />
-    <Card />
-    <Card />
+    <Card currentProduct={props.currentProduct} reviews={props.reviews}/>
     </>
   )
 
