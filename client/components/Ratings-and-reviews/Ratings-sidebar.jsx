@@ -1,6 +1,6 @@
 import React from 'react';
 
-const RatingsSidebar = () => {
+const RatingsSidebar = (props) => {
   return (
     <div className="column-L">
       <div className="RR-sidebar">

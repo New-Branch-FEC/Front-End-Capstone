@@ -12,9 +12,9 @@ const RatingsListEntry = () => {
         <div>Seller Response (optional)</div>
         <div className="RR-feedback">Review Feedback Goes Here
           <p>Helpful?</p>
-          <button>Yes</button>
+          <button className="RR-button">Yes</button>
           <p>Number of 'Helpful' Goes Here</p>
-          <button>Report</button>
+          <button className="RR-button">Report</button>
         </div>
       </div>
     </div>

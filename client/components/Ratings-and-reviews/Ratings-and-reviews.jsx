@@ -3,11 +3,11 @@ import axios from 'axios';
 import RatingsList from './Ratings-list.jsx';
 import RatingsSidebar from './Ratings-sidebar.jsx';
 
-const RatingsAndReviews = () => {
+const RatingsAndReviews = (props) => {
   return (
     <div className="row RR-header">
-      <RatingsList />
-      <RatingsSidebar />
+      <RatingsList currentProduct={props.currentProduct}/>
+      <RatingsSidebar currentProduct={props.currentProduct}/>
     </div>
   )
 };

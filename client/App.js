@@ -30,7 +30,7 @@ const App = () => {
      <Overview />
      <RelatedItemsAndComparisons />
      {/* <QuestionsAndAnswers /> */}
-     <RatingsAndReviews />
+     <RatingsAndReviews currentProduct={currentProduct}/>
      </>
    )
 };
