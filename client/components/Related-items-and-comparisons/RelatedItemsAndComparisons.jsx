@@ -4,15 +4,15 @@ import ReactDOM from 'react-dom';
 
 import CardList from "./CardList.jsx";
 
-const RelatedItemsAndComparisons = () => {
-
-
+const RelatedItemsAndComparisons = (props) => {
 
   return (
     <>
-    <div>RELATED PRODUCTS/COMPARISONS SECTION IS RENDERING</div>
-  {/* <CardList title="RELATED PRODUCTS" />
-  <CardList title="YOUR OUTFIT" /> */}
+
+    <CardList title="RELATED PRODUCTS" currentProduct={props.currentProduct} reviews={props.reviews}/>
+
+    <CardList title="YOUR OUTFIT" currentProduct={props.currentProduct} reviews={props.reviews}/>
+
     </>
   )
 
