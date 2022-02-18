@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 
 import Card from './Card.jsx';
 
-const CardList = () => {
+const CardList = (props) => {
 
   // GET /products/:product_id/related <- (this returned value is an array that must be iterated over with forEach)
 
@@ -18,6 +18,13 @@ const CardList = () => {
   //if(props.title === "RELATED PRODUCTS") ?
 
 
+
+  return (
+    <>
+    <h2>{props.title}</h2>
+    <Card currentProduct={props.currentProduct} reviews={props.reviews}/>
+    </>
+  )
 
 }
 
