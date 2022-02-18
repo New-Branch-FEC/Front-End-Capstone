@@ -7,14 +7,12 @@ import SelectStyle from './Style-selector.jsx';
 import ShareOnline from './Share-to-socials.jsx'
 
 const Overview = (props) => {
-
   return (
   <div>
-    <h1>
-    <ProductInformation />
-    </h1>
+    {/* {console.log(props)} */}
     <div>
-      < SelectStyle />
+      < ProductInformation currentProduct={props.currentProduct}/>
+      < SelectStyle currentProduct={props.currentProduct}/>
       < ShareOnline />
     </div>
   </div>

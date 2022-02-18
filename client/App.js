@@ -47,7 +47,7 @@ const App = () => {
         setCurrentProduct(res.data)
       })
       .catch(err => {
-        console.log("An error occured while fetching current item", error);
+        console.log("An error occured while fetching current item", err);
       })
   }, []);
 
@@ -161,9 +161,9 @@ const App = () => {
     })
   }, []);
 
+  const [outfit, setOutfit] = useState([]);
   /*
     // adding to user's outfit array
-    const [outfit, setOutfit] = useState([]);
 
     // do this in file where addToBagProductID click event takes place, Anisah!
     let addToBagProductID = 'FIX_ME_TO_ADDED_PRODUCTS_ID' //should always be current product's ID, based on the button being on the current item!
@@ -173,7 +173,7 @@ const App = () => {
   return (
      <>
      <div>Hello, World!</div>
-     <Overview />
+     <Overview currentProduct={currentProduct} reviews={reviews} outfit={outfit}/>
      <RelatedItemsAndComparisons currentProduct={currentProduct} reviews={reviews}/>
      {/* <QuestionsAndAnswers /> */}
      <RatingsAndReviews />

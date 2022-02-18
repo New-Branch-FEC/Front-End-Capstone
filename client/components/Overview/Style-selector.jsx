@@ -1,8 +1,9 @@
 import React, {useState, useEffect, useContext} from 'react';
 
 
-const SelectStyle = () => (
+const SelectStyle = (props) => (
     <div>
+      {console.log('PROPS IN STYLE', props)}
       <div className='OV-Style-Selector'>thumbnails</div>
       <div className='OV-Selected-Style'>this one must look different</div>
     </div>

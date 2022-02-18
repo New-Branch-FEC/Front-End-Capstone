@@ -17,9 +17,9 @@ const Stars = (props) => {
   // For each req.body.results.rating, add value to total, and count each rating
   let totalCount = 0;
   let totalOfRatings = 0;
-  for (i = 0; i < props.reviews.results.length; i++) {
-    totalRatingsCount++;
-    totalOfAllRatings += props.reviews.results[i]
+  for (let i = 0; i < props.reviews.results.length; i++) {
+    totalCount++;
+    totalOfRatings += props.reviews.results[i]
   }
 
   // take total and divide by number of reviews to get average rating
