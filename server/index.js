@@ -48,7 +48,7 @@ app.get('/products/:product_id/related', (req, res) => {
 
 // return all of product's reviews at the endpoint id
 app.get('/reviews', (req, res) => {
-   console.log('requests query', req.query)
+   // console.log('requests query', req.query) <-- this works
    axios.get(`https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/reviews?product_id=${req.query.product_id}`, {
       headers: {
          'Authorization': `${token}`

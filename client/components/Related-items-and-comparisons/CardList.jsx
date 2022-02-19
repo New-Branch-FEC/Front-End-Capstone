@@ -15,14 +15,10 @@ const CardList = (props) => {
   //   increment through card array
   //   if (card array index is its length -1, toggle arrow to "HIDE"
 
-  //if(props.title === "RELATED PRODUCTS") ?
-
-
-
   return (
     <>
     <h2>{props.title}</h2>
-    <Card currentProduct={props.currentProduct} reviews={props.reviews}/>
+    <Card currentProduct={props.currentProduct} reviews={props.reviews} outfit={props.outfit} relatedProducts={props.relatedProducts} title={props.title}/>
     </>
   )
 

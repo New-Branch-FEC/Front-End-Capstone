@@ -27,8 +27,13 @@
   padding: 2px 16px;
 }
 
+/* Specifies that all img tags in all elements with class "star-images" will have this styling */
+.star-images img {
+    width: 17px;
+    max-width: 100%;
 
 
+}
 
 /******************** Ratings and Reviews ********************/
 

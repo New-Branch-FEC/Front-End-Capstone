@@ -22,9 +22,30 @@ const Card = (props) => {
 // THREE click events, two in top right corner: one toggled for related products that brings up comparison card; the other toggled to "current product" that deletes the card upon click
 // if the user clicks the image, update the currentProduct to the clicked product!
 
-  return (
-    <>
+let imageSource = props.currentProduct.results//[0].photos[0].url
+let href = ''
 
+console.log(" image source: ", imageSource)
+
+
+if(props.title === "RELATED PRODUCTS") {
+  return (
+    <div className="card">
+      <div className="col-lg-3 col-md-3">
+        <div className="clickable-img">
+  {/* <a href={props.currentProduct.results[0].photos[0].url}><img src='https://i.imgur.com/fe0T4nw.png' onClick={() => {setCurrentProductID(res.data)}} /></a> */}
+        </div>
+      </div>
+      <div className="container">
+        <div>CATEGORY</div>
+        <div>{props.currentProduct.name}</div>
+        <div>{props.currentProduct.default_price}</div>
+        <Stars reviews={props.reviews}/>
+      </div>
+    </div>
+  )
+} else {
+  return (
     <div className="card">
       <div className="container">
         <div>CATEGORY</div>
@@ -33,8 +54,8 @@ const Card = (props) => {
         <Stars reviews={props.reviews}/>
       </div>
     </div>
-    </>
   )
+}
 
 }
 

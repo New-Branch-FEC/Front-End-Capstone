@@ -161,10 +161,10 @@ const App = () => {
     })
   }, []);
 
-  /*
-    // adding to user's outfit array
-    const [outfit, setOutfit] = useState([]);
+  // adding to user's outfit array
+  const [outfit, setOutfit] = useState([]);
 
+  /*
     // do this in file where addToBagProductID click event takes place, Anisah!
     let addToBagProductID = 'FIX_ME_TO_ADDED_PRODUCTS_ID' //should always be current product's ID, based on the button being on the current item!
     setOutfit([...outfit, `${addToBagProductID}`])
@@ -174,7 +174,7 @@ const App = () => {
      <>
      <div>Hello, World!</div>
      <Overview />
-     <RelatedItemsAndComparisons currentProduct={currentProduct} reviews={reviews}/>
+     <RelatedItemsAndComparisons currentProduct={currentProduct} reviews={reviews} outfit={outfit} relatedProducts={relatedProducts}/>
      {/* <QuestionsAndAnswers /> */}
      <RatingsAndReviews />
      </>
