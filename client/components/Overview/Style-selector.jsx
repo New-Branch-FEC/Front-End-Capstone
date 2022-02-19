@@ -3,9 +3,8 @@ import React, {useState, useEffect, useContext} from 'react';
 
 const SelectStyle = (props) => (
     <div>
-      {console.log('PROPS IN STYLE', props)}
-      <div className='OV-Style-Selector'>thumbnails</div>
-      <div className='OV-Selected-Style'>this one must look different</div>
+      <img className='OV-Style-Selector' src='https://en.wikipedia.org/wiki/Kirby_(character)#/media/File:SSU_Kirby_artwork.png'/>
+      <div className='OV-Selected-Style'>{props.currentStyle.results[0].name}</div>
     </div>
 )
 

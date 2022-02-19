@@ -33,7 +33,7 @@ const Stars = (props) => {
 
   // How to render 1/4, 1/2, 3/4 parts of star? does fontawesome have this, or must these be made and imported as assets?
 
-  console.log(props.reviews)
+  // console.log(props.reviews)
   return (
     <>
     <div>{props.reviews.results[0].rating}</div>
