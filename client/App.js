@@ -11,7 +11,8 @@ import RelatedItemsAndComparisons from "./components/Related-items-and-compariso
 const App = () => {
 
   // setting current product by current product ID, with a default product upon load, "Bright Future Sunglasses"
-  const [currentProductID, setCurrentProductID] = useState(37312);
+  // Charles changed initial product to 37311, should change back to 37312 before PR
+  const [currentProductID, setCurrentProductID] = useState(37320);
   const [currentProduct, setCurrentProduct] = useState(
     {
       "id": 37312,
@@ -176,7 +177,7 @@ const App = () => {
      <Overview />
      <RelatedItemsAndComparisons currentProduct={currentProduct} reviews={reviews}/>
      {/* <QuestionsAndAnswers /> */}
-     <RatingsAndReviews currentProduct={currentProduct}/>
+     <RatingsAndReviews currentProduct={currentProduct} reviews={reviews}/>
      </>
    )
 };
