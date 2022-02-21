@@ -49,7 +49,7 @@ const App = () => {
       .catch(err => {
         console.log("An error occured while fetching current item", error);
       })
-  }, []);
+  }, [currentProductID]);
 
   // setting the default related products for the default product
   const [relatedProducts, setRelatedProducts] = useState([37313, 37317, 37316, 37315])
@@ -63,7 +63,7 @@ const App = () => {
       .catch((err) => {
         console.log("An error occured while fetching related products", err)
       })
-  }, []);
+  }, [currentProductID]);
 
   // setting the default reviews for the default product
   const [reviews, setReviews] = useState({
@@ -152,6 +152,7 @@ const App = () => {
 
   // getting the reviews for the current product by current product's id
   useEffect(() => {
+    console.log('current product id changed', currentProductID)
     axios.get(`/reviews?product_id=${currentProductID}`)
     .then((res) => {
       setReviews(res.data)
@@ -159,7 +160,7 @@ const App = () => {
     .catch(err => {
       console.log("An error occured while fetching reviews", err);
     })
-  }, []);
+  }, [currentProductID]);
 
   // adding to user's outfit array
   const [outfit, setOutfit] = useState([]);
@@ -174,7 +175,7 @@ const App = () => {
      <>
      <div>Hello, World!</div>
      <Overview />
-     <RelatedItemsAndComparisons currentProduct={currentProduct} reviews={reviews} outfit={outfit} relatedProducts={relatedProducts}/>
+     <RelatedItemsAndComparisons currentProduct={currentProduct} reviews={reviews} outfit={outfit} relatedProducts={relatedProducts} setCurrentProductID={setCurrentProductID}/>
      {/* <QuestionsAndAnswers /> */}
      <RatingsAndReviews />
      </>
