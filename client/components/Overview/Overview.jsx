@@ -20,12 +20,3 @@ const Overview = (props) => {
 
 export default Overview;
 
-
-
-  // axios.get('', (req, res) => {})
-  // .then(res => {
-  //   console.log(res);
-  // })
-  // .catch(error => {
-  //     console.log('i cannot believe this', error);
-  // })

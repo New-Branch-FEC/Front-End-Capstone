@@ -148,7 +148,18 @@ const App = () => {
     ]
   })
 
-  // setting style for overview component
+  useEffect(() => {
+    axios.get(`/reviews?product_id=${currentProductID}`)
+    .then((res) => {
+      setReviews(res.data)
+    })
+    .catch(err => {
+      console.log("An error occured while fetching reviews", err);
+    })
+  }, []);
+
+  // getting the reviews for the current product by current product's id
+
   const [currentStyle, setCurrentStyle] = useState(
     {
       "product_id": "37311",
@@ -213,16 +224,16 @@ const App = () => {
               }
             }
       ]})
-  // getting the reviews for the current product by current product's id
-  useEffect(() => {
-    axios.get(`/reviews?product_id=${currentProductID}`)
-    .then((res) => {
-      setReviews(res.data)
-    })
-    .catch(err => {
-      console.log("An error occured while fetching reviews", err);
-    })
-  }, []);
+
+    useEffect(() => {
+        axios.get(`/products/${currentProductID}/styles/`)
+        .then((res) => {
+            setCurrentStyle(res.data);
+        })
+        .catch((err) => {
+            console.log('you have no style', err)
+        })
+    }, [])
 
   const [outfit, setOutfit] = useState([]);
   /*
