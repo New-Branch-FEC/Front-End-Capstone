@@ -1,6 +1,6 @@
 # Bundle packages (both bundle.js and index.html in dist)
 
-dist/
+dist/bundle.js
 
 # Node modules
 

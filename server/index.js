@@ -48,7 +48,7 @@ app.get('/products/:product_id/related', (req, res) => {
 
 // return all of product's reviews at the endpoint id
 app.get('/reviews', (req, res) => {
-   console.log('requests query', req.query)
+   // console.log('requests query', req.query) <-- this works
    axios.get(`https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/reviews?product_id=${req.query.product_id}`, {
       headers: {
          'Authorization': `${token}`
@@ -62,7 +62,19 @@ app.get('/reviews', (req, res) => {
    })
 })
 
-
+app.get('/products/:product_id/styles', (req, res) => {
+   axios.get(`https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/products/${req.params.product_id}/styles/`, {
+      headers: {
+         'Authorization': `${token}`
+      }
+   })
+   .then(result => {
+      res.send(result.data);
+   })
+   .catch(error => {
+      res.status(500).send(error);
+   })
+})
 //////
 
 // // add to and return user's outfit array

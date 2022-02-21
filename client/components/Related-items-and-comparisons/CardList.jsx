@@ -15,15 +15,16 @@ const CardList = (props) => {
   //   increment through card array
   //   if (card array index is its length -1, toggle arrow to "HIDE"
 
-  //if(props.title === "RELATED PRODUCTS") ?
-
-
+  // console.log("is this defined?", props.setCurrentProductID) <-- working
+  console.log(props.relatedProducts)
 
   return (
-    <>
+    <div className="card-list">
     <h2>{props.title}</h2>
-    <Card currentProduct={props.currentProduct} reviews={props.reviews}/>
-    </>
+    {props.relatedProducts.map((relatedProductID, index) => (
+      <Card relatedProductID={relatedProductID} index={index} currentProduct={props.currentProduct} reviews={props.reviews} outfit={props.outfit} relatedProducts={props.relatedProducts} title={props.title} setCurrentProductID={props.setCurrentProductID}/>
+    ))}
+    </div>
   )
 
 }
