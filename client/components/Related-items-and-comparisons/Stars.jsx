@@ -17,9 +17,9 @@ const Stars = (props) => {
   // For each req.body.results.rating, add value to total, and count each rating
   let totalCount = 0;
   let totalOfRatings = 0;
-  for (i = 0; i < props.reviews.results.length; i++) {
-    totalRatingsCount++;
-    totalOfAllRatings += props.reviews.results[i]
+  for (let i = 0; i < props.reviews.results.length; i++) {
+    totalCount++;
+    totalOfRatings += props.reviews.results[i]
   }
 
   // take total and divide by number of reviews to get average rating
@@ -33,7 +33,7 @@ const Stars = (props) => {
 
   // How to render 1/4, 1/2, 3/4 parts of star? does fontawesome have this, or must these be made and imported as assets?
 
-  console.log(props.reviews)
+  // console.log(props.reviews)
   return (
     <>
     <div>{props.reviews.results[0].rating}</div>

@@ -80,6 +80,18 @@ body {
   background-color: gray;
 }
 
-button {
+.RR-button {
   padding: 3px;
 }
+
+.OV-Style-Selector {
+  padding: 3px;
+  color: rgb(168, 206, 255)
+}
+
+/* what is the difference between className and id? */
+
+#Share-to {
+  padding: 10px;
+  color: rgb(196, 104, 119);
+};

@@ -3,7 +3,6 @@ import axios from 'axios';
 import ReactDOM from 'react-dom';
 
 import CardList from "./CardList.jsx";
-import receiveProducts from  "../../index.js";
 
 const RelatedItemsAndComparisons = (props) => {
 
