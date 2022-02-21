@@ -17,11 +17,11 @@ const Card = (props) => {
       .then((res) => {
         cardObject.name = res.data.name;
         cardObject.default_price = res.data.default_price;
-        // return axios.get(`/products/${props.relatedProductID}/styles`) // will not work until Anisah merges changes containing styles axios.get in server
+        return axios.get(`/products/${props.relatedProductID}/styles`) // will not work until Anisah merges changes containing styles axios.get in server
       })
       .then((res) => {
-        // cardObject.image = res.data.results[0].photos[0].url
-        cardObject.image = 'https://cdn.shopify.com/s/files/1/0185/7770/products/1993DW-edit-front_x1080.png?v=1602864333'
+        cardObject.image = res.data.results[0].photos[0].url
+        // cardObject.image = 'https://cdn.shopify.com/s/files/1/0185/7770/products/1993DW-edit-front_x1080.png?v=1602864333'
 
         return axios.get(`/reviews?product_id=${props.relatedProductID}`)
       })
@@ -45,7 +45,7 @@ if(props.title === "RELATED PRODUCTS") {
     <div className="card">
       <img className="comparison-button" src="http://localhost:3000/assets/fullStar.png" />
         <div className="clickable-img" onClick={() => {props.setCurrentProductID(cardProduct.id)}}>
-  <img src="https://cdn.shopify.com/s/files/1/0185/7770/products/1993DW-edit-front_x1080.png?v=1602864333"/>
+  <img src={cardProduct.image}/>
         </div>
       <div className="container">
         <div>CATEGORY</div>

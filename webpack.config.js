@@ -9,6 +9,10 @@ module.exports = {
     path: path.resolve("dist"),
     publicPath: "/",
   },
+  devServer: {
+    port: 3000,
+    watchContentBase: true
+  },
   module: {
     rules:[
       {

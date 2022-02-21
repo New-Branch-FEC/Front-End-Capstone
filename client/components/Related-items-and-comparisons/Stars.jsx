@@ -2,9 +2,6 @@ import React from "react";
 import axios from 'axios';
 import ReactDOM from 'react-dom';
 
-// http://localhost:3000/a44fc2b27be3f3b99b5f.png
-// '../../../dist/assets/quarterStar.png'
-
 const Stars = (props) => {
   //  Edge case: if there are no reviews, HIDE the star rating section on each card.
   if (props.reviews.results.length === 0) {
@@ -42,8 +39,6 @@ const Stars = (props) => {
   let roundedDownRating = parseInt(roundedDown);
 
   // There should be a total of 20 star rendering options, populated on the screen depending on the average rating calculation (each star rating image must map to the calculated value in the component)
-
-  // How to render 1/4, 1/2, 3/4 parts of star? does fontawesome have this, or must these be made and imported as assets?
 
   let firstStar;
   let secondStar;
@@ -175,8 +170,6 @@ const Stars = (props) => {
     console.log("something went wrong with star render!")
   }
 
-  // console.log(props.reviews)
-  //
   return (
     <div className="star-images">
       {firstStar}
