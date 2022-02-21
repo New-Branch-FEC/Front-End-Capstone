@@ -14,7 +14,7 @@
   border-color: rgb(0, 0, 0);
   border-width: .1em;
   border-style: solid;
-
+  width: 300px;
 }
 
 /* On mouse-over, added a deeper shadow (because it's pretty) */
@@ -24,11 +24,47 @@
 
 /* Added some padding inside the card container */
 .container {
+  background-color: rgb(218, 215, 250);
   padding: 2px 16px;
+  overflow: hidden;
 }
 
+.card-list {
+  overflow-x: scroll;
+  white-space: nowrap;
+  padding: 10px;
+}
 
+/* Specifies that all img tags in all elements with class "star-images" will have this styling */
+.star-images img {
+    width: 17px;
+    /* max-width: 100%; */
+}
 
+.clickable-img img {
+  width: 300px;
+
+  /* max-width: 100%; */
+  /* display: block;
+  touch-action: pinch-zoom; */
+}
+
+/* this position:relative is what the button below should consider its boundaries (the button is in the div with className=card */
+.card {
+  position: relative;
+  display: inline-block;
+
+}
+
+.comparison-button {
+  position: absolute; /* this makes the star able to occupy the same space as its neighbors inside its container */
+  top: 0;
+  right: 0;
+  width: 25px;
+  padding: 10px
+  /* max-width: 100%; */
+
+}
 
 /******************** Ratings and Reviews ********************/
 
@@ -36,6 +72,7 @@ body {
   padding: 10px;
   background-color: antiquewhite;
 }
+
 
 .column-L {
   float: left;
