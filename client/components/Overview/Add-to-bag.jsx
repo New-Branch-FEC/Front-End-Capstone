@@ -12,19 +12,17 @@ const AddToBag = (props) => {
     for (let i = 0; i < resultsArray.length; i++) {
       // reach into results array
       let availableSizesAndQuantity = resultsArray[i].skus;
-      console.log(availableSizesAndQuantity);
-
-      for (let j = 0; j < availableSizesAndQuantity.length; j++) {
-        quantity.push(availableSizesAndQuantity[j].quantity);
-        sizes.push(availableSizesAndQuantity[j].size);
-        console.log('INNER LOOP IS WORKING', sizes, quantity);
-      }
-      // for each index in results array
-        // reach into skus array
-        // for each index in skus array
-        // identify size and quantity values
+      console.log('IS THIS AN OBJECT', availableSizesAndQuantity);
+        // for each inside of here to access each individual sku
+      Object.keys(availableSizesAndQuantity).forEach(style => {
+        quantity[style] = availableSizesAndQuantity[style].quantity
+        sizes[style] = availableSizesAndQuantity[style].size;
+      });
     }
 
+    console.log('MEOW????', quantity, sizes);
+      // WE HAVE TURNED IT INTO AN ARRAYYYYYYY
+        // NOW WE MUST MAP IT IN THE OPTIONS
 
     return (
     <div>

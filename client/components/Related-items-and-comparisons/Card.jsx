@@ -68,7 +68,7 @@ const Card = (props) => {
       let cardOutfitObject = {};
       axios.get(`/products/${props.outfitID}`)
     .then((res) => {
-      console.log(`THIS IS THE ID AND PRICE FOR EACH ${res.data.name}`, res.data.id, res.data.default_price)
+      // console.log(`THIS IS THE ID AND PRICE FOR EACH ${res.data.name}`, res.data.id, res.data.default_price)
       cardOutfitObject.id = res.data.id
       cardOutfitObject.name = res.data.name;
       cardOutfitObject.default_price = res.data.default_price;
