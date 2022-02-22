@@ -28,12 +28,15 @@ const Comparison = () => {
       // }
 
 
-
+  console.log('the comparison card is called up')
   return (
-    <table>
-    <thead>{currentProduct.name}</thead>
-    <tr></tr>
-    </table>
+    // <table>
+    // <thead>{currentProduct.name}</thead>
+    // <tr></tr>
+    // </table>
+    <>
+    <div>The comparison card is called!</div>
+    </>
   )
 
 }
