@@ -5,7 +5,14 @@ const RatingsList = (props) => {
   return (
     <div className="column-R RR-ratings-list">Ratings List Goes Here
       <h2>There Are {props.reviews.results.length} Reviews For This Product</h2>
-      <form>Sorted by "Relevance" (form: relevance, newest, helpful)</form>
+      <form>
+        <label>Sort by </label>
+        <select>
+          <option value="relevance">Relevance</option>
+          <option value="helpful">Helpful</option>
+          <option value="newest">Newest</option>
+        </select>
+      </form>
       <div>
         {props.reviews.results.map((reviews, i) => (
           <RatingsListEntry reviews={props.reviews} currentReview={props.reviews.results[i]} />

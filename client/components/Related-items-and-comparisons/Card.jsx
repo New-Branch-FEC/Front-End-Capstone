@@ -17,13 +17,13 @@ const Card = (props) => {
       .then((res) => {
         cardObject.name = res.data.name;
         cardObject.default_price = res.data.default_price;
-        return axios.get(`/products/${props.relatedProductID}/styles`) // will not work until Anisah merges changes containing styles axios.get in server
+        return axios.get(`/products/${props.relatedProductID}/styles`);
       })
       .then((res) => {
         cardObject.image = res.data.results[0].photos[0].url
         // cardObject.image = 'https://cdn.shopify.com/s/files/1/0185/7770/products/1993DW-edit-front_x1080.png?v=1602864333'
 
-        return axios.get(`/reviews?product_id=${props.relatedProductID}`)
+        return axios.get(`/reviews?product_id=${props.relatedProductID}`);
       })
       .then((res) => {
         cardObject.reviews = res.data;

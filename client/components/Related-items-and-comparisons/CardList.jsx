@@ -16,7 +16,7 @@ const CardList = (props) => {
   //   if (card array index is its length -1, toggle arrow to "HIDE"
 
   // console.log("is this defined?", props.setCurrentProductID) <-- working
-  console.log(props.relatedProducts)
+  // console.log(props.relatedProducts)
 
   return (
     <div className="card-list">

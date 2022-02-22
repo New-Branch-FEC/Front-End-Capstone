@@ -1,16 +1,29 @@
 import React from 'react';
+import Stars from '../Related-items-and-comparisons/Stars.jsx';
 
 const RatingsSidebar = (props) => {
+
+  let ratingsAverage = 0;
+  props.reviews.results.forEach(element => (ratingsAverage += element.rating));
+  ratingsAverage /= props.reviews.results.length;
+
+  let recommendPercent = 0;
+  props.reviews.results.forEach(element => {
+    if (element.recommend) {
+      recommendPercent += 100;
+    }
+  });
+  recommendPercent /= props.reviews.results.length;
+
   return (
     <div className="column-L">
       <div className="RR-sidebar">
           <div className="RR-star-rating">
-            {/* TODO: star rating math from Terri, average from all {props.reviews.results[ALL_OF_THEM].rating} */}
-            <p>3.5</p>
-            <div>⭐⭐⭐⭐⭐</div>
+            <p className="RR-average-rating">Average Product Rating: {ratingsAverage}</p>
+            {/* TODO: star rating math from Terri, currently logging first review? */}
+            <Stars reviews={props.reviews} />
           </div>
-          {/* TODO: logic returning percent with {props.reviews.results[ALL_OF_THEM].recommend} */}
-          <p className="RR-recommends">XXX% of reviewers recommend this product</p>
+          <p className="RR-recommends">{recommendPercent}% of reviewers recommend this product!</p>
           <div className="RR-stars-graph">
             {/* TODO: distribution of {props.reviews.results[ALL_OF_THEM].rating} */}
             <li>5 stars</li>
