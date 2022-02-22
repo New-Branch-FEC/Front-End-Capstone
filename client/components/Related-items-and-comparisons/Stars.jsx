@@ -24,6 +24,7 @@ const Stars = (props) => {
 
   // take total and divide by number of reviews to get average rating
   let average = totalOfRatings/totalCount;
+  // average = 4.8
 
   // testing
   // console.log("the length is: ", props.reviews.results.length) <-- 5
@@ -33,10 +34,10 @@ const Stars = (props) => {
   // console.log("rounded down rating! It is: ", roundedDownRating) <-- 2
 
   // rounding down to nearest 25th percentile
-  let roundedDown = (Math.round(average * 4) / 4).toFixed(2);
+  let roundedDownRating = (Math.round(average * 4) / 4) //.toFixed(2);
 
-  // parsing string number (issue with percentage value return for 00)
-  let roundedDownRating = parseInt(roundedDown);
+  // console.log("rounded down star", roundedDownRating)
+  // console.log("rounded down rating", roundedDownRating)
 
   // There should be a total of 20 star rendering options, populated on the screen depending on the average rating calculation (each star rating image must map to the calculated value in the component)
 

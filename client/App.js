@@ -256,7 +256,7 @@ const App = () => {
         })
     }, [])
 
-  const [outfit, setOutfit] = useState([]);
+  const [outfit, setOutfit] = useState([37314, 37315, 37320]);
   /*
     // adding to user's outfit array
 
