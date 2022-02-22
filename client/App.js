@@ -266,6 +266,19 @@ const App = () => {
     setOutfit([...outfit, `${addToBagProductID}`])
   */
 
+// set modal toggle function
+const [showModalStatus, setShowModalStatus] = useState(false);
+
+
+// const showModal = () => {
+//     setShowModalStatus(prev => !prev); // this should toggle it back and forth
+//     return (
+//         <>
+//     <Comparison showModalStatus={showModalStatus} setShowModalStatus={setShowModalStatus} showModal={showModal}/>
+//         </>
+//     )
+//     }
+
   return (
      <>
      <div>Hello, World!</div>

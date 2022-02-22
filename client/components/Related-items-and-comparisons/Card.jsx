@@ -10,6 +10,18 @@ const Card = (props) => {
 
   if(props.relatedProductID !== undefined) {
 
+    // // set modal toggle function
+    // const [showModalStatus, setShowModalStatus] = useState(false);
+
+    // const showModal = () => {
+    //   setShowModalStatus(prev => !prev); // this should toggle it back and forth
+    //   return (
+    //     <>
+    //   <Comparison showModalStatus={showModalStatus} setShowModalStatus={setShowModalStatus} showModal={showModal}/>
+    //     </>
+    //   )
+    // }
+
     // to render related products array
     const [cardProduct, setCardProduct] = useState(null);
 
@@ -45,8 +57,13 @@ const Card = (props) => {
     }
 
     return (
+      // onClick={() => {props.showModal}} <-- to be added
       <div className="card">
-        <img className="comparison-button" src="http://localhost:3000/assets/clickStar.png" onClick={() => {<Comparison/>}}/>
+        <div>
+          <img className="comparison-button" src="http://localhost:3000/assets/clickStar.png"/>
+
+        </div>
+
           <div className="clickable-img" onClick={() => {props.setCurrentProductID(cardProduct.id)}}>
     <img src={cardProduct.image}/>
           </div>

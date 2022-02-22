@@ -2,7 +2,9 @@ import React from "react";
 import axios from 'axios';
 import ReactDOM from 'react-dom';
 
-const Comparison = () => {
+const Comparison = (props) => {
+
+
   // Upon click event, the user will see this comparison card, which takes the card's product and compares it to the currentProduct.
 
 // TODO: How can I use useContext to grab the currentProduct from the App component???
@@ -22,22 +24,27 @@ const Comparison = () => {
   // else if the characteristic NOT shared,
     // render it with its product checked (and the other unchecked)
 
-
       // if (currentProduct.some(item => cardProduct.includes(item)) {
-
       // }
 
-
-  console.log('the comparison card is called up')
-  return (
-    // <table>
-    // <thead>{currentProduct.name}</thead>
-    // <tr></tr>
-    // </table>
-    <>
-    <div>The comparison card is called!</div>
-    </>
-  )
+  // console.log('the comparison card is called up')
+  // return (
+  //   // <table>
+  //   // <thead>{currentProduct.name}</thead>
+  //   // <tr></tr>
+  //   // </table>
+  //   <>
+  //   {props.showModalStatus ?
+  //   <div className="comparison-modal-background"onClick={() => props.setShowModalStatus(prev => !prev)} >
+  //     <div className="comparison-modal-wrapper">
+  //       <div className="comparison-modal-content">
+  //         <h1> The comparison </h1>
+  //         <p> It goes here!</p>
+  //       </div>
+  //     </div>
+  //   </div> : null}
+  //   </>
+  // )
 
 }
 

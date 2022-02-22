@@ -9,7 +9,7 @@ const RelatedItemsAndComparisons = (props) => {
   return (
     <>
 
-    <CardList title="RELATED PRODUCTS" currentProduct={props.currentProduct} reviews={props.reviews} outfit={props.outfit} relatedProducts={props.relatedProducts} setCurrentProductID={props.setCurrentProductID}/>
+    <CardList title="RELATED PRODUCTS" currentProduct={props.currentProduct} reviews={props.reviews} outfit={props.outfit} relatedProducts={props.relatedProducts} setCurrentProductID={props.setCurrentProductID} showModal={props.showModal}/>
 
     <CardList title="YOUR OUTFIT" currentProduct={props.currentProduct} reviews={props.reviews} outfit={props.outfit} relatedProducts={props.relatedProducts} setCurrentProductID={props.setCurrentProductID}/>
 
