@@ -3,23 +3,31 @@ const axios = require('axios');
 
 const AddToBag = (props) => {
 
-    console.log('STYLES', props.currentStyle);
+    // console.log(props.currentStyle.results);
 
     const resultsArray = props.currentStyle.results;
     let sizes = [];
     let quantity = [];
 
-    for (let i = 0; i < resultsArray.length; i++) {
-      // reach into results array
-      let availableSizesAndQuantity = resultsArray[i].skus;
-        // for each inside of here to access each individual sku
+    resultsArray.forEach(style => {
+      let availableSizesAndQuantity = style.skus;
       Object.keys(availableSizesAndQuantity).forEach(style => {
-        quantity[style] = availableSizesAndQuantity[style].quantity
-        sizes[style] = availableSizesAndQuantity[style].size;
-      });
-    }
+        quantity.push(availableSizesAndQuantity[style].quantity);
+        sizes.push(availableSizesAndQuantity[style].size);
+    })
+  })
+    // for (let i = 0; i < resultsArray.length; i++) {
+      // reach into results array
+      // let availableSizesAndQuantity = resultsArray[i].skus;
+        // for each inside of here to access each individual sku
+      // Object.keys(availableSizesAndQuantity).forEach(style => {
+      //   quantity[style] = availableSizesAndQuantity[style].quantity
+      //   sizes[style] = availableSizesAndQuantity[style].size;
+      // });
 
-    console.log('QUANTITY THEN SIZES', quantity, sizes);
+    // }
+
+    // console.log('QUANTITY THEN SIZES', quantity, sizes);
       // WE HAVE TURNED IT INTO AN ARRAYYYYYYY
         // NOW WE MUST MAP IT IN THE OPTIONS
 

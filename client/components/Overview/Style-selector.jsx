@@ -5,21 +5,17 @@ const axios = require('axios');
 const SelectStyle = (props) => {
 
   const[style, setStyle] = useState(props.currentStyle);
+  const styleArray = props.currentStyle.results;
+  console.log('CHANGE OF PLAN', props.currentStyle);
 
-  // useEffect(() => {
-  //   axios.get(`/products/:product_id/${props.currentStyle}`)
-  //   .then((res) => {
-  //     setStyle(res.data);
-  //   })
-  //   .catch((err) => {
-  //     console.log('something went wrong while finding style', err)
-  //   })
-  // })
+  styleArray.forEach(style => {
+    console.log(style.photos)
+  })
 
   return (
     <div>
-      <img className='OV-Style-Selector' src='https://images.unsplash.com/photo-1501088430049-71c79fa3283e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80'/>
-      <div className='OV-Selected-Style'>{props.currentStyle.results[0].name}</div>
+      <img className='OV-Style-Selector' src=''/>
+      <div className='OV-Selected-Style'></div>
     </div>
   )
 }
