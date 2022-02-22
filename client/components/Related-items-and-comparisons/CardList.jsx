@@ -16,7 +16,7 @@ const CardList = (props) => {
   //   if (card array index is its length -1, toggle arrow to "HIDE"
 
   // console.log("is this defined?", props.setCurrentProductID) <-- working
-  console.log("HEREHERHERHERHEHREHREHREHREHR", props.outfit)
+  // console.log("HEREHERHERHERHEHREHREHREHREHR", props.outfit)
 
   if(props.title === "RELATED PRODUCTS") {
     return (
