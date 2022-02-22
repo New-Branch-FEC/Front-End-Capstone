@@ -4,7 +4,8 @@ const axios = require('axios');
 
 import ProductInformation from './Product-information.jsx';
 import SelectStyle from './Style-selector.jsx';
-import ShareOnline from './Share-to-socials.jsx'
+import ShareOnline from './Share-to-socials.jsx';
+import AddToBag from './Add-to-bag.jsx';
 
 const Overview = (props) => {
   return (
@@ -13,6 +14,7 @@ const Overview = (props) => {
       < ProductInformation currentProduct={props.currentProduct} currentStyle={props.currentStyle} reviews={props.reviews}/>
       < SelectStyle currentProduct={props.currentProduct} currentStyle={props.currentStyle}/>
       < ShareOnline />
+      < AddToBag currentProduct={props.currentProduct} currentStyle={props.currentStyle} />
     </div>
   </div>
   )
