@@ -168,6 +168,50 @@ const App = () => {
     ]
   })
 
+  const [reviewsMeta, setReviewsMeta] = useState({
+    "product_id": "37311",
+    "ratings": {
+        "1": "10",
+        "2": "16",
+        "3": "41",
+        "4": "21",
+        "5": "91"
+    },
+    "recommended": {
+        "false": "29",
+        "true": "150"
+    },
+    "characteristics": {
+        "Fit": {
+            "id": 125031,
+            "value": "2.9811320754716981"
+        },
+        "Length": {
+            "id": 125032,
+            "value": "2.8823529411764706"
+        },
+        "Comfort": {
+            "id": 125033,
+            "value": "2.9000000000000000"
+        },
+        "Quality": {
+            "id": 125034,
+            "value": "2.9620253164556962"
+        }
+    }
+})
+
+//   reviewMeta axios.get is not being async yet
+//   useEffect(() => {
+//       axios.get(`/reviews/meta?product_id=${currentProductID}`)
+//       .then((res) => {
+//           setReviewsMeta(res.data)
+//       })
+//       .catch(err => {
+//           console.log("An error occured while fecthing reviewsMeta", err);
+//       })
+//   }, [currentProductID]);
+
   useEffect(() => {
     console.log('current product id changed', currentProductID)
     axios.get(`/reviews?product_id=${currentProductID}`)
@@ -272,7 +316,7 @@ const App = () => {
      <Overview currentProduct={currentProduct} currentStyle={currentStyle} reviews={reviews} outfit={outfit}/>
      <RelatedItemsAndComparisons currentProduct={currentProduct} reviews={reviews} outfit={outfit} relatedProducts={relatedProducts} setCurrentProductID={setCurrentProductID}/>
      {/* <QuestionsAndAnswers /> */}
-     <RatingsAndReviews currentProduct={currentProduct} reviews={reviews}/>
+     <RatingsAndReviews currentProduct={currentProduct} reviews={reviews} reviewsMeta={reviewsMeta}/>
      </>
    )
 };

@@ -8,7 +8,7 @@ const RatingsAndReviews = (props) => {
     <div className="row RR-header">
       <h1>Ratings and Reviews</h1>
       <RatingsList currentProduct={props.currentProduct} reviews={props.reviews}/>
-      <RatingsSidebar currentProduct={props.currentProduct} reviews={props.reviews}/>
+      <RatingsSidebar currentProduct={props.currentProduct} reviews={props.reviews} reviewsMeta={props.reviewsMeta}/>
     </div>
   )
 };
