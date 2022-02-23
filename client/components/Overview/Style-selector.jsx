@@ -3,28 +3,25 @@ const axios = require('axios');
 
 
 const SelectStyle = (props) => {
+  console.log('PROPS IN STYLE', props.smallPhotos);
 
-  const[style, setStyle] = useState(props.currentStyle);
-  const styleArray = props.currentStyle.results;
-  // console.log('CHANGE OF PLAN', props.currentStyle);
-
-  styleArray.forEach(style => {
-    // console.log(style.photos)
-  })
+  //populate small photos into an object so we can access them correctly
 
   return (
     <div>
-      <img className='OV-Style-Selector' src={props.currentStyle.results[0].photos[0].url}/>
-      <div className='OV-Selected-Style'>{props.currentStyle.results[0].name}</div>
+      <img className='OV-Main-Photo' src={props.mainPhoto}/>
+      {/* <img className='OV-Small-Photos' src={props.smallPhotos[id].url} /> */}
+      <div className='OV-Selected-Style-Name'></div>
+      <Add-to-bag />
     </div>
-  )
-}
 
+)
+}
 export default SelectStyle;
 
 
+// Get the main photo to render correctly > get the thumbnails to render correctly > get styles to render correctly > get the size and quantity render correctly
 
-// this should be in our return statement
 
 
 // use postman to access styles endpoint, which gives you thumbnail full url

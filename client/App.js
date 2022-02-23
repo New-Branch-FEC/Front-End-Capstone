@@ -313,10 +313,10 @@ const App = () => {
   return (
      <>
      <div>Hello, World!</div>
-     <Overview currentProduct={currentProduct} currentStyle={currentStyle} reviews={reviews} outfit={outfit}/>
+     <Overview currentProduct={currentProduct} setCurrentProduct={setCurrentProduct} currentStyle={currentStyle} setCurrentStyle={setCurrentStyle} reviews={reviews} outfit={outfit}/>
      <RelatedItemsAndComparisons currentProduct={currentProduct} reviews={reviews} outfit={outfit} relatedProducts={relatedProducts} setCurrentProductID={setCurrentProductID}/>
      {/* <QuestionsAndAnswers /> */}
-     <RatingsAndReviews currentProduct={currentProduct} reviews={reviews} reviewsMeta={reviewsMeta}/>
+     {/* <RatingsAndReviews currentProduct={currentProduct} reviews={reviews} reviewsMeta={reviewsMeta}/> */}
      </>
    )
 };

@@ -8,11 +8,33 @@ import ShareOnline from './Share-to-socials.jsx';
 import AddToBag from './Add-to-bag.jsx';
 
 const Overview = (props) => {
+  console.log('props', props);
+  // move all the states into here
+  // for styles
+  const [mainPhoto, setMainPhoto] = useState(props.currentStyle.results[0].photos[0].url);
+  const [smallPhotos, setSmallPhotos] = useState(props.currentStyle.results[0].photos);
+  const [styleName, setStyleName] = useState(props.currentStyle.results[0].name);
+  // for size and quantity
+  const [sizeAndStock, setSizeAndStock] = useState({});
+  // event handler for clicking new style
+  const styleHandler = (click) => {
+    console.log(click);
+    setMainPhoto(click.photos[0].url);
+    setSmallPhotos(click.photos);
+  }
+
+  // event handler for clicking new image
+  const changeImage = (click) => {
+
+  }
+
+
+
   return (
   <div>
     <div>
       < ProductInformation currentProduct={props.currentProduct} currentStyle={props.currentStyle} reviews={props.reviews}/>
-      < SelectStyle currentProduct={props.currentProduct} currentStyle={props.currentStyle}/>
+      < SelectStyle currentProduct={props.currentProduct} currentStyle={props.currentStyle} styleHandler={styleHandler} mainPhoto={mainPhoto} setMainPhoto={setMainPhoto} smallPhotos={smallPhotos} setSmallPhotos={setSmallPhotos} styleName={styleName} setStyleName={setStyleName}/>
       < ShareOnline />
       < AddToBag currentProduct={props.currentProduct} currentStyle={props.currentStyle} />
     </div>
