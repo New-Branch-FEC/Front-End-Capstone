@@ -43,6 +43,7 @@ const App = () => {
     axios.get(`/products/${currentProductID}`)
       .then((res) => {
         // console.log('res: ', res); <-- working
+        // console.log('res.data', res.data)
         setCurrentProduct(res.data)
       })
       .catch(err => {
@@ -217,7 +218,7 @@ const App = () => {
 //   }, [currentProductID]);
 
   useEffect(() => {
-    console.log('current product id changed', currentProductID)
+    // console.log('current product id changed', currentProductID)
     axios.get(`/reviews?product_id=${currentProductID}`)
     .then((res) => {
       setReviews(res.data)
@@ -332,10 +333,10 @@ const [cardProductFeatures, setCardProductFeatures] = useState(currentProductID)
 // getting current product by current product's id
 
 useEffect(() => {
-    console.log(cardProductFeatures)
+    // console.log(cardProductFeatures)
     axios.get(`/products/${cardProductFeatures}`)
     .then((res) => {
-        console.log('res: ', res);
+        // console.log('res: ', res);
         setCardProductFeatures(res.data)
     })
     .catch(err => {
@@ -350,7 +351,6 @@ useEffect(() => {
         <Comparison currentProduct={currentProduct} showModalStatus={showModalStatus} setShowModalStatus={setShowModalStatus} showModal={showModal} cardProductFeatures={cardProductFeatures}/>
         <RelatedItemsAndComparisons setCardProductFeatures={setCardProductFeatures} currentProduct={currentProduct} reviews={reviews} outfit={outfit} relatedProducts={relatedProducts} setCurrentProductID={setCurrentProductID} showModal={showModal}/>
      </div>
-
      {/* <QuestionsAndAnswers /> */}
      <RatingsAndReviews currentProduct={currentProduct} reviews={reviews} reviewsMeta={reviewsMeta}/>
      </>

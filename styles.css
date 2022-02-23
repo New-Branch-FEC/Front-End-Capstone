@@ -88,7 +88,7 @@
   background: #fff;
   color: rgb(82, 69, 69);
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  /* grid-template-columns: 1fr 1fr; */
   position: relative;
   z-index: 10;
   border-radius: 10px;
@@ -108,8 +108,9 @@
 /* TODO: make this display three columns */
 .comparison-modal-content .modal-grid {
   display: flex;
+  white-space: pre-line;
   flex-direction: column;
-  /* grid-column: 3; */
+  grid-column: 3;
   align-items: left;
   line-height: 1.8;
   color: #141414;
