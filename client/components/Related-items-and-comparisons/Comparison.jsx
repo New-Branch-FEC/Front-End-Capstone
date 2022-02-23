@@ -1,10 +1,26 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import axios from 'axios';
 import ReactDOM from 'react-dom';
 
 const Comparison = (props) => {
 
+// setting current product by current product ID, with a default product upon load, "Bright Future Sunglasses"
+// const [cardProductFeatures, setCardProductFeatures] = useState(37312);
 
+// // getting current product by current product's id
+// useEffect(() => {
+//   axios.get(`/products/${cardProductFeatures}`)
+//     .then((res) => {
+//       // console.log('res: ', res); <-- working
+//       setCardProductFeatures(res.data)
+//     })
+//     .catch(err => {
+//       console.log("An error occured while fetching card item", err);
+//     })
+// }, []);
+
+
+console.log("This is card product features", props.cardProductFeatures)
   // Upon click event, the user will see this comparison card, which takes the card's product and compares it to the currentProduct.
 
 // TODO: How can I use useContext to grab the currentProduct from the App component???
@@ -27,24 +43,29 @@ const Comparison = (props) => {
       // if (currentProduct.some(item => cardProduct.includes(item)) {
       // }
 
-  // console.log('the comparison card is called up')
-  // return (
-  //   // <table>
-  //   // <thead>{currentProduct.name}</thead>
-  //   // <tr></tr>
-  //   // </table>
-  //   <>
-  //   {props.showModalStatus ?
-  //   <div className="comparison-modal-background"onClick={() => props.setShowModalStatus(prev => !prev)} >
-  //     <div className="comparison-modal-wrapper">
-  //       <div className="comparison-modal-content">
-  //         <h1> The comparison </h1>
-  //         <p> It goes here!</p>
-  //       </div>
-  //     </div>
-  //   </div> : null}
-  //   </>
-  // )
+  console.log('the comparison card is called up')
+  return (
+
+    <>
+    {props.showModalStatus ?
+    <div className="comparison-modal-background"onClick={() => props.setShowModalStatus(prev => !prev)} >
+      <div className="comparison-modal-wrapper">
+      <div>COMPARING</div>
+        <div className="comparison-modal-content">
+           <div className="modal-grid">
+
+             <h4>{props.currentProduct.name} comparing against: {props.cardProductFeatures.name}</h4>
+
+             <p>✓ {props.currentProduct.features[0].feature}: {props.currentProduct.features[0].value}</p>
+
+             <p>✓ {props.cardProductFeatures.features[0].feature}: {props.cardProductFeatures.features[0].value}</p>
+           </div>
+
+        </div>
+      </div>
+    </div> : null}
+    </>
+  )
 
 }
 

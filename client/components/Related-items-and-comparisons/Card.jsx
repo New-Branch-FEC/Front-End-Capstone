@@ -33,6 +33,7 @@ const Card = (props) => {
         cardObject.id = res.data.id
         cardObject.name = res.data.name;
         cardObject.default_price = res.data.default_price;
+        cardObject.fullProductObj =res.data
         return axios.get(`/products/${props.relatedProductID}/styles`)
       })
       .then((res) => {
@@ -57,11 +58,10 @@ const Card = (props) => {
     }
 
     return (
-      // onClick={() => {props.showModal}} <-- to be added
+
       <div className="card">
         <div>
-          <img className="comparison-button" src="http://localhost:3000/assets/clickStar.png"/>
-
+          <img className="comparison-button" src="http://localhost:3000/assets/clickStar.png" onClick={() => {props.showModal(true), props.setCardProductFeatures(cardProduct.fullProductObj)}}/>
         </div>
 
           <div className="clickable-img" onClick={() => {props.setCurrentProductID(cardProduct.id)}}>
@@ -116,7 +116,7 @@ const Card = (props) => {
   return (
     <div className="card">
     <img className="comparison-button" src="http://localhost:3000/assets/deleteButton.png"/>
-      <div className="clickable-img" onClick={() => {props.setCurrentProductID(cardOutfitProduct.id)}}>
+      <div className="clickable-img" onClick={() => {props.setCurrentProductID(cardOutfitProduct.id) }}>
 <img src={cardOutfitProduct.image}/>
       </div>
     <div className="container">
