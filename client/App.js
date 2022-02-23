@@ -7,8 +7,12 @@ import QuestionsAndAnswers from "./components/Questions-and-answers/Questions-an
 import Overview from "./components/Overview/Overview.jsx";
 import RatingsAndReviews from "./components/Ratings-and-reviews/Ratings-and-reviews.jsx";
 import RelatedItemsAndComparisons from "./components/Related-items-and-comparisons/RelatedItemsAndComparisons.jsx";
+import Comparison from "./components/Related-items-and-comparisons/Comparison.jsx"
 
 const App = () => {
+
+
+
 
   // setting current product by current product ID, with a default product upon load, "Bright Future Sunglasses"
   const [currentProductID, setCurrentProductID] = useState(37311);
@@ -39,6 +43,7 @@ const App = () => {
     axios.get(`/products/${currentProductID}`)
       .then((res) => {
         // console.log('res: ', res); <-- working
+        // console.log('res.data', res.data)
         setCurrentProduct(res.data)
       })
       .catch(err => {
@@ -213,7 +218,7 @@ const App = () => {
   }, [currentProductID]);
 
   useEffect(() => {
-    console.log('current product id changed', currentProductID)
+    // console.log('current product id changed', currentProductID)
     axios.get(`/reviews?product_id=${currentProductID}`)
     .then((res) => {
       setReviews(res.data)
@@ -310,11 +315,42 @@ const App = () => {
     setOutfit([...outfit, `${addToBagProductID}`])
   */
 
+    // set modal toggle function
+const [showModalStatus, setShowModalStatus] = useState(false);
+
+
+const showModal = (value) => {
+    // setShowModalStatus(prev => !prev); // this should toggle it back and forth
+    if (value === true) {
+        setShowModalStatus(true)
+
+    }
+    }
+
+  // setting card productID by click event in Card modal
+const [cardProductFeatures, setCardProductFeatures] = useState(currentProductID);
+
+// getting current product by current product's id
+
+useEffect(() => {
+    // console.log(cardProductFeatures)
+    axios.get(`/products/${cardProductFeatures}`)
+    .then((res) => {
+        // console.log('res: ', res);
+        setCardProductFeatures(res.data)
+    })
+    .catch(err => {
+        console.log("An error occured while fetching card item", err);
+    })
+}, []);
+
   return (
      <>
-     <div>Hello, World!</div>
      <Overview currentProduct={currentProduct} currentStyle={currentStyle} reviews={reviews} outfit={outfit}/>
-     <RelatedItemsAndComparisons currentProduct={currentProduct} reviews={reviews} outfit={outfit} relatedProducts={relatedProducts} setCurrentProductID={setCurrentProductID}/>
+     <div className="comparison-and-modal-container">
+        <Comparison currentProduct={currentProduct} showModalStatus={showModalStatus} setShowModalStatus={setShowModalStatus} showModal={showModal} cardProductFeatures={cardProductFeatures}/>
+        <RelatedItemsAndComparisons setCardProductFeatures={setCardProductFeatures} currentProduct={currentProduct} reviews={reviews} outfit={outfit} relatedProducts={relatedProducts} setCurrentProductID={setCurrentProductID} showModal={showModal}/>
+     </div>
      {/* <QuestionsAndAnswers /> */}
      <RatingsAndReviews currentProduct={currentProduct} reviews={reviews} reviewsMeta={reviewsMeta}/>
      </>
