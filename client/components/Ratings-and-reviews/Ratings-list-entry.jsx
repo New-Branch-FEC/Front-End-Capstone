@@ -29,6 +29,14 @@ const RatingsListEntry = (props) => {
     }
   }
 
+  // let urlIsPhoto = (props) => {
+  //   for (let i = 0; i < props.currentReview.photos.length; i++) {
+  //     let currentURL = props.currentReview.photos[i].url;
+  //     if (currentURL.includes('.png' || '.svg' || '.jpg' || '.jpeg' || 'gif')) {
+  //       console.log('legitimate photo type found :', props.currentReview.photos[i].url);
+  //     }
+  // }
+
   let sellerResponse = (props) => {
     if (props.currentReview.response) {
       return "Seller Response: " + props.currentReview.response;
@@ -47,10 +55,10 @@ const RatingsListEntry = (props) => {
         <div className="column-R RR-user-date"> User: {props.currentReview.reviewer_name}// Posted: {prettyDate}</div>
         <h3 className="RR-summary">{props.currentReview.summary}</h3>
         <h4 className="RR-body">{props.currentReview.body}</h4>
-        {props.currentReview.photos.map((element, i) => (
+        {/* {props.currentReview.photos.map((element, i) => (
           // TODO: make modal to show full size image
           <img className="RR-thumbnail" src={element.url} key={i} onClick={makeFullSize}/>
-        ))}
+        ))} */}
         <div>{isRecommended(props)}</div>
         <div>{sellerResponse(props)}</div>
         <div className="RR-feedback">Review Feedback

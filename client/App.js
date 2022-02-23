@@ -202,15 +202,15 @@ const App = () => {
 })
 
 //   reviewMeta axios.get is not being async yet
-//   useEffect(() => {
-//       axios.get(`/reviews/meta?product_id=${currentProductID}`)
-//       .then((res) => {
-//           setReviewsMeta(res.data)
-//       })
-//       .catch(err => {
-//           console.log("An error occured while fecthing reviewsMeta", err);
-//       })
-//   }, [currentProductID]);
+  useEffect(() => {
+      axios.get(`/reviews/meta?product_id=${currentProductID}`)
+      .then((res) => {
+          setReviewsMeta(res.data)
+      })
+      .catch(err => {
+          console.log("An error occured while fecthing reviewsMeta", err);
+      })
+  }, [currentProductID]);
 
   useEffect(() => {
     console.log('current product id changed', currentProductID)
