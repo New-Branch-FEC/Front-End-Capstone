@@ -23,7 +23,7 @@ const RatingsList = (props) => {
       </form>
       <div>
         {props.reviews.results.map((reviews, i) => (
-          <RatingsListEntry reviews={props.reviews} currentReview={props.reviews.results[i]} />
+          <RatingsListEntry reviews={props.reviews} key={i} currentReview={props.reviews.results[i]} />
         ))}
       </div>
       <div className="RR-more-and-add">

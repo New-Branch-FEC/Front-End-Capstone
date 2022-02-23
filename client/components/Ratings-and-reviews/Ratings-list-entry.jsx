@@ -47,9 +47,9 @@ const RatingsListEntry = (props) => {
         <div className="column-R RR-user-date"> User: {props.currentReview.reviewer_name}// Posted: {prettyDate}</div>
         <h3 className="RR-summary">{props.currentReview.summary}</h3>
         <h4 className="RR-body">{props.currentReview.body}</h4>
-        {props.currentReview.photos.map(element => (
+        {props.currentReview.photos.map((element, i) => (
           // TODO: make modal to show full size image
-          <img className="RR-thumbnail" src={element.url} onClick={makeFullSize}/>
+          <img className="RR-thumbnail" src={element.url} key={i} onClick={makeFullSize}/>
         ))}
         <div>{isRecommended(props)}</div>
         <div>{sellerResponse(props)}</div>
