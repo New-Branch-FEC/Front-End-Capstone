@@ -62,6 +62,20 @@ app.get('/reviews', (req, res) => {
    })
 })
 
+app.get('/reviews/meta', (req, res) => {
+   axios.get(`https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/reviews/meta?product_id=${req.query.product_id}`, {
+      headers: {
+         'Authorization': `${token}`
+      }
+   })
+   .then(result => {
+      res.send(result.data);
+   })
+   .catch(error => {
+      res.status(500).send(error);
+   })
+})
+
 app.get('/products/:product_id/styles', (req, res) => {
    axios.get(`https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/products/${req.params.product_id}/styles/`, {
       headers: {

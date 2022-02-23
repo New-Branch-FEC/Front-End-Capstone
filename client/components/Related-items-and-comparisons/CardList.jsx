@@ -16,14 +16,14 @@ const CardList = (props) => {
   //   if (card array index is its length -1, toggle arrow to "HIDE"
 
   // console.log("is this defined?", props.setCurrentProductID) <-- working
-  console.log("HEREHERHERHERHEHREHREHREHREHR", props.outfit)
+  // console.log("HEREHERHERHERHEHREHREHREHREHR", props.outfit)
 
   if(props.title === "RELATED PRODUCTS") {
     return (
       <div className="card-list">
       <h2>{props.title}</h2>
       {props.relatedProducts.map((relatedProductID, index) => (
-        <Card relatedProductID={relatedProductID} index={index} currentProduct={props.currentProduct} reviews={props.reviews} outfit={props.outfit} relatedProducts={props.relatedProducts} title={props.title} setCurrentProductID={props.setCurrentProductID}/>
+        <Card relatedProductID={relatedProductID} key={index} currentProduct={props.currentProduct} reviews={props.reviews} outfit={props.outfit} relatedProducts={props.relatedProducts} title={props.title} setCurrentProductID={props.setCurrentProductID}/>
       ))}
       </div>
     )
@@ -32,7 +32,7 @@ const CardList = (props) => {
       <div className="card-list">
       <h2>{props.title}</h2>
       {props.outfit.map((outfitID, index) => (
-        <Card outfitID={outfitID} index={index} currentProduct={props.currentProduct} reviews={props.reviews} outfit={props.outfit} relatedProducts={props.relatedProducts} title={props.title} setCurrentProductID={props.setCurrentProductID}/>
+        <Card outfitID={outfitID} key={index} currentProduct={props.currentProduct} reviews={props.reviews} outfit={props.outfit} relatedProducts={props.relatedProducts} title={props.title} setCurrentProductID={props.setCurrentProductID}/>
       ))}
       </div>
     )
