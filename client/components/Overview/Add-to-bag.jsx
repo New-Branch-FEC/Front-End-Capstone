@@ -16,33 +16,30 @@ const AddToBag = (props) => {
         sizes.push(availableSizesAndQuantity[style].size);
     })
   })
-    // for (let i = 0; i < resultsArray.length; i++) {
+
+    for (let i = 0; i < resultsArray.length; i++) {
       // reach into results array
-      // let availableSizesAndQuantity = resultsArray[i].skus;
+      let availableSizesAndQuantity = resultsArray[i].skus;
+      // console.log('IS THIS AN OBJECT', availableSizesAndQuantity);
         // for each inside of here to access each individual sku
-      // Object.keys(availableSizesAndQuantity).forEach(style => {
-      //   quantity[style] = availableSizesAndQuantity[style].quantity
-      //   sizes[style] = availableSizesAndQuantity[style].size;
-      // });
+      Object.keys(availableSizesAndQuantity).forEach(style => {
+        quantity[style] = availableSizesAndQuantity[style].quantity
+        sizes[style] = availableSizesAndQuantity[style].size;
+      });
 
-    // }
+    }
 
-    // console.log('QUANTITY THEN SIZES', quantity, sizes);
+    // console.log('MEOW????', quantity, sizes);
       // WE HAVE TURNED IT INTO AN ARRAYYYYYYY
         // NOW WE MUST MAP IT IN THE OPTIONS
 
     return (
     <div>
     <select>
-    {sizes.map((size, key) =>
-      <option key={key}> {size} </option>
-    )}
-      THIS IS CURRENTLY MAPPING OVER EVERY SINGLE ONE ALL AT A TIME, CHANGE IT TO BE STYLE SPECIFIC
+      <option value=''> size </option>
     </select>
     <select>
-    {quantity.map((amount, key) =>
-      <option key={key}> {amount} </option>
-    )}
+      <option value=''> quantity </option>
     </select>
     </div>
     )

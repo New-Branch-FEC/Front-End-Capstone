@@ -6,16 +6,16 @@ const SelectStyle = (props) => {
 
   const[style, setStyle] = useState(props.currentStyle);
   const styleArray = props.currentStyle.results;
-  console.log('CHANGE OF PLAN', props.currentStyle);
+  // console.log('CHANGE OF PLAN', props.currentStyle);
 
   styleArray.forEach(style => {
-    console.log(style.photos)
+    // console.log(style.photos)
   })
 
   return (
     <div>
-      <img className='OV-Style-Selector' src=''/>
-      <div className='OV-Selected-Style'></div>
+      <img className='OV-Style-Selector' src={props.currentStyle.results[0].photos[0].url}/>
+      <div className='OV-Selected-Style'>{props.currentStyle.results[0].name}</div>
     </div>
   )
 }
