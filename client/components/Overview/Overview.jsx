@@ -8,7 +8,7 @@ import ShareOnline from './Share-to-socials.jsx';
 import AddToBag from './Add-to-bag.jsx';
 
 const Overview = (props) => {
-  console.log('props', props);
+  // console.log('props', props);
   // move all the states into here
   // for styles
   const [mainPhoto, setMainPhoto] = useState(props.currentStyle.results[0].photos[0].url);
@@ -17,10 +17,10 @@ const Overview = (props) => {
   // for size and quantity
   const [sizeAndStock, setSizeAndStock] = useState({});
   // event handler for clicking new style
-  const styleHandler = (click) => {
-    console.log(click);
-    setMainPhoto(click.photos[0].url);
-    setSmallPhotos(click.photos);
+  const styleHandler = (item) => {
+    // console.log(item);
+    setMainPhoto(item.photos[0].url);
+    setSmallPhotos(item.photos);
   }
 
   // event handler for clicking new image
