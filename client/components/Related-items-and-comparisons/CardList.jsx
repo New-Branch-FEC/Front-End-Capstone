@@ -23,7 +23,7 @@ const CardList = (props) => {
       <div className="card-list">
       <h2>{props.title}</h2>
       {props.relatedProducts.map((relatedProductID, index) => (
-        <Card relatedProductID={relatedProductID} key={index} currentProduct={props.currentProduct} reviews={props.reviews} outfit={props.outfit} relatedProducts={props.relatedProducts} title={props.title} setCurrentProductID={props.setCurrentProductID}/>
+        <Card relatedProductID={relatedProductID} key={index} currentProduct={props.currentProduct} reviews={props.reviews} outfit={props.outfit} relatedProducts={props.relatedProducts} title={props.title} setCurrentProductID={props.setCurrentProductID} showModal={props.showModal} setCardProductFeatures={props.setCardProductFeatures} />
       ))}
       </div>
     )
