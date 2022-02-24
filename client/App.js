@@ -306,6 +306,7 @@ const App = () => {
     }, [])
 
   const [outfit, setOutfit] = useState([37314, 37315, 37320]);
+
   /*
     // adding to user's outfit array
 
@@ -352,7 +353,7 @@ useEffect(() => {
      {/* <Overview currentProduct={currentProduct} currentStyle={currentStyle} reviews={reviews} outfit={outfit}/> */}
      <div className="comparison-and-modal-container">
     <Comparison currentProduct={currentProduct} showModalStatus={showModalStatus} setShowModalStatus={setShowModalStatus} showModal={showModal} cardProductFeatures={cardProductFeatures}/>
-    <RelatedItemsAndComparisons setCardProductFeatures={setCardProductFeatures} currentProduct={currentProduct} reviews={reviews} outfit={outfit} relatedProducts={relatedProducts} setCurrentProductID={setCurrentProductID} showModal={showModal}/>
+    <RelatedItemsAndComparisons setCardProductFeatures={setCardProductFeatures} currentProduct={currentProduct} reviews={reviews} outfit={outfit} setOutfit={setOutfit} relatedProducts={relatedProducts} setCurrentProductID={setCurrentProductID} showModal={showModal}/>
      </div>
      {/* <QuestionsAndAnswers /> */}
      <RatingsAndReviews currentProduct={currentProduct} reviews={reviews} reviewsMeta={reviewsMeta}/>

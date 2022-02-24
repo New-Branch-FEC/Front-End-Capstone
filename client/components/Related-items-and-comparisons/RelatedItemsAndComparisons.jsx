@@ -11,7 +11,7 @@ const RelatedItemsAndComparisons = (props) => {
 
     <CardList title="RELATED PRODUCTS" currentProduct={props.currentProduct} reviews={props.reviews} outfit={props.outfit} relatedProducts={props.relatedProducts} setCurrentProductID={props.setCurrentProductID} showModal={props.showModal} setCardProductFeatures={props.setCardProductFeatures}/>
 
-    <CardList title="YOUR OUTFIT" currentProduct={props.currentProduct} reviews={props.reviews} outfit={props.outfit} relatedProducts={props.relatedProducts} setCurrentProductID={props.setCurrentProductID}/>
+    <CardList title="YOUR OUTFIT" currentProduct={props.currentProduct} reviews={props.reviews} outfit={props.outfit} setOutfit={props.setOutfit} relatedProducts={props.relatedProducts} setCurrentProductID={props.setCurrentProductID}/>
 
     </>
   )

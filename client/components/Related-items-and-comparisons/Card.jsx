@@ -70,7 +70,7 @@ const Card = (props) => {
         <div className="container">
           <div>CATEGORY</div>
           <div>{cardProduct.name}</div>
-          <div>{cardProduct.default_price}</div>
+          <div>{`$${cardProduct.default_price}`}</div>
           <Stars reviews={cardProduct.reviews}/>
         </div>
       </div>
@@ -80,6 +80,13 @@ const Card = (props) => {
 
     //to render outfit array:
     const [cardOutfitProduct, setCardOutfitProduct] = useState(null);
+
+    const removeOutfit = (selectedOutfitID) => {
+      let index = props.outfit.indexOf(selectedOutfitID);
+      props.outfit.splice(index, 1);
+      console.log("props.outfit upon click event", props.outfit)
+      props.setOutfit(props.outfit);
+    }
 
     useEffect(() => {
       let cardOutfitObject = {};
@@ -112,17 +119,17 @@ const Card = (props) => {
   if (cardOutfitProduct === null) {
     return <div>Loading Outfits</div>
   }
-  // TODO: add an onClick event to the className="remove-outfit"
+  // TODO: add an onClick event to the className="comparison-button"
   return (
     <div className="card">
-    <img className="comparison-button" src="http://localhost:3000/assets/deleteButton.png"/>
+    <img className="comparison-button" src="http://localhost:3000/assets/deleteButton.png" onClick={() => removeOutfit(cardOutfitProduct.id)}/>
       <div className="clickable-img" onClick={() => {props.setCurrentProductID(cardOutfitProduct.id) }}>
 <img src={cardOutfitProduct.image}/>
       </div>
     <div className="container">
       <div>CATEGORY</div>
       <div>{cardOutfitProduct.name}</div>
-      <div>{cardOutfitProduct.default_price}</div>
+      <div>{`$${cardOutfitProduct.default_price}`}</div>
       <Stars reviews={cardOutfitProduct.reviews}/>
     </div>
   </div>
