@@ -11,43 +11,79 @@ const Comparison = (props) => {
 
 
   let tableRows = [];
+  // create an object that will populate three separate columns in the grid: a boolean value for the presence or absence of a checkmark, and the value of the feature that populates the middle column
+
+  // this if conditional ensures that we iterate over the called cardProduct instead of the default in App.js (which is a string)
   if(Array.isArray(props.cardProductFeatures?.features)) {
-
+    // this for-loop captures both shared features, and features that are only in current product (the else statement)
     for (let i = 0; i < props.cardProductFeatures.features?.length; i++) {
-      // for (let j = 0; j < props.cardProductFeatures.features.length; j++) {
-
-        if (props.cardProductFeatures.features[i]?.value === props.currentProduct.features[i]?.value) {
-          //console.log("the if conditional is working")
-          tableRows.push(`✓   ${props.cardProductFeatures.features[i]?.value}   ✓`)
-        } else if (props.cardProductFeatures.features[i]?.value !== props.currentProduct.features[i]?.value) {
-          tableRows.push(`    ${props.cardProductFeatures.features[i]?.value}   ✓`)
-          tableRows.push(`✓   ${props.currentProduct.features[i]?.value}    `)
-        }
-        // }
+      let rowObj = {};
+      if (props.cardProductFeatures.features[i]?.value === props.currentProduct.features[i]?.value) {
+        rowObj.featureName = props.cardProductFeatures.features[i]?.value;
+        rowObj.doesCurrentProductHaveFeature = true;
+        rowObj.doesCardProductHaveFeature = true;
+      } else if (props.cardProductFeatures.features[i]?.value !== props.currentProduct.features[i]?.value) {
+        rowObj.featureName = props.cardProductFeatures.features[i]?.value;
+        rowObj.doesCurrentProductHaveFeature = false;
+        rowObj.doesCardProductHaveFeature = true;
       }
-      // console.log("tableRows", tableRows) <-- this works
+      tableRows.push(rowObj);
     }
+    // this second for-loop captures any features that are not shared with the card product
+    for (let i = 0; i < props.currentProduct.features?.length; i++) {
+      let rowObj = {};
+      if (tableRows[i].featureName !== props.currentProduct.features[i]?.value) {
+        console.log("rowObj.featureName in the 2nd for-loop", rowObj.featureName)
+        rowObj.featureName = props.cardProductFeatures.features[i]?.value;
+        rowObj.doesCurrentProductHaveFeature = true;
+        rowObj.doesCardProductHaveFeature = false;
+      }
+      tableRows.push(rowObj);
+    }
+  }
 
-    // If the characteristic is shared (If the compared product value === current product value)
-    // render the item with a checkbox in the Compared Product Name column, and in the Current Product Name column
-    // else if the characteristic NOT shared,
-    // render it with its product checked (and the other unchecked)
 
-      return (
+    /*
+    Example of what data should look like in tableRows:
+      [
+        {
+          featureName: "100% Cotton",
+          doesCurrentProductHaveFeature: false,
+          doesCardProductHaveFeature: true,
+        }
+      ]
 
-        <>
-      {props.showModalStatus ?
-      <div className="comparison-modal-background"onClick={() => props.setShowModalStatus(prev => !prev)} >
-        <div className="comparison-modal-wrapper">
-        <div>COMPARING</div>
-          <div className="comparison-modal-content">
-              <h4>{props.currentProduct?.name}           {props.cardProductFeatures?.name}</h4>
-            <div className="modal-grid">
-              <div> {tableRows.map((element, i) => { return <ul key={i} >{element}</ul>})} </div>
+
+    */
+
+  console.log("tableRows", tableRows);
+
+  return (
+    <>
+      {props.showModalStatus &&
+        <div className="comparison-modal-background"onClick={() => props.setShowModalStatus(prev => !prev)} >
+          <div className="comparison-modal-wrapper">
+          <div>COMPARING</div>
+            <div className="comparison-modal-content">
+              <div className="comparision-modal-header">
+                <div>{props.currentProduct?.name}</div>
+                <div>{props.cardProductFeatures?.name}</div>
+              </div>
+              <div className="modal-grid">
+                <div>
+                  {tableRows.map((element, i) => (
+                    <div key={i} className="comparison-modal-grid-row">
+                      <div>{element.doesCurrentProductHaveFeature && "✓"}</div>
+                      <div>{element.featureName}</div>
+                      <div>{element.doesCardProductHaveFeature && "✓"}</div>
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      </div> : null}
+      }
     </>
   )
 
