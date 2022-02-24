@@ -3,7 +3,7 @@ const axios = require('axios');
 
 
 const SelectStyle = (props) => {
-  console.log('PROPS IN STYLE', props.smallPhotos);
+  // console.log('PROPS IN STYLE', props.smallPhotos);
 
   //populate small photos into an object so we can access them correctly
   const photosArray = [];
