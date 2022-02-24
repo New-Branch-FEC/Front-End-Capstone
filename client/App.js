@@ -15,7 +15,7 @@ const App = () => {
 
 
   // setting current product by current product ID, with a default product upon load, "Bright Future Sunglasses"
-  const [currentProductID, setCurrentProductID] = useState(37311);
+  const [currentProductID, setCurrentProductID] = useState(37313);
   const [currentProduct, setCurrentProduct] = useState(
     {
       "id": 37311,
@@ -346,13 +346,16 @@ useEffect(() => {
 
   return (
      <>
+     <div>Hello, World!</div>
+     <Overview currentProduct={currentProduct} setCurrentProductID={setCurrentProductID} currentStyle={currentStyle} setCurrentStyle={setCurrentStyle} reviews={reviews} outfit={outfit}/>
+     <RelatedItemsAndComparisons currentProduct={currentProduct} reviews={reviews} outfit={outfit} relatedProducts={relatedProducts} setCurrentProductID={setCurrentProductID}/>
      <Overview currentProduct={currentProduct} currentStyle={currentStyle} reviews={reviews} outfit={outfit}/>
      <div className="comparison-and-modal-container">
-        <Comparison currentProduct={currentProduct} showModalStatus={showModalStatus} setShowModalStatus={setShowModalStatus} showModal={showModal} cardProductFeatures={cardProductFeatures}/>
-        <RelatedItemsAndComparisons setCardProductFeatures={setCardProductFeatures} currentProduct={currentProduct} reviews={reviews} outfit={outfit} relatedProducts={relatedProducts} setCurrentProductID={setCurrentProductID} showModal={showModal}/>
+    <Comparison currentProduct={currentProduct} showModalStatus={showModalStatus} setShowModalStatus={setShowModalStatus} showModal={showModal} cardProductFeatures={cardProductFeatures}/>
+    <RelatedItemsAndComparisons setCardProductFeatures={setCardProductFeatures} currentProduct={currentProduct} reviews={reviews} outfit={outfit} relatedProducts={relatedProducts} setCurrentProductID={setCurrentProductID} showModal={showModal}/>
      </div>
      {/* <QuestionsAndAnswers /> */}
-     <RatingsAndReviews currentProduct={currentProduct} reviews={reviews} reviewsMeta={reviewsMeta}/>
+     {/* <RatingsAndReviews currentProduct={currentProduct} reviews={reviews} reviewsMeta={reviewsMeta}/> */}
      </>
    )
 };
