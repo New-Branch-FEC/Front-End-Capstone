@@ -3,26 +3,34 @@ const axios = require('axios');
 
 
 const SelectStyle = (props) => {
-  // console.log('PROPS IN STYLE', props.smallPhotos);
+  // console.log('PROPS IN STYLE', props);
 
   //populate small photos into an object so we can access them correctly
-  const photosArray = [];
-  props.smallPhotos.forEach(photo => {
-    photosArray.push(photo.thumbnail_url);
+  const stylesObject = {};
+  const photosObject = {};
+  props.currentStyle.forEach(style => {
+    console.log(style);
+    stylesObject[style.name] = style;
+    photosObject[style.name] = [style.photos];
   })
+
+  //styles object dot {stylename} dot photos
+
+  console.log('styles object', stylesObject);
+  console.log('PHOTOS ARRAY', photosObject);
 
 
   return (
     <div>
       <img className='OV-Main-Photo' src={props.mainPhoto}/>
       <div>
-        {photosArray.map((url, index) => (
+        {/* {photosArray.map((url, index) => (
           <img key={index} src={url} />
         )
-        )}
+        )} */}
       </div>
       <div className='OV-Selected-Style-Name'></div>
-      <Add-to-bag />
+      <Add-to-bag stylesObject={stylesObject}/>
     </div>
 
 )
