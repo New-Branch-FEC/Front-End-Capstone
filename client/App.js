@@ -207,15 +207,15 @@ const App = () => {
 })
 
 //   reviewMeta axios.get is not being async yet
-//   useEffect(() => {
-//       axios.get(`/reviews/meta?product_id=${currentProductID}`)
-//       .then((res) => {
-//           setReviewsMeta(res.data)
-//       })
-//       .catch(err => {
-//           console.log("An error occured while fecthing reviewsMeta", err);
-//       })
-//   }, [currentProductID]);
+  useEffect(() => {
+      axios.get(`/reviews/meta?product_id=${currentProductID}`)
+      .then((res) => {
+          setReviewsMeta(res.data)
+      })
+      .catch(err => {
+          console.log("An error occured while fecthing reviewsMeta", err);
+      })
+  }, [currentProductID]);
 
   useEffect(() => {
     // console.log('current product id changed', currentProductID)
@@ -346,10 +346,13 @@ useEffect(() => {
 
   return (
      <>
-     <Overview currentProduct={currentProduct} currentStyle={currentStyle} reviews={reviews} outfit={outfit}/>
+     <div>Hello, World!</div>
+     <Overview currentProduct={currentProduct} setCurrentProductID={setCurrentProductID} currentStyle={currentStyle} setCurrentStyle={setCurrentStyle} reviews={reviews} outfit={outfit}/>
+     {/* <RelatedItemsAndComparisons currentProduct={currentProduct} reviews={reviews} outfit={outfit} relatedProducts={relatedProducts} setCurrentProductID={setCurrentProductID}/> */}
+     {/* <Overview currentProduct={currentProduct} currentStyle={currentStyle} reviews={reviews} outfit={outfit}/> */}
      <div className="comparison-and-modal-container">
-        <Comparison currentProduct={currentProduct} showModalStatus={showModalStatus} setShowModalStatus={setShowModalStatus} showModal={showModal} cardProductFeatures={cardProductFeatures}/>
-        <RelatedItemsAndComparisons setCardProductFeatures={setCardProductFeatures} currentProduct={currentProduct} reviews={reviews} outfit={outfit} relatedProducts={relatedProducts} setCurrentProductID={setCurrentProductID} showModal={showModal}/>
+    <Comparison currentProduct={currentProduct} showModalStatus={showModalStatus} setShowModalStatus={setShowModalStatus} showModal={showModal} cardProductFeatures={cardProductFeatures}/>
+    <RelatedItemsAndComparisons setCardProductFeatures={setCardProductFeatures} currentProduct={currentProduct} reviews={reviews} outfit={outfit} relatedProducts={relatedProducts} setCurrentProductID={setCurrentProductID} showModal={showModal}/>
      </div>
      {/* <QuestionsAndAnswers /> */}
      <RatingsAndReviews currentProduct={currentProduct} reviews={reviews} reviewsMeta={reviewsMeta}/>
