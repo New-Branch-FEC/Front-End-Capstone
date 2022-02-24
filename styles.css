@@ -8,6 +8,9 @@
   border-width: .1em;
   border-style: solid;
   width: 300px;
+  position: relative;
+  display: inline-block;
+
 }
 
 /* On mouse-over, added a deeper shadow (because it's pretty) */
@@ -42,13 +45,7 @@
   touch-action: pinch-zoom; */
 }
 
-/* this position:relative is what the button below should consider its boundaries (the button is in the div with className=card */
-.card {
-  position: relative;
-  display: inline-block;
-
-}
-
+/*  position:relative on card is what the button below should consider its boundaries */
 .comparison-button {
   position: absolute; /* this makes the star able to occupy the same space as its neighbors inside its container */
   top: 0;
@@ -76,7 +73,7 @@
 }
 
 .comparison-modal-wrapper {
-  width: 500px;
+  width: 460px;
   height: 500px;
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
   background: #fff;
@@ -106,17 +103,37 @@
 
 /* TODO: make this display three columns */
 .comparison-modal-content .modal-grid {
-  display: flex;
+  /* display: flex;
   white-space: pre-line;
   flex-direction: column;
-  grid-column: 3;
   align-items: left;
   line-height: 1.8;
-  color: #141414;
+  color: #141414; */
+
+  flex: 33.33%;
+  height: 200px;
+  padding: 10px;
+  margin: 5px;
+  line-height: 1.3;
+  background-color: #ffffff;
+  text-align: center;
 }
 
 .comparison-modal-grid-row {
-  grid-template-columns: 3;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+}
+
+.left-checkmark {
+  text-align: left;
+}
+
+.compared-characteristic {
+  font-weight: normal;
+}
+
+.right-checkmark {
+  text-align: right;
 }
 
 /******************** Ratings and Reviews ********************/

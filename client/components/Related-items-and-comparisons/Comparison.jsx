@@ -8,6 +8,56 @@ const Comparison = (props) => {
     //console.log("The featues needed to take a second to load here")
     return <div>Loading Card Product Features</div>
   }
+// default item:
+//   {
+//     "id": 37311,
+//     "campus": "hr-rfe",
+//     "name": "Camo Onesie",
+//     "slogan": "Blend in to your crowd",
+//     "description": "The So Fatigues will wake you up and fit you in. This high energy camo will have you blending in to even the wildest surroundings.",
+//     "category": "Jackets",
+//     "default_price": "140.00",
+//     "created_at": "2021-08-13T14:37:33.145Z",
+//     "updated_at": "2021-08-13T14:37:33.145Z",
+//     "features": [
+//         {
+//             "feature": "Fabric",
+//             "value": "Canvas"
+//         },
+//         {
+//             "feature": "Buttons",
+//             "value": "Brass"
+//         }
+//     ]
+// }
+
+// comparison with bright future sunglasses
+
+// {
+//   "id": 37312,
+//   "campus": "hr-rfe",
+//   "name": "Bright Future Sunglasses",
+//   "slogan": "You've got to wear shades",
+//   "description": "Where you're going you might not need roads, but you definitely need some shades. Give those baby blues a rest and let the future shine bright on these timeless lenses.",
+//   "category": "Accessories",
+//   "default_price": "69.00",
+//   "created_at": "2021-08-13T14:37:33.145Z",
+//   "updated_at": "2021-08-13T14:37:33.145Z",
+//   "features": [
+//       {
+//           "feature": "Lenses",
+//           "value": "Ultrasheen"
+//       },
+//       {
+//           "feature": "UV Protection",
+//           "value": null
+//       },
+//       {
+//           "feature": "Frames",
+//           "value": "LightCompose"
+//       }
+//   ]
+// }
 
   let tableRows = [];
   // create an object that will populate three separate columns in the grid: a boolean value for the presence or absence of a checkmark, and the value of the feature that populates the middle column
@@ -18,26 +68,42 @@ const Comparison = (props) => {
     for (let i = 0; i < props.cardProductFeatures.features?.length; i++) {
       let rowObj = {};
       if (props.cardProductFeatures.features[i]?.value === props.currentProduct.features[i]?.value) {
-        rowObj.featureName = props.cardProductFeatures.features[i]?.value;
+        if (props.cardProductFeatures.features[i]?.value === null) {
+          rowObj.featureName = props.cardProductFeatures.features[i]?.feature;
+        } else {
+          rowObj.featureName = props.cardProductFeatures.features[i]?.value;
+        }
         rowObj.doesCurrentProductHaveFeature = true;
         rowObj.doesCardProductHaveFeature = true;
+        tableRows.push(rowObj);
       } else if (props.cardProductFeatures.features[i]?.value !== props.currentProduct.features[i]?.value) {
-        rowObj.featureName = props.cardProductFeatures.features[i]?.value;
+        if (props.cardProductFeatures.features[i]?.value === null) {
+          rowObj.featureName = props.cardProductFeatures.features[i]?.feature;
+        } else {
+          rowObj.featureName = props.cardProductFeatures.features[i]?.value;
+        }
         rowObj.doesCurrentProductHaveFeature = false;
         rowObj.doesCardProductHaveFeature = true;
+        tableRows.push(rowObj);
       }
-      tableRows.push(rowObj);
+      console.log("tableRows[i].featureName", tableRows[0].featureName)
     }
+
     // this second for-loop captures any features that are not shared with the card product
     for (let i = 0; i < props.currentProduct.features?.length; i++) {
       let rowObj = {};
-      if (tableRows[i].featureName !== props.currentProduct.features[i]?.value) {
-        console.log("rowObj.featureName in the 2nd for-loop", rowObj.featureName)
-        rowObj.featureName = props.cardProductFeatures.features[i]?.value;
+      if (!tableRows[i].featureName?.includes(props.currentProduct.features[i]?.value)) {
+        // console.log("rowObj.featureName in the 2nd for-loop", rowObj.featureName)
+        if (props.currentProduct.features[i]?.value === null) {
+          rowObj.featureName = props.currentProduct.features[i]?.feature;
+        } else {
+          rowObj.featureName = props.currentProduct.features[i]?.value;
+        }
+        rowObj.featureName = props.currentProduct.features[i]?.value;
         rowObj.doesCurrentProductHaveFeature = true;
         rowObj.doesCardProductHaveFeature = false;
+        tableRows.push(rowObj);
       }
-      tableRows.push(rowObj);
     }
   }
 
@@ -72,9 +138,9 @@ const Comparison = (props) => {
                 <div>
                   {tableRows.map((element, i) => (
                     <div key={i} className="comparison-modal-grid-row">
-                      <div>{element.doesCurrentProductHaveFeature && "✓"}</div>
-                      <div>{element.featureName}</div>
-                      <div>{element.doesCardProductHaveFeature && "✓"}</div>
+                      <div className="left-checkmark">{element.doesCurrentProductHaveFeature && "✓"}</div>
+                      <div className="compared-characteristic">{element.featureName}</div>
+                      <div className="right-checkmark">{element.doesCardProductHaveFeature && "✓"}</div>
                     </div>
                   ))}
                 </div>
