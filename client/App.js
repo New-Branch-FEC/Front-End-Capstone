@@ -15,7 +15,7 @@ const App = () => {
 
 
   // setting current product by current product ID, with a default product upon load, "Bright Future Sunglasses"
-  const [currentProductID, setCurrentProductID] = useState(37314);
+  const [currentProductID, setCurrentProductID] = useState(37311);
   const [currentProduct, setCurrentProduct] = useState(
     {
       "id": 37311,

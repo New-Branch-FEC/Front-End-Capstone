@@ -2,9 +2,9 @@ import React, { useState, useEffect, useContext } from 'react';
 
 const ShareOnline = () => (
   <div>
-    <button id='Share-to'> Meta </button>
-    <button id='Share-to'> Twitter </button>
-    <button id='Share-to'> Pinterest </button>
+    <button className='Share-to'> Meta </button>
+    <button className='Share-to'> Twitter </button>
+    <button className='Share-to'> Pinterest </button>
   </div>
 )
 

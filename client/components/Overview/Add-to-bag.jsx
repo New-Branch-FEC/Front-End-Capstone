@@ -2,9 +2,6 @@ import React, { useState, useEffect } from 'react';
 const axios = require('axios');
 
 const AddToBag = (props) => {
-
-    // console.log(props.currentStyle.results);
-
     const resultsArray = props.currentStyle.results;
     let sizes = [];
     let quantity = [];
@@ -18,10 +15,7 @@ const AddToBag = (props) => {
   })
 
     for (let i = 0; i < resultsArray.length; i++) {
-      // reach into results array
       let availableSizesAndQuantity = resultsArray[i].skus;
-      // console.log('IS THIS AN OBJECT', availableSizesAndQuantity);
-        // for each inside of here to access each individual sku
       Object.keys(availableSizesAndQuantity).forEach(style => {
         quantity[style] = availableSizesAndQuantity[style].quantity
         sizes[style] = availableSizesAndQuantity[style].size;
@@ -34,13 +28,14 @@ const AddToBag = (props) => {
         // NOW WE MUST MAP IT IN THE OPTIONS
 
     return (
-    <div>
+    <div className='OV-dropdowns'>
     <select>
       <option value=''> size </option>
     </select>
     <select>
       <option value=''> quantity </option>
     </select>
+      <button className='Add-to-bag' > add to bag </button>
     </div>
     )
 }
