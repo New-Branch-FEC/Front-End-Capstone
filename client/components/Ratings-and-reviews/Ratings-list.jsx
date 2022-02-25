@@ -10,6 +10,7 @@ const RatingsList = (props) => {
   let clickAdd = () => {
     console.log('open a modal to add a new review to DOM');
   }
+
   return (
     <div className="column-R RR-ratings-list">Ratings List Goes Here
       <h2>There Are {props.reviews.results.length} Reviews For This Product</h2>
