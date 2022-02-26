@@ -58,7 +58,10 @@ const App = () => {
   useEffect(() => {
     axios.get(`/products/${currentProductID}/related`)
       .then((res) => {
-        setRelatedProducts(res.data)
+        var noCurrentID = res.data.filter((item) => {return item !== currentProductID});
+        var unique = [... new Set(noCurrentID)];
+        console.log("unique", unique)
+        setRelatedProducts(unique)
       })
       .catch((err) => {
         console.log("An error occured while fetching related products", err)

@@ -1,44 +1,44 @@
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import axios from 'axios';
 import ReactDOM from 'react-dom';
 
 import Card from './Card.jsx';
 
-// let index = 0; // will store the index upon each click
+let index = 0; // will store the index upon each click
 
 const CardList = (props) => {
 
   // GET /products/:product_id/related <- (this returned value is an array that must be iterated over with .map)
-  const [visibleRelatedProducts, setVisibleRelatedProducts] = useState(props.relatedProducts);
+  // const [visibleRelatedProducts, setVisibleRelatedProducts] = useState(props.relatedProducts);
   const [index, setIndex] = useState(0);
 
   const handleScrollArrow = (direction) => {
     if (direction === "left") {
       setIndex(index - 1)
 
-      if (index === 0) {
-        setVisibleRelatedProducts([props.relatedProducts[0], props.relatedProducts[1], props.relatedProducts[2], props.relatedProducts[3]])
-      } else if (index === 1 && index < props.relatedProducts.length - 3 ) {
-        setVisibleRelatedProducts([props.relatedProducts[1], props.relatedProducts[2], props.relatedProducts[3], props.relatedProducts[4]])
-      } else if (index === 2 && index < props.relatedProducts.length - 3 ) {
-        setVisibleRelatedProducts([props.relatedProducts[2], props.relatedProducts[3], props.relatedProducts[4], props.relatedProducts[5]])
-      } else if (index === 3 && index < props.relatedProducts.length - 3 ) {
-        setVisibleRelatedProducts([props.relatedProducts[3], props.relatedProducts[4], props.relatedProducts[5], props.relatedProducts[6]])
-      } else if (index === 4 && index < props.relatedProducts.length - 3 ) {
-        setVisibleRelatedProducts([props.relatedProducts[4], props.relatedProducts[5], props.relatedProducts[6], props.relatedProducts[7]])
-      } else if (index === 5 && index < props.relatedProducts.length - 3 ) {
-        setVisibleRelatedProducts([props.relatedProducts[5], props.relatedProducts[6], props.relatedProducts[7], props.relatedProducts[8]])
-      } else if (index === 6 && index < props.relatedProducts.length - 3 ) {
-        setVisibleRelatedProducts([props.relatedProducts[6], props.relatedProducts[7], props.relatedProducts[8], props.relatedProducts[9]])
-      } else if (index === 7 && index < props.relatedProducts.length - 3 ) {
-        setVisibleRelatedProducts([props.relatedProducts[7], props.relatedProducts[2], props.relatedProducts[3], props.relatedProducts[4]])
-      } else if (index === 8 && index < props.relatedProducts.length - 3 ) {
-        setVisibleRelatedProducts([props.relatedProducts[8], props.relatedProducts[2], props.relatedProducts[3], props.relatedProducts[4]])
-      } else if (index === 9 && index < props.relatedProducts.length - 3 ) {
-        setVisibleRelatedProducts([props.relatedProducts[9], props.relatedProducts[2], props.relatedProducts[3], props.relatedProducts[4]])
-      } else if (index < 0) {
-        setVisibleRelatedProducts([props.relatedProducts[0], props.relatedProducts[1], props.relatedProducts[2], props.relatedProducts[3]])
-      }
+      // if (index === 0) {
+      //   setVisibleRelatedProducts([props.relatedProducts[0], props.relatedProducts[1], props.relatedProducts[2], props.relatedProducts[3]])
+      // } else if (index === 1 && index < props.relatedProducts.length - 3 ) {
+      //   setVisibleRelatedProducts([props.relatedProducts[1], props.relatedProducts[2], props.relatedProducts[3], props.relatedProducts[4]])
+      // } else if (index === 2 && index < props.relatedProducts.length - 3 ) {
+      //   setVisibleRelatedProducts([props.relatedProducts[2], props.relatedProducts[3], props.relatedProducts[4], props.relatedProducts[5]])
+      // } else if (index === 3 && index < props.relatedProducts.length - 3 ) {
+      //   setVisibleRelatedProducts([props.relatedProducts[3], props.relatedProducts[4], props.relatedProducts[5], props.relatedProducts[6]])
+      // } else if (index === 4 && index < props.relatedProducts.length - 3 ) {
+      //   setVisibleRelatedProducts([props.relatedProducts[4], props.relatedProducts[5], props.relatedProducts[6], props.relatedProducts[7]])
+      // } else if (index === 5 && index < props.relatedProducts.length - 3 ) {
+      //   setVisibleRelatedProducts([props.relatedProducts[5], props.relatedProducts[6], props.relatedProducts[7], props.relatedProducts[8]])
+      // } else if (index === 6 && index < props.relatedProducts.length - 3 ) {
+      //   setVisibleRelatedProducts([props.relatedProducts[6], props.relatedProducts[7], props.relatedProducts[8], props.relatedProducts[9]])
+      // } else if (index === 7 && index < props.relatedProducts.length - 3 ) {
+      //   setVisibleRelatedProducts([props.relatedProducts[7], props.relatedProducts[2], props.relatedProducts[3], props.relatedProducts[4]])
+      // } else if (index === 8 && index < props.relatedProducts.length - 3 ) {
+      //   setVisibleRelatedProducts([props.relatedProducts[8], props.relatedProducts[2], props.relatedProducts[3], props.relatedProducts[4]])
+      // } else if (index === 9 && index < props.relatedProducts.length - 3 ) {
+      //   setVisibleRelatedProducts([props.relatedProducts[9], props.relatedProducts[2], props.relatedProducts[3], props.relatedProducts[4]])
+      // } else if (index < 0) {
+      //   setVisibleRelatedProducts([props.relatedProducts[0], props.relatedProducts[1], props.relatedProducts[2], props.relatedProducts[3]])
+      // }
 
 
       // let array = props.relatedProducts
@@ -52,29 +52,29 @@ const CardList = (props) => {
     } else if (direction === "right") {
       setIndex(index + 1)
 
-      if (index === 0) {
-        setVisibleRelatedProducts([props.relatedProducts[0], props.relatedProducts[1], props.relatedProducts[2], props.relatedProducts[3]])
-      } else if (index === 1 && index < props.relatedProducts.length - 3 ) {
-        setVisibleRelatedProducts([props.relatedProducts[1], props.relatedProducts[2], props.relatedProducts[3], props.relatedProducts[4]])
-      } else if (index === 2 && index < props.relatedProducts.length - 3 ) {
-        setVisibleRelatedProducts([props.relatedProducts[2], props.relatedProducts[3], props.relatedProducts[4], props.relatedProducts[5]])
-      } else if (index === 3 && index < props.relatedProducts.length - 3 ) {
-        setVisibleRelatedProducts([props.relatedProducts[3], props.relatedProducts[4], props.relatedProducts[5], props.relatedProducts[6]])
-      } else if (index === 4 && index < props.relatedProducts.length - 3 ) {
-        setVisibleRelatedProducts([props.relatedProducts[4], props.relatedProducts[5], props.relatedProducts[6], props.relatedProducts[7]])
-      } else if (index === 5 && index < props.relatedProducts.length - 3 ) {
-        setVisibleRelatedProducts([props.relatedProducts[5], props.relatedProducts[6], props.relatedProducts[7], props.relatedProducts[8]])
-      } else if (index === 6 && index < props.relatedProducts.length - 3 ) {
-        setVisibleRelatedProducts([props.relatedProducts[6], props.relatedProducts[7], props.relatedProducts[8], props.relatedProducts[9]])
-      } else if (index === 7 && index < props.relatedProducts.length - 3 ) {
-        setVisibleRelatedProducts([props.relatedProducts[7], props.relatedProducts[2], props.relatedProducts[3], props.relatedProducts[4]])
-      } else if (index === 8 && index < props.relatedProducts.length - 3 ) {
-        setVisibleRelatedProducts([props.relatedProducts[8], props.relatedProducts[2], props.relatedProducts[3], props.relatedProducts[4]])
-      } else if (index === 9 && index < props.relatedProducts.length - 3 ) {
-        setVisibleRelatedProducts([props.relatedProducts[9], props.relatedProducts[2], props.relatedProducts[3], props.relatedProducts[4]])
-      } else {
-        "something is wrong with index"
-      }
+      // if (index === 0) {
+      //   setVisibleRelatedProducts([props.relatedProducts[0], props.relatedProducts[1], props.relatedProducts[2], props.relatedProducts[3]])
+      // } else if (index === 1 && index < props.relatedProducts.length - 3 ) {
+      //   setVisibleRelatedProducts([props.relatedProducts[1], props.relatedProducts[2], props.relatedProducts[3], props.relatedProducts[4]])
+      // } else if (index === 2 && index < props.relatedProducts.length - 3 ) {
+      //   setVisibleRelatedProducts([props.relatedProducts[2], props.relatedProducts[3], props.relatedProducts[4], props.relatedProducts[5]])
+      // } else if (index === 3 && index < props.relatedProducts.length - 3 ) {
+      //   setVisibleRelatedProducts([props.relatedProducts[3], props.relatedProducts[4], props.relatedProducts[5], props.relatedProducts[6]])
+      // } else if (index === 4 && index < props.relatedProducts.length - 3 ) {
+      //   setVisibleRelatedProducts([props.relatedProducts[4], props.relatedProducts[5], props.relatedProducts[6], props.relatedProducts[7]])
+      // } else if (index === 5 && index < props.relatedProducts.length - 3 ) {
+      //   setVisibleRelatedProducts([props.relatedProducts[5], props.relatedProducts[6], props.relatedProducts[7], props.relatedProducts[8]])
+      // } else if (index === 6 && index < props.relatedProducts.length - 3 ) {
+      //   setVisibleRelatedProducts([props.relatedProducts[6], props.relatedProducts[7], props.relatedProducts[8], props.relatedProducts[9]])
+      // } else if (index === 7 && index < props.relatedProducts.length - 3 ) {
+      //   setVisibleRelatedProducts([props.relatedProducts[7], props.relatedProducts[2], props.relatedProducts[3], props.relatedProducts[4]])
+      // } else if (index === 8 && index < props.relatedProducts.length - 3 ) {
+      //   setVisibleRelatedProducts([props.relatedProducts[8], props.relatedProducts[2], props.relatedProducts[3], props.relatedProducts[4]])
+      // } else if (index === 9 && index < props.relatedProducts.length - 3 ) {
+      //   setVisibleRelatedProducts([props.relatedProducts[9], props.relatedProducts[2], props.relatedProducts[3], props.relatedProducts[4]])
+      // } else {
+      //   "something is wrong with index"
+      // }
 
       // let array = props.relatedProducts
       // setVisibleRelatedProducts(array.slice(index, 4))
@@ -82,12 +82,21 @@ const CardList = (props) => {
     }
   }
 
-  useEffect((direction) => {
-    console.log("useEffect is firing" , index)
-    handleScrollArrow(direction);
-  }, [visibleRelatedProducts])
+  // useEffect(() => {
+  //   console.log("useEffect is firing" , index)
+  //   handleScrollArrow(direction);
+  // }, [visibleRelatedProducts])
+
+  // useEffect(() => {
+  //   setIndex(0);
+  // }, [props.relatedProducts])
+
+
 
   if(props.title === "RELATED PRODUCTS") {
+
+    const visibleRelatedProducts = props.relatedProducts.slice(index, index + 4);
+
     return (
       <div className="card-list">
       <h2>{props.title}</h2>
