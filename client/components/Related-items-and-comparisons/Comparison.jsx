@@ -62,9 +62,9 @@ const Comparison = (props) => {
   let tableRows = [];
   // create an object that will populate three separate columns in the grid: a boolean value for the presence or absence of a checkmark, and the value of the feature that populates the middle column
 
-  // this if conditional ensures that we iterate over the called cardProduct instead of the default in App.js (which is a string)
+  // this if conditional ensures that we iterate over the called cardProduct'd array instead of the default in App.js (which is a string)
   if(Array.isArray(props.cardProductFeatures?.features)) {
-    // this for-loop captures both shared features, and features that are only in current product (the else statement)
+    // this for-loop captures both shared features, and features that are only in current product (the else statement). We also have a nested conditional to render the name of the product if it's value is set to null.
     for (let i = 0; i < props.cardProductFeatures.features?.length; i++) {
       let rowObj = {};
       if (props.cardProductFeatures.features[i]?.value === props.currentProduct.features[i]?.value) {
@@ -86,7 +86,7 @@ const Comparison = (props) => {
         rowObj.doesCardProductHaveFeature = true;
         tableRows.push(rowObj);
       }
-      console.log("tableRows[i].featureName", tableRows[0].featureName)
+      // console.log("tableRows[i].featureName", tableRows[0].featureName)
     }
 
     // this second for-loop captures any features that are not shared with the card product
@@ -107,7 +107,6 @@ const Comparison = (props) => {
     }
   }
 
-
     /*
     Example of what data should look like in tableRows:
       [
@@ -120,8 +119,6 @@ const Comparison = (props) => {
 
 
     */
-
-  console.log("tableRows", tableRows);
 
   return (
     <>

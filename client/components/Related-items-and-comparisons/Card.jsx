@@ -82,10 +82,13 @@ const Card = (props) => {
     const [cardOutfitProduct, setCardOutfitProduct] = useState(null);
 
     const removeOutfit = (selectedOutfitID) => {
-      let index = props.outfit.indexOf(selectedOutfitID);
-      props.outfit.splice(index, 1);
-      console.log("props.outfit upon click event", props.outfit)
-      props.setOutfit(props.outfit);
+
+      let updatedOutfit = props.outfit.filter((itemID) => {
+        return itemID !== selectedOutfitID;
+      })
+
+      console.log("updatedOutfit upon click event", updatedOutfit)
+      props.setOutfit(updatedOutfit);
     }
 
     useEffect(() => {
