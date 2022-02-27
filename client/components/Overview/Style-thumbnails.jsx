@@ -1,6 +1,6 @@
 import React, { useState, useEffect }from 'react';
 
-const SelectStyle = (props) => {
+const SelectThumb = (props) => {
   //populate small photos into an object so we can access them correctly
   const stylesObject = {};
   const photosObject = {};
@@ -8,7 +8,6 @@ const SelectStyle = (props) => {
     stylesObject[style.name] = style;
     photosObject[style.name] = style.photos;
   })
-  console.log(stylesObject);
 
     const photosArray = [];
     const allStyles = Object.keys(photosObject);
@@ -32,4 +31,4 @@ const SelectStyle = (props) => {
       </div>
   )
 }
-export default SelectStyle;
+export default SelectThumb;
