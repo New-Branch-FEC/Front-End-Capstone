@@ -1,15 +1,17 @@
 import React from 'react';
-import IndivStars from './Indiv-Stars.jsx';
 
 const RatingsListEntry = (props) => {
 
+  let localHelpfulness = props.currentReview.helpfulness;
+
   let helpfulClick = () => {
-    // TODO: make props.currentReview.helpfulness++
-    console.log('click!');
+    // TODO: update DOM with new localHelpfulness
+    localHelpfulness++;
+    console.log('localHelpfulness: ', localHelpfulness);
   }
 
   let reportClick = () => {
-    console.log('reported and deported!');
+    alert("Reported! Thank you for your feedback")
   }
 
   let makeFullSize = () => {
@@ -43,35 +45,84 @@ const RatingsListEntry = (props) => {
     }
   }
 
-  return (
-    <div>Ratings List Entry Goes Here
-      <div className="RR-list-entry">
-        <div className="column-L">
-          {/* TODO: Needs to just load one star per review */}
-          {/* <Stars reviews={props.reviews} /> */}
-          {/* <IndivStars currentReview={props.currentReview}/> */}
-          <div>{props.currentReview.rating} Stars</div>
-        </div>
-        <div className="column-R RR-user-date"> User: {props.currentReview.reviewer_name}// Posted: {prettyDate}</div>
-        <h3 className="RR-summary">{props.currentReview.summary}</h3>
-        <h4 className="RR-body">{props.currentReview.body}</h4>
-        {/* {props.currentReview.photos.map((element, i) => (
-          // TODO: make modal to show full size image
-          <img className="RR-thumbnail" src={element.url} key={i} onClick={makeFullSize}/>
-        ))} */}
-        <div>{isRecommended(props)}</div>
-        <div>{sellerResponse(props)}</div>
-        <div className="RR-feedback">Review Feedback
-          <p>Helpful?</p>
-          {/* TODO: button increases helpfulness number */}
-          <button type="button" className="RR-button" onClick={helpfulClick}>Yes</button>
-          <p className="RR-helpfulness"> ({props.currentReview.helpfulness}) </p>
-          {/* TODO: button removes feedback from view */}
-          <button className="RR-button" onClick={reportClick}>Report</button>
-        </div>
+  let indivStars = (props) => {
+    let firstStar;
+    let secondStar;
+    let thirdStar;
+    let fourthStar;
+    let fifthStar;
+
+    if (props.currentReview.rating === 1) {
+      firstStar = <img src="http://localhost:3000/assets/fullStar.png" />
+      secondStar = <img src="http://localhost:3000/assets/emptyStar.png" />
+      thirdStar = <img src="http://localhost:3000/assets/emptyStar.png" />
+      fourthStar = <img src="http://localhost:3000/assets/emptyStar.png" />
+      fifthStar = <img src="http://localhost:3000/assets/emptyStar.png" />
+    } else if (props.currentReview.rating === 2) {
+      firstStar = <img src="http://localhost:3000/assets/fullStar.png" />
+      secondStar = <img src="http://localhost:3000/assets/fullStar.png" />
+      thirdStar = <img src="http://localhost:3000/assets/emptyStar.png" />
+      fourthStar = <img src="http://localhost:3000/assets/emptyStar.png" />
+      fifthStar = <img src="http://localhost:3000/assets/emptyStar.png" />
+    } else if (props.currentReview.rating === 3) {
+      firstStar = <img src="http://localhost:3000/assets/fullStar.png" />
+      secondStar = <img src="http://localhost:3000/assets/fullStar.png" />
+      thirdStar = <img src="http://localhost:3000/assets/fullStar.png" />
+      fourthStar = <img src="http://localhost:3000/assets/emptyStar.png" />
+      fifthStar = <img src="http://localhost:3000/assets/emptyStar.png" />
+    } else if (props.currentReview.rating === 4) {
+      firstStar = <img src="http://localhost:3000/assets/fullStar.png" />
+      secondStar = <img src="http://localhost:3000/assets/fullStar.png" />
+      thirdStar = <img src="http://localhost:3000/assets/fullStar.png" />
+      fourthStar = <img src="http://localhost:3000/assets/fullStar.png" />
+      fifthStar = <img src="http://localhost:3000/assets/emptyStar.png" />
+    } else if (props.currentReview.rating === 5) {
+      firstStar = <img src="http://localhost:3000/assets/fullStar.png" />
+      secondStar = <img src="http://localhost:3000/assets/fullStar.png" />
+      thirdStar = <img src="http://localhost:3000/assets/fullStar.png" />
+      fourthStar = <img src="http://localhost:3000/assets/fullStar.png" />
+      fifthStar = <img src="http://localhost:3000/assets/fullStar.png" />
+    } else {
+      console.log("something went wrong with star render!")
+    }
+
+    return (
+      <div className="star-images">
+        {firstStar}
+        {secondStar}
+        {thirdStar}
+        {fourthStar}
+        {fifthStar}
+      </div>
+    )
+  }
+
+return (
+  <div>Ratings List Entry Goes Here
+    <div className="RR-list-entry">
+      <div className="column-L">
+        <div>{indivStars(props)}</div>
+      </div>
+      <div className="column-R RR-user-date"> User: {props.currentReview.reviewer_name}// Posted: {prettyDate}</div>
+      <h3 className="RR-summary">{props.currentReview.summary}</h3>
+      <h4 className="RR-body">{props.currentReview.body}</h4>
+      {props.currentReview.photos.map((element, i) => (
+        // TODO: make modal to show full size image
+        <img className="RR-thumbnail" src={element.url} key={i} onClick={makeFullSize}></img>
+      ))}
+      <div>{isRecommended(props)}</div>
+      <div>{sellerResponse(props)}</div>
+      <div className="RR-feedback">Review Feedback
+        <p>Helpful?</p>
+        {/* TODO: button increases helpfulness number */}
+        <button type="button" className="RR-button" onClick={helpfulClick}>Yes</button>
+        <p className="RR-helpfulness"> ({localHelpfulness}) </p>
+        {/* TODO: button removes feedback from view */}
+        <button className="RR-button" onClick={reportClick}>Report</button>
       </div>
     </div>
-  )
+  </div>
+)
 };
 
 export default RatingsListEntry;
