@@ -36,7 +36,7 @@ const RatingsSidebar = (props) => {
   let sizeValue = (Math.round(props.reviewsMeta.characteristics.Size?.value * 100) /100);
 
 
-
+  if (props.reviewsMeta.characteristics.Fit?.value) {}
 
   return (
     <div className="column-L">
@@ -58,16 +58,16 @@ const RatingsSidebar = (props) => {
           </div>
           <div className="RR-characteristics"> Product Characteristics:
             {/* TODO: conditional rendering for whatever characteristics are present for currentProduct} */}
-            <p className="RR-characteristics-entry">Fit: {fitValue}, percent full: {Math.round(((fitValue / 5) * 100) * 100) / 100}%</p>
-            <img src="https://cdn.iconscout.com/icon/premium/png-256-thumb/graph-2300680-1917645.png" alt="img placeholder"></img>
-            <p className="RR-characteristics-entry">Length: {lengthValue}, percent full: {Math.round(((lengthValue / 5) * 100) * 100) / 100}%</p>
-            <img src="https://cdn.iconscout.com/icon/premium/png-256-thumb/graph-2300680-1917645.png" alt="img placeholder"></img>
-            <p className="RR-characteristics-entry">Comfort: {comfortValue}, percent full: {Math.round(((comfortValue / 5) * 100) * 100) / 100}%</p>
-            <img src="https://cdn.iconscout.com/icon/premium/png-256-thumb/graph-2300680-1917645.png" alt="img placeholder"></img>
-            <p className="RR-characteristics-entry">Quality: {qualityValue}, percent full: {Math.round(((qualityValue / 5) * 100) * 100) / 100}%</p>
-            <img src="https://cdn.iconscout.com/icon/premium/png-256-thumb/graph-2300680-1917645.png" alt="img placeholder"></img>
-            <p className="RR-characteristics-entry">Size: {sizeValue}, percent full: {Math.round(((sizeValue / 5) * 100) * 100) / 100}%</p>
-            <img src="https://cdn.iconscout.com/icon/premium/png-256-thumb/graph-2300680-1917645.png" alt="img placeholder"></img>
+            { props.reviewsMeta.characteristics.Fit?.value && <p className="RR-characteristics-entry">Fit: {fitValue}, percent full: {Math.round(((fitValue / 5) * 100) * 100) / 100}%</p> }
+            { props.reviewsMeta.characteristics.Fit?.value && <img src="https://cdn.iconscout.com/icon/premium/png-256-thumb/graph-2300680-1917645.png" alt="img placeholder"></img> }
+            { props.reviewsMeta.characteristics.Length?.value && <p className="RR-characteristics-entry">Length: {lengthValue}, percent full: {Math.round(((lengthValue / 5) * 100) * 100) / 100}%</p> }
+            { props.reviewsMeta.characteristics.Length?.value && <img src="https://cdn.iconscout.com/icon/premium/png-256-thumb/graph-2300680-1917645.png" alt="img placeholder"></img> }
+            { props.reviewsMeta.characteristics.Comfort?.value && <p className="RR-characteristics-entry">Comfort: {comfortValue}, percent full: {Math.round(((comfortValue / 5) * 100) * 100) / 100}%</p> }
+            { props.reviewsMeta.characteristics.Comfort?.value && <img src="https://cdn.iconscout.com/icon/premium/png-256-thumb/graph-2300680-1917645.png" alt="img placeholder"></img> }
+            { props.reviewsMeta.characteristics.Quality?.value && <p className="RR-characteristics-entry">Quality: {qualityValue}, percent full: {Math.round(((qualityValue / 5) * 100) * 100) / 100}%</p> }
+            { props.reviewsMeta.characteristics.Quality?.value && <img src="https://cdn.iconscout.com/icon/premium/png-256-thumb/graph-2300680-1917645.png" alt="img placeholder"></img> }
+            { props.reviewsMeta.characteristics.Size?.value && <p className="RR-characteristics-entry">Size: {sizeValue}, percent full: {Math.round(((sizeValue / 5) * 100) * 100) / 100}%</p> }
+            { props.reviewsMeta.characteristics.Size?.value && <img src="https://cdn.iconscout.com/icon/premium/png-256-thumb/graph-2300680-1917645.png" alt="img placeholder"></img> }
           </div>
         </div>
     </div>
