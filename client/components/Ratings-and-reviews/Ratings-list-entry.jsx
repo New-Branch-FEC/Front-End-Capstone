@@ -11,7 +11,7 @@ const RatingsListEntry = (props) => {
   }
 
   let reportClick = () => {
-    console.log('reported and deported!');
+    alert("Reported! Thank you for your feedback")
   }
 
   let makeFullSize = () => {
