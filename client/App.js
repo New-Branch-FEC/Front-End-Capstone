@@ -58,7 +58,10 @@ const App = () => {
   useEffect(() => {
     axios.get(`/products/${currentProductID}/related`)
       .then((res) => {
-        setRelatedProducts(res.data)
+        var noCurrentID = res.data.filter((item) => {return item !== currentProductID});
+        var unique = [... new Set(noCurrentID)];
+        console.log("unique", unique)
+        setRelatedProducts(unique)
       })
       .catch((err) => {
         console.log("An error occured while fetching related products", err)
@@ -317,13 +320,15 @@ const App = () => {
     }, [])
 
   const [outfit, setOutfit] = useState([37314, 37315, 37320]);
+
   /*
     // adding to user's outfit array
 
   /*
     // do this in file where addToBagProductID click event takes place, Anisah!
     let addToBagProductID = 'FIX_ME_TO_ADDED_PRODUCTS_ID' //should always be current product's ID, based on the button being on the current item!
-    setOutfit([...outfit, `${addToBagProductID}`])
+    setOutfit([...outfit, `${addToBagProductID}`]) or
+    setOutfit( outfit.push(${addToBagProductID}) )
   */
 
     // set modal toggle function
@@ -363,7 +368,7 @@ useEffect(() => {
      {/* <Overview currentProduct={currentProduct} currentStyle={currentStyle} reviews={reviews} outfit={outfit}/> */}
      <div className="comparison-and-modal-container">
     <Comparison currentProduct={currentProduct} showModalStatus={showModalStatus} setShowModalStatus={setShowModalStatus} showModal={showModal} cardProductFeatures={cardProductFeatures}/>
-    <RelatedItemsAndComparisons setCardProductFeatures={setCardProductFeatures} currentProduct={currentProduct} reviews={reviews} outfit={outfit} relatedProducts={relatedProducts} setCurrentProductID={setCurrentProductID} showModal={showModal}/>
+    <RelatedItemsAndComparisons setCardProductFeatures={setCardProductFeatures} currentProduct={currentProduct} reviews={reviews} outfit={outfit} setOutfit={setOutfit} relatedProducts={relatedProducts} setRelatedProducts={setRelatedProducts} setCurrentProductID={setCurrentProductID} showModal={showModal}/>
      </div>
      {/* <QuestionsAndAnswers /> */}
      <RatingsAndReviews currentProduct={currentProduct} reviews={reviews} reviewsMeta={reviewsMeta}/>
