@@ -7,7 +7,8 @@ import Card from './Card.jsx';
 const CardList = (props) => {
 
   // GET /products/:product_id/related <- endpoint
-  // the below is carousel scroll functionality
+  // the below is carousel scroll functionality'
+  // This is added to ensure the commit
 
   const [index, setIndex] = useState(0);
 
