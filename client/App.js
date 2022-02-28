@@ -231,6 +231,17 @@ const App = () => {
     })
   }, [currentProductID]);
 
+//   speculative ReviewModal stuff for Ratings and Reviews
+//   const [showReviewModalStatus, setShowReviewModalStatus] = useState(false);
+
+//   const showReviewModal = (value) => {
+//       if (value === true) {
+//           setShowReviewModalStatus(true)
+//       }
+//   }
+
+//   const [reviewContents, setReviewContents]
+
   // getting the reviews for the current product by current product's id
 
   const [currentStyle, setCurrentStyle] = useState(
