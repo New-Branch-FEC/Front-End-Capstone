@@ -60,7 +60,7 @@ const App = () => {
       .then((res) => {
         var noCurrentID = res.data.filter((item) => {return item !== currentProductID});
         var unique = [... new Set(noCurrentID)];
-        console.log("unique", unique)
+        // console.log("unique", unique)
         setRelatedProducts(unique)
       })
       .catch((err) => {

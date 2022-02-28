@@ -4,7 +4,7 @@ const SelectStyle = (props) => {
 
   // create an object that has all of the styles for the particular product
   const stylesArray = [];
-  console.log('STYLE INFO', props.currentStyle)
+  // console.log('STYLE INFO', props.currentStyle)
 
   for (let i = 0; i < props.currentStyle.length; i++) {
     let current = props.currentStyle[i];
