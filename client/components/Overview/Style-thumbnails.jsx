@@ -26,7 +26,6 @@ const SelectThumb = (props) => {
             )
           )}
         </div>
-        <div className='OV-Selected-Style-Name'></div>
         <Add-to-bag stylesObject={stylesObject} />
       </div>
   )

@@ -10,6 +10,7 @@ import AddToBag from './Add-to-bag.jsx';
 
 const Overview = (props) => {
   // for styles
+  // console.log(props.currentStyle);
   const [mainPhoto, setMainPhoto] = useState(props.currentStyle.results[0].photos[0].url);
   const [styleName, setStyleName] = useState(props.currentStyle.results[0].name);
   // for size and quantity
@@ -21,6 +22,8 @@ const Overview = (props) => {
   }
 
   const handleStyle = (style) => {
+    props.setCurrentStyle(style);
+    console.log('STYLE', style);
     setMainPhoto(style.photos[0].thumbnail_url);
     setStyleName(style.name)
   }
