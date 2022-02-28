@@ -87,7 +87,7 @@ const Card = (props) => {
         return itemID !== selectedOutfitID;
       })
 
-      console.log("updatedOutfit upon click event", updatedOutfit)
+      // console.log("updatedOutfit upon click event", updatedOutfit)
       props.setOutfit(updatedOutfit);
     }
 

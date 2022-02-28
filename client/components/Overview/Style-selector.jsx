@@ -1,37 +1,32 @@
 import React, { useState, useEffect } from 'react';
-const axios = require('axios');
-
 
 const SelectStyle = (props) => {
-  // console.log('PROPS IN STYLE', props.smallPhotos);
 
-  //populate small photos into an object so we can access them correctly
-  const photosArray = [];
-  props.smallPhotos.forEach(photo => {
-    photosArray.push(photo.thumbnail_url);
-  })
+  // create an object that has all of the styles for the particular product
+  const stylesArray = [];
+  // console.log('STYLE INFO', props.currentStyle)
 
+  for (let i = 0; i < props.currentStyle.length; i++) {
+    let current = props.currentStyle[i];
+    stylesArray.push(current);
+  }
+
+  // iterate over currentStyles to get each photo for styles
+    // props.currentStyle[index].photos[0].thumbnail_url
 
   return (
     <div>
-      <img className='OV-Main-Photo' src={props.mainPhoto}/>
-      <div>
-        {photosArray.map((url, index) => (
-          <img key={index} src={url} />
-        )
-        )}
-      </div>
-      <div className='OV-Selected-Style-Name'></div>
-      <Add-to-bag />
+      {stylesArray.map((style, index) => (
+        <img key={index} src={style.photos[0].thumbnail_url} onClick={() => props.handleStyle(style)} ></img>
+      ))
+    }
+      {/* map all photos the same way as the other thumbnails */}
     </div>
-
-)
+  )
 }
-export default SelectStyle;
-
-
 // Get the main photo to render correctly > get the thumbnails to render correctly > get styles to render correctly > get the size and quantity render correctly
 
+export default SelectStyle;
 
 
 // use postman to access styles endpoint, which gives you thumbnail full url
