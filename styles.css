@@ -310,6 +310,78 @@ body {
   height: 19px;
 }
 
+.OV-Rating {
+  padding: 3px;
+  position: relative;
+  left: 500px;
+  top: 140px;
+  font-weight: bolder;
+}
+
+.OV-Category {
+  padding: 3px;
+  position: relative;
+  left: 500px;
+  top: 140px;
+  font-weight: bolder;
+}
+
+.OV-Name {
+  padding: 3px;
+  position: relative;
+  left: 500px;
+  top: 140px;
+  font-weight: bolder;
+}
+
+.OV-Default-Price {
+  padding: 3px;
+  position: relative;
+  left: 500px;
+  top: 140px;
+  font-weight: bolder;
+}
+
+.OV-Description {
+  padding: 3px;
+  position: relative;
+  top: 650px;
+  font-weight: bolder;
+}
+
+.OV-Main-Photo {
+  padding: 3px;
+  object-fit: scale-down;
+  width: 400px;
+  height: 600px;
+  position: relative;
+  left: 80px;
+  bottom: 20px
+}
+
+.OV-Thumbnails {
+  padding: 3px;
+  object-fit: cover;
+  width: 68px;
+  height: 90px;
+  position: relative;
+  display: list-item;
+  bottom: 615px;
+}
+
+
+.OV-Styles {
+  /* four thumbs per row */
+  padding: 3px;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  object-fit: cover;
+  position: relative;
+  left: 500px;
+  bottom: 850px;
+}
+
 .Add-to-bag {
   color: forestgreen
 }
