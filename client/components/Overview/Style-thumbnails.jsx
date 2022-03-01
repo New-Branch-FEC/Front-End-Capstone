@@ -18,7 +18,8 @@ const SelectThumb = (props) => {
     }
 
     return (
-      <div>
+      // <div>
+      <>
         <img className='OV-Main-Photo' src={props.mainPhoto}/>
         <div>
           {photosArray[0].map((url, index) => (
@@ -27,7 +28,7 @@ const SelectThumb = (props) => {
           )}
         </div>
         <Add-to-bag stylesObject={stylesObject} />
-      </div>
+      </>
   )
 }
 export default SelectThumb;
