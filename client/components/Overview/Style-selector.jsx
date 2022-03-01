@@ -17,7 +17,7 @@ const SelectStyle = (props) => {
   return (
     <div>
       {stylesArray.map((style, index) => (
-        <img key={index} src={style.photos[0].thumbnail_url} onClick={() => props.handleStyle(style)} ></img>
+        <img className='OV-Styles' key={index} src={style.photos[0].thumbnail_url} onClick={() => props.handleStyle(style)} ></img>
       ))
     }
       {/* map all photos the same way as the other thumbnails */}

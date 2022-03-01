@@ -22,7 +22,7 @@ const SelectThumb = (props) => {
         <img className='OV-Main-Photo' src={props.mainPhoto}/>
         <div>
           {photosArray[0].map((url, index) => (
-            <img key={index} src={url.thumbnail_url} onClick={() => {props.handleThumb(url)}}/>
+            <img className='OV-Thumbnails' key={index} src={url.thumbnail_url} onClick={() => {props.handleThumb(url)}}/>
             )
           )}
         </div>
