@@ -22,9 +22,9 @@ const Overview = (props) => {
   }
 
   const handleStyle = (style) => {
-    props.setCurrentStyle(style);
-    // console.log('STYLE', style);
-    setMainPhoto(style.photos[0].thumbnail_url);
+    // props.setCurrentStyle(style);
+    console.log('STYLE', style);
+    setMainPhoto(style.photos[0].url);
     setStyleName(style.name)
   }
 
