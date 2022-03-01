@@ -321,7 +321,7 @@ body {
 .OV-Rating {
   padding: 3px;
   position: relative;
-  left: 500px;
+  left: 62%;
   top: 140px;
   font-weight: bolder;
 }
@@ -329,7 +329,7 @@ body {
 .OV-Category {
   padding: 3px;
   position: relative;
-  left: 500px;
+  left: 62%;
   top: 140px;
   font-weight: bolder;
 }
@@ -337,7 +337,7 @@ body {
 .OV-Name {
   padding: 3px;
   position: relative;
-  left: 500px;
+  left: 62%;
   top: 140px;
   font-weight: bolder;
 }
@@ -345,7 +345,7 @@ body {
 .OV-Default-Price {
   padding: 3px;
   position: relative;
-  left: 500px;
+  left: 62%;
   top: 140px;
   font-weight: bolder;
 }
@@ -362,9 +362,9 @@ body {
   object-fit: scale-down;
   width: 400px;
   height: 600px;
-  position: relative;
-  left: 80px;
-  bottom: 20px
+  position: absolute;
+  left: 30%;
+  bottom: 4%;
 }
 
 .OV-Thumbnails {
@@ -374,7 +374,8 @@ body {
   height: 90px;
   position: relative;
   display: list-item;
-  bottom: 615px;
+  left: 20%;
+  bottom: 48px;
 }
 
 
@@ -386,8 +387,8 @@ body {
   border-radius: 50%;
   object-fit: cover;
   position: relative;
-  left: 500px;
-  bottom: 850px;
+  left: 62%;
+  bottom: 325px;
 }
 
 .Add-to-bag {
