@@ -98,7 +98,7 @@ const RatingsListEntry = (props) => {
   }
 
 return (
-  <div>Ratings List Entry Goes Here
+  <div>
     <div className="RR-list-entry">
       <div className="column-L">
         <div>{indivStars(props)}</div>

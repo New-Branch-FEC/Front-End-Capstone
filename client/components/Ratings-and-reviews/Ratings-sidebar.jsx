@@ -43,8 +43,7 @@ const RatingsSidebar = (props) => {
       <div className="RR-sidebar">
           <div className="RR-star-rating">
             <p className="RR-average-rating">Average Product Rating:</p>
-            <div>{ratingsAverage}</div>
-            {/* TODO: need to use Indiv-stars for whole stars */}
+            <div>{ratingsAverage}</div><br></br>
             <Stars reviews={props.reviews} />
           </div>
           <p className="RR-recommends">{recommendValue}% of reviewers recommend this product!</p>
@@ -55,7 +54,7 @@ const RatingsSidebar = (props) => {
             <li>3 stars count: {threeStarQuantity}, percent full: {threeStarPercentFull}%</li>
             <li>2 stars count: {twoStarQuantity}, percent full: {twoStarPercentFull}%</li>
             <li>1 stars count: {oneStarQuantity}, percent full: {oneStarPercentFull}%</li>
-          </div>
+          </div><br></br>
           <div className="RR-characteristics"> Product Characteristics:
             {/* TODO: conditional rendering for whatever characteristics are present for currentProduct} */}
             { props.reviewsMeta.characteristics.Fit?.value && <p className="RR-characteristics-entry">Fit: {fitValue}, percent full: {Math.round(((fitValue / 5) * 100) * 100) / 100}%</p> }
