@@ -362,7 +362,11 @@ useEffect(() => {
 
   return (
      <>
-     <div>Hello, World!</div>
+     <div className="banner-area">
+        <img className="logo" src="http://localhost:3000/assets/plainLogo.png"></img>
+        <h1 className="title">NEW BRANCH</h1>
+        <img className="banner" src="http://localhost:3000/assets/Banner3.png"></img>
+     </div>
      <Overview currentProduct={currentProduct} setCurrentProductID={setCurrentProductID} currentStyle={currentStyle} setCurrentStyle={setCurrentStyle} reviews={reviews} outfit={outfit}/>
      <div className="comparison-and-modal-container">
     <Comparison currentProduct={currentProduct} showModalStatus={showModalStatus} setShowModalStatus={setShowModalStatus} showModal={showModal} cardProductFeatures={cardProductFeatures}/>
