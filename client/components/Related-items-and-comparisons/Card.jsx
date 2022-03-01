@@ -125,17 +125,17 @@ const Card = (props) => {
   // TODO: add an onClick event to the className="comparison-button"
   return (
     <div className="card">
-    <img className="comparison-button" src="http://localhost:3000/assets/deleteButton.png" onClick={() => removeOutfit(cardOutfitProduct.id)}/>
-      <div className="clickable-img" onClick={() => {props.setCurrentProductID(cardOutfitProduct.id) }}>
-<img src={cardOutfitProduct.image}/>
+      <img className="comparison-button" src="http://localhost:3000/assets/deleteButton.png" onClick={() => removeOutfit(cardOutfitProduct.id)}/>
+        <div className="clickable-img" onClick={() => {props.setCurrentProductID(cardOutfitProduct.id) }}>
+          <img src={cardOutfitProduct.image}/>
+        </div>
+      <div className="container">
+        <div>CATEGORY</div>
+        <div>{cardOutfitProduct.name}</div>
+        <div>{`$${cardOutfitProduct.default_price}`}</div>
+        <Stars reviews={cardOutfitProduct.reviews}/>
       </div>
-    <div className="container">
-      <div>CATEGORY</div>
-      <div>{cardOutfitProduct.name}</div>
-      <div>{`$${cardOutfitProduct.default_price}`}</div>
-      <Stars reviews={cardOutfitProduct.reviews}/>
     </div>
-  </div>
   )
 
 }

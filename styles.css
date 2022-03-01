@@ -1,16 +1,58 @@
 /******************** Related Items and Comparisons ********************/
 
 /* Added shadows to create the "card" effect (because it's pretty) */
+.banner-area {
+  position: relative;
+
+}
+
+.banner {
+  width: -webkit-fill-available;
+  height: 110px;
+  margin: 0;
+  padding: 0;
+  /* background-size: cover; */
+}
+
+.logo {
+  height: 110px;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  z-index: 10;
+  /* background-size: cover; */
+}
+
+.title {
+  /* height: 110px;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  z-index: 10; */
+  height: 110px;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    z-index: 10;
+    font-family: sans-serif;
+    color: #F8F4F6;
+    margin-left: 57px;
+    margin-top: 57px;
+    display: flex;
+}
+
+
 .card {
   box-shadow: 0 4px 3px 0 rgba(0,0,0,0.2);
   transition: 0.3s;
   border-color: rgb(0, 0, 0);
   border-width: .1em;
-  border-style: solid;
+  /* border-style: solid; */
+  margin-right: 22px;
   width: 300px;
   position: relative;
   display: inline-block;
-
+  border-radius: 12px;
 }
 
 
@@ -19,12 +61,15 @@
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
 
-/* Added some padding inside the card container */
+/* Added some padding inside the card info container */
 .container {
-  background-color: rgb(218, 215, 250);
-  padding: 2px 16px;
+  background-color: #bc9098;
+  padding: 5px 16px;
   overflow: hidden;
-
+  margin-top: -7px;
+  overflow-y: overlay;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
 
 .card-list {
@@ -33,7 +78,7 @@
   padding: 10px;
   margin: 4px, 4px;
   /* background-color: #08c708; */
-  width: 1205px;
+  width: 1272px;
   overflow-y: visible;
   white-space: nowrap;
   /* padding: 10px;*/
@@ -65,7 +110,7 @@
   z-index: 11;
   right: 0;
   top: 6%;
-  height: 554px;
+  height: 558px;
   position: absolute;
   width: 131px;
 }
@@ -73,15 +118,22 @@
 /* Specifies that all img tags in all elements with class "star-images" will have this styling */
 .star-images img {
   width: 17px;
-  /* max-width: 100%; */
+}
+
+.clickable-img {
+  /* width: 300px;
+  height: 451px; */
+  display: flex;
+  justify-content: center;
 }
 
 .clickable-img img {
   width: 300px;
-
-  /* max-width: 100%; */
-  /* display: block;
-  touch-action: pinch-zoom; */
+  height: 471px;
+  object-fit: cover;
+  align-self: center;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
 
 /*  position:relative on card is what the button below should consider its boundaries */
@@ -108,6 +160,7 @@
   position: absolute;
   display: flex;
   justify-content: center;
+  border-radius: 10px;
   align-items: baseline;
 }
 
@@ -115,8 +168,8 @@
   width: 460px;
   height: 500px;
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-  background: #fff;
-  color: rgb(82, 69, 69);
+  background:#EDE0E3;;
+  color: #bc9098;
   /* grid-template-columns: 1fr 1fr; */
   position: relative;
   z-index: 10;
@@ -131,7 +184,6 @@
   justify-content: center;
   line-height: 3.8;
   font-weight: bold;
-  color: #141414;
   font-size: large;
 }
 
@@ -154,7 +206,7 @@
   padding: 10px;
   margin: 5px;
   line-height: 3.3;
-  background-color: #ffffff;
+  background-color: #EDE0E3;;
   text-align: center;
 }
 
@@ -178,8 +230,8 @@
 /******************** Ratings and Reviews ********************/
 
 body {
-  padding: 10px;
-  background-color: antiquewhite;
+  /* padding: 10px; */
+  background-color: #F8F4F6;
 }
 
 
@@ -187,29 +239,35 @@ body {
   float: left;
   width: 25%;
   border: dashed;
+  border-radius: 12px;
 }
 
 .column-R {
   float: right;
   width: 73%;
   border: dashed;
+  border-radius: 12px;
+
 }
 
 .RR-sidebar {
   padding: 3px;
-  background-color: rgb(241, 241, 241)
+  background-color:  #bc9098;
+  border-radius: 12px;
 }
 
 .RR-ratings-list {
   padding: 3px;
-  background-color: rgb(241, 241, 241);
+  background-color: #bc9098;
+  border-radius: 12px;
 }
 
 .RR-list-entry {
   padding: 3px;
-  background-color: rgba(192, 192, 192, 0.781);
+  background-color: #D0B2B5;
   border: 5px;
   border: solid;
+  border-radius: 12px;
 }
 
 .RR-user-date {
@@ -223,7 +281,8 @@ body {
   border: 5px;
   border: inset;
   border-color: black;
-  background-color: gray;
+  background-color: #EDE0E3;
+  border-radius: 12px;
 }
 
 .RR-thumbnail {
