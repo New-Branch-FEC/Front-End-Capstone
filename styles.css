@@ -203,6 +203,7 @@ body {
 .RR-ratings-list {
   padding: 3px;
   background-color: rgb(241, 241, 241);
+  margin-bottom: 20px;
 }
 
 .RR-list-entry {
