@@ -34,11 +34,14 @@
     padding: 0;
     position: absolute;
     z-index: 10;
-    font-family: sans-serif;
-    color: #F8F4F6;
-    margin-left: 57px;
-    margin-top: 57px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-style: oblique;
+    color: #bc9098;
+    font-size: 48px;
+    margin-left: 55px;
+    margin-top: 53px;
     display: flex;
+    -webkit-text-stroke:#F8F4F6 1px;
 }
 
 
@@ -264,7 +267,7 @@ body {
 
 .RR-list-entry {
   padding: 3px;
-  background-color: #D0B2B5;
+  background-color: #EDE0E3;
   border: 5px;
   border: solid;
   border-radius: 12px;
@@ -281,7 +284,7 @@ body {
   border: 5px;
   border: inset;
   border-color: black;
-  background-color: #EDE0E3;
+  background-color: #D0B2B5;
   border-radius: 12px;
 }
 
