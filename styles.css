@@ -352,6 +352,11 @@ body {
   left: 15%;
 }
 
+/* parents have relative positions, things that go into it are absolute */
+.Photo-Parent {
+  position: relative;
+}
+
 .OV-Main-Photo {
   padding: 3px;
   object-fit: scale-down;
@@ -359,7 +364,11 @@ body {
   height: 600px;
   position: absolute;
   left: 30%;
-  bottom: 4%;
+  top: -14%
+}
+
+.Thumb-Parent {
+  position: relative;
 }
 
 .OV-Thumbnails {
@@ -373,11 +382,16 @@ body {
   bottom: 62px;
 }
 
+.Style-Parent {
+  position: absolute;
+  left: 62%
+}
+
 .OV-Style-Name {
   padding: 3px;
   position: relative;
-  left: 62%;
-  bottom: 345px;
+  text-align: left;
+  bottom: 355px;
 }
 
 .OV-Styles {
@@ -388,17 +402,22 @@ body {
   border-radius: 50%;
   object-fit: cover;
   position: relative;
-  left: 62%;
-  bottom: 325px;
+  bottom: 345px;
 }
+
 
 .Add-to-bag {
   padding: 10px;
   position: absolute;
   width: 100px;
-  left: 10%;
-  top: 30px;
+  left: 15px;
+  bottom: 190px;
   margin: 5px;
+}
+
+.Dropdown-Parent {
+  position: relative;
+  left: 62%
 }
 
 .OV-dropdowns {
@@ -406,15 +425,17 @@ body {
   width: 115px;
   height: 19px;
   position: absolute;
+  bottom: 240px;
+}
+
+.Share {
+  position: relative;
+  bottom: 500px;
   left: 62%;
-  bottom: 140px;
 }
 
 .Share-to {
   padding: 10px;
-  position: relative;
-  bottom: 500px;
-  left: 62%;
   border-radius: 50%;
   margin: 5px
 }

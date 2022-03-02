@@ -17,7 +17,7 @@ const SelectStyle = (props) => {
 
   // add cumulative stars from terri's component (<Stars REVIEWS={props.reviews} />)
   return (
-    <div>
+    <div className='Style-Parent'>
       <div className='OV-Style-Name'>Style: '{props.styleName}'</div>
       {stylesArray.map((style, index) => (
         <img className='OV-Styles' key={index} src={style.photos[0].thumbnail_url} onClick={() => props.handleStyle(style)} ></img>
