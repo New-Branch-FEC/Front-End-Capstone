@@ -10,7 +10,7 @@ import AddToBag from './Add-to-bag.jsx';
 
 const Overview = (props) => {
   // for styles
-  console.log('reviews',props.reviews);
+  // console.log('reviews',props.reviews);
   const [mainPhoto, setMainPhoto] = useState(props.currentStyle.results[0].photos[0].url);
   const [styleName, setStyleName] = useState(props.currentStyle.results[0].name);
   // for size and quantity
@@ -26,7 +26,7 @@ const Overview = (props) => {
     // console.log('STYLE', style);
     setMainPhoto(style.photos[0].url);
     setStyleName(style.name);
-    console.log('meow', style.name)
+    // console.log('meow', style.name)
   }
 
   return (
