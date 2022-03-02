@@ -365,15 +365,20 @@ useEffect(() => {
      <div className="banner-area">
         <img className="logo" src="http://localhost:3000/assets/plainLogo.png"></img>
         <h1 className="title">NEW BRANCH</h1>
+        <img className="search-bar" src="http://localhost:3000/assets/searchBar.png"></img>
+        <img className="magnifying-glass" src="http://localhost:3000/assets/magnifyGlass.png"></img>
         <img className="banner" src="http://localhost:3000/assets/Banner3.png"></img>
+        </div>
+     <div className="page-body">
+        <Overview className="widget" currentProduct={currentProduct} setCurrentProductID={setCurrentProductID} currentStyle={currentStyle} setCurrentStyle={setCurrentStyle} reviews={reviews} outfit={outfit}/>
+        <div className="comparison-and-modal-container">
+        <Comparison className="widget" currentProduct={currentProduct} showModalStatus={showModalStatus} setShowModalStatus={setShowModalStatus} showModal={showModal} cardProductFeatures={cardProductFeatures}/>
+        <RelatedItemsAndComparisons className="widget" setCardProductFeatures={setCardProductFeatures} currentProduct={currentProduct} reviews={reviews} outfit={outfit} setOutfit={setOutfit} relatedProducts={relatedProducts} setRelatedProducts={setRelatedProducts} setCurrentProductID={setCurrentProductID} showModal={showModal}/>
+        </div>
+        {/* <QuestionsAndAnswers /> */}
+        <RatingsAndReviews className="widget" currentProduct={currentProduct} reviews={reviews} reviewsMeta={reviewsMeta}/>
+        <img className="footer" src="http://localhost:3000/assets/cleanFooter.png"></img>
      </div>
-     <Overview currentProduct={currentProduct} setCurrentProductID={setCurrentProductID} currentStyle={currentStyle} setCurrentStyle={setCurrentStyle} reviews={reviews} outfit={outfit}/>
-     <div className="comparison-and-modal-container">
-    <Comparison currentProduct={currentProduct} showModalStatus={showModalStatus} setShowModalStatus={setShowModalStatus} showModal={showModal} cardProductFeatures={cardProductFeatures}/>
-    <RelatedItemsAndComparisons setCardProductFeatures={setCardProductFeatures} currentProduct={currentProduct} reviews={reviews} outfit={outfit} setOutfit={setOutfit} relatedProducts={relatedProducts} setRelatedProducts={setRelatedProducts} setCurrentProductID={setCurrentProductID} showModal={showModal}/>
-     </div>
-     {/* <QuestionsAndAnswers /> */}
-     <RatingsAndReviews currentProduct={currentProduct} reviews={reviews} reviewsMeta={reviewsMeta}/>
      </>
    )
 };
