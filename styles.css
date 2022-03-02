@@ -318,6 +318,7 @@ body {
   position: relative;
   left: 62%;
   top: 85px;
+  width: 100px;
   margin-bottom: 5px;
 }
 
@@ -326,6 +327,7 @@ body {
   position: relative;
   left: 62%;
   top: 85px;
+  width: 100px;
   margin-bottom: 5px;
 }
 
@@ -334,6 +336,7 @@ body {
   position: relative;
   left: 62%;
   top: 85px;
+  width: 100px;
   margin-bottom: 5px;
 }
 
@@ -342,6 +345,7 @@ body {
   position: relative;
   left: 62%;
   top: 85px;
+  width: 100px;
   margin-bottom: 5px;
 }
 
@@ -384,7 +388,7 @@ body {
 
 .Style-Parent {
   position: absolute;
-  left: 62%
+  left: 62%;
 }
 
 .OV-Style-Name {
@@ -431,6 +435,7 @@ body {
 .Share {
   position: relative;
   bottom: 500px;
+  width: 300px;
   left: 62%;
 }
 
