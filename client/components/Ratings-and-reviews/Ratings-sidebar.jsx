@@ -70,7 +70,27 @@ const RatingsSidebar = (props) => {
             <div className="RR-star-percent">{oneStarPercentFull}%</div>
 
           </div><br></br>
-          <div className="RR-characteristics"> Product Characteristics:
+          <section class="bar-graph bar-graph-horizontal bar-graph-one">
+            <div class="bar-one">
+              <span class="year">🌟🌟🌟🌟🌟</span>
+              <div class="bar" data-percentage={fiveStarPercentFull}></div>
+            </div>
+            <div class="bar-two">
+              <span class="year">🌟🌟🌟🌟</span>
+              <div class="bar" data-percentage={fourStarPercentFull}></div>
+            </div>
+            <div class="bar-three">
+              <span class="year">🌟🌟🌟</span>
+              <div class="bar" data-percentage={threeStarPercentFull}></div>
+            </div>
+            <div class="bar-four">
+             <span class="year">🌟🌟</span>
+             <div class="bar" data-percentage={twoStarPercentFull}></div>
+            </div>
+          </section>
+          <div className="RR-characteristics">
+            <br></br>
+            <br></br>
             {/* TODO: conditional rendering for whatever characteristics are present for currentProduct} */}
             { props.reviewsMeta.characteristics.Fit?.value && <p className="RR-characteristics-entry">Fit: {fitValue}, percent full: {Math.round(((fitValue / 5) * 100) * 100) / 100}%</p> }
             { props.reviewsMeta.characteristics.Fit?.value && <img src="https://cdn.iconscout.com/icon/premium/png-256-thumb/graph-2300680-1917645.png" alt="img placeholder"></img> }
