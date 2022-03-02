@@ -15,12 +15,16 @@ const RatingsSidebar = (props) => {
   let recommendTotal = parseInt(props.reviewsMeta.recommended.true) + parseInt(props.reviewsMeta.recommended.false);
   let recommendValue = Math.round((parseInt(props.reviewsMeta.recommended.true) / recommendTotal) * 100)
 
-  let highestRatingAmount = props.reviewsMeta.ratings[1] || 0;
-  for (let i = 2; i <= 5; i++) {
-    if (props.reviewsMeta.ratings[i] > highestRatingAmount) {
-      highestRatingAmount = props.reviewsMeta.ratings[i];
+  let highestRatingAmount = props.reviewsMeta.ratings[5] || 0;
+  let findHighestRatingAmount = (highestRatingAmount) => {
+
+    for (let i = 1; i < 5; i++) {
+      if (props.reviewsMeta.ratings[i] > highestRatingAmount) {
+        highestRatingAmount = props.reviewsMeta.ratings[i];
+      }
     }
   }
+  findHighestRatingAmount(highestRatingAmount);
 
   let oneStarPercentFull = (Math.round((oneStarQuantity / highestRatingAmount) * 100) / 100) * 100;
   let twoStarPercentFull = (Math.round((twoStarQuantity / highestRatingAmount) * 100) / 100) * 100;
@@ -28,15 +32,11 @@ const RatingsSidebar = (props) => {
   let fourStarPercentFull = (Math.round((fourStarQuantity / highestRatingAmount) * 100) / 100) * 100;
   let fiveStarPercentFull = (Math.round((fiveStarQuantity / highestRatingAmount) * 100) / 100) * 100;
 
-  // TODO: check if these characteristics exist
   let fitValue= (Math.round(props.reviewsMeta.characteristics.Fit?.value * 100) / 100);
   let lengthValue = (Math.round(props.reviewsMeta.characteristics.Length?.value * 100) / 100);
   let comfortValue = (Math.round(props.reviewsMeta.characteristics.Comfort?.value * 100) / 100);
   let qualityValue = (Math.round(props.reviewsMeta.characteristics.Quality?.value * 100) / 100);
   let sizeValue = (Math.round(props.reviewsMeta.characteristics.Size?.value * 100) /100);
-
-
-  if (props.reviewsMeta.characteristics.Fit?.value) {}
 
   return (
     <div className="column-L">
@@ -47,13 +47,28 @@ const RatingsSidebar = (props) => {
             <Stars reviews={props.reviews} />
           </div>
           <p className="RR-recommends">{recommendValue}% of reviewers recommend this product!</p>
+          <figure className="RR-recommends-chart">
+            <svg role="img" xmlns="http://www.w3.org/2000/svg">
+              <title>Recommended:</title>
+              <desc>This is how many reviewers would recommend this product</desc>
+              <circle className="circle-background" />
+              <circle className="circle-foreground" />
+            </svg>
+            <figcaption>{recommendValue}% of reviewers recommend this product!</figcaption>
+          </figure>
           <div className="RR-stars-graph">
             {/* TODO: turn values into visual representation based on highest number = 100% full bar */}
-            <li>5 stars count: {fiveStarQuantity}, percent full: {fiveStarPercentFull}%</li>
-            <li>4 stars count: {fourStarQuantity}, percent full: {fourStarPercentFull}%</li>
-            <li>3 stars count: {threeStarQuantity}, percent full: {threeStarPercentFull}%</li>
-            <li>2 stars count: {twoStarQuantity}, percent full: {twoStarPercentFull}%</li>
-            <li>1 stars count: {oneStarQuantity}, percent full: {oneStarPercentFull}%</li>
+            <li>5 stars count: {fiveStarQuantity}</li>
+            <div className="RR-star-percent">{fiveStarPercentFull}%</div>
+            <li>4 stars count: {fourStarQuantity}</li>
+            <div className="RR-star-percent">{fourStarPercentFull}%</div>
+            <li>3 stars count: {threeStarQuantity}</li>
+            <div className="RR-star-percent">{threeStarPercentFull}%</div>
+            <li>2 stars count: {twoStarQuantity}</li>
+            <div className="RR-star-percent">{twoStarPercentFull}%</div>
+            <li>1 stars count: {oneStarQuantity}</li>
+            <div className="RR-star-percent">{oneStarPercentFull}%</div>
+
           </div><br></br>
           <div className="RR-characteristics"> Product Characteristics:
             {/* TODO: conditional rendering for whatever characteristics are present for currentProduct} */}

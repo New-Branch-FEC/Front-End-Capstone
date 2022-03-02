@@ -2,6 +2,10 @@ import React from 'react';
 
 const RatingsForm = (props) => {
 
+  let clickSubmit = () => {
+    alert("Review submitted!");
+  }
+
   return (
     <div className="RR-add-rating">Add a Review (form, default hidden)
       <br></br>
@@ -132,7 +136,7 @@ const RatingsForm = (props) => {
         </label>
       </label>
       <br></br>
-      <input type="submit" value="Submit" />
+      <input type="submit" value="Submit" onClick={clickSubmit}/>
     </div>
   )
 }
