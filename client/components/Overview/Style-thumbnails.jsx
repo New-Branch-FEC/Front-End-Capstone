@@ -18,17 +18,16 @@ const SelectThumb = (props) => {
     }
 
     return (
-      // <div>
-      <>
+      <div className='Photo-Parent'>
         <img className='OV-Main-Photo' src={props.mainPhoto}/>
-        <div>
+        <div className='Thumb-Parent'>
           {photosArray[0].map((url, index) => (
             <img className='OV-Thumbnails' key={index} src={url.thumbnail_url} onClick={() => {props.handleThumb(url)}}/>
             )
           )}
         </div>
         <Add-to-bag stylesObject={stylesObject} />
-      </>
+      </div>
   )
 }
 export default SelectThumb;

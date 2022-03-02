@@ -397,55 +397,61 @@ body {
   color: rgb(168, 206, 255)
 }
 
-.OV-dropdowns {
-  padding: 3px;
-  width: 115px;
-  height: 19px;
-}
 
 .OV-Rating {
   padding: 3px;
   position: relative;
-  left: 500px;
-  top: 140px;
-  font-weight: bolder;
+  left: 62%;
+  top: 85px;
+  margin-bottom: 5px;
 }
 
 .OV-Category {
   padding: 3px;
   position: relative;
-  left: 500px;
-  top: 140px;
-  font-weight: bolder;
+  left: 62%;
+  top: 85px;
+  margin-bottom: 5px;
 }
 
 .OV-Name {
   padding: 3px;
   position: relative;
-  left: 500px;
-  top: 140px;
-  font-weight: bolder;
+  left: 62%;
+  top: 85px;
+  margin-bottom: 5px;
 }
 
 .OV-Default-Price {
   padding: 3px;
   position: relative;
-  left: 500px;
-  top: 140px;
-  font-weight: bolder;
+  left: 62%;
+  top: 85px;
+  margin-bottom: 5px;
 }
 
 .OV-Description {
   padding: 3px;
   position: relative;
-  top: 650px;
-  font-weight: bolder;
+  top: 575px;
+  left: 15%;
+}
+
+/* parents have relative positions, things that go into it are absolute */
+.Photo-Parent {
+  position: relative;
 }
 
 .OV-Main-Photo {
   object-fit: scale-down;
   width: 400px;
   height: 600px;
+  position: absolute;
+  left: 30%;
+  top: -14%
+}
+
+.Thumb-Parent {
   position: relative;
   left: 80px;
   bottom: 20px;
@@ -482,8 +488,21 @@ body {
 
 .OV-Thumbnails {
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  left: 20%;
+  bottom: 62px;
 }
 
+.Style-Parent {
+  position: absolute;
+  left: 62%
+}
+
+.OV-Style-Name {
+  padding: 3px;
+  position: relative;
+  text-align: left;
+  bottom: 355px;
+}
 
 .OV-Styles {
   /* four thumbs per row */
@@ -505,12 +524,40 @@ body {
 
 .OV-Styles {
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  bottom: 345px;
 }
 
+
 .Add-to-bag {
-  color: forestgreen
+  padding: 10px;
+  position: absolute;
+  width: 100px;
+  left: 15px;
+  bottom: 190px;
+  margin: 5px;
+}
+
+.Dropdown-Parent {
+  position: relative;
+  left: 62%
+}
+
+.OV-dropdowns {
+  padding: 10px;
+  width: 115px;
+  height: 19px;
+  position: absolute;
+  bottom: 240px;
+}
+
+.Share {
+  position: relative;
+  bottom: 500px;
+  left: 62%;
 }
 
 .Share-to {
-  color: red
+  padding: 10px;
+  border-radius: 50%;
+  margin: 5px
 }
