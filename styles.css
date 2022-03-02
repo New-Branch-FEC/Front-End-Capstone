@@ -401,7 +401,7 @@ body {
 .OV-Rating {
   padding: 3px;
   position: relative;
-  left: 62%;
+  left: 65%;
   top: 85px;
   margin-bottom: 5px;
 }
@@ -409,7 +409,7 @@ body {
 .OV-Category {
   padding: 3px;
   position: relative;
-  left: 62%;
+  left: 65%;
   top: 85px;
   margin-bottom: 5px;
 }
@@ -417,7 +417,7 @@ body {
 .OV-Name {
   padding: 3px;
   position: relative;
-  left: 62%;
+  left: 65%;
   top: 85px;
   margin-bottom: 5px;
 }
@@ -425,7 +425,7 @@ body {
 .OV-Default-Price {
   padding: 3px;
   position: relative;
-  left: 62%;
+  left: 65%;
   top: 85px;
   margin-bottom: 5px;
 }
@@ -440,6 +440,7 @@ body {
 /* parents have relative positions, things that go into it are absolute */
 .Photo-Parent {
   position: relative;
+  width: 1200px
 }
 
 .OV-Main-Photo {
@@ -452,7 +453,7 @@ body {
 }
 
 .Thumb-Parent {
-  position: relative;
+  /* position: relative;
   left: 80px;
   bottom: 20px;
 
@@ -461,7 +462,7 @@ body {
   transition: 0.3s;
   border-color: rgb(0, 0, 0);
   border-width: .1em;
-  cursor: pointer;
+  cursor: pointer; */
 }
 
 /* On mouse-over, added a deeper shadow (because it's pretty) */
@@ -511,7 +512,6 @@ body {
   border-radius: 50%;
   object-fit: cover;
   position: relative;
-  left: 500px;
   bottom: 850px;
 
 
@@ -532,14 +532,14 @@ body {
   padding: 10px;
   position: absolute;
   width: 100px;
-  left: 15px;
+  left: 42px;
   bottom: 190px;
   margin: 5px;
 }
 
 .Dropdown-Parent {
   position: relative;
-  left: 62%
+  left: 62%;
 }
 
 .OV-dropdowns {
@@ -548,12 +548,13 @@ body {
   height: 19px;
   position: absolute;
   bottom: 240px;
+  left: 37px;
 }
 
 .Share {
   position: relative;
   bottom: 500px;
-  left: 62%;
+  left: 65%;
 }
 
 .Share-to {
