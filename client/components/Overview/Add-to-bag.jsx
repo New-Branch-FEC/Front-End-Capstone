@@ -28,14 +28,16 @@ const AddToBag = (props) => {
         // NOW WE MUST MAP IT IN THE OPTIONS
 
     return (
-    <div className='OV-dropdowns'>
-    <select>
-      <option value=''> size </option>
-    </select>
-    <select>
-      <option value=''> quantity </option>
-    </select>
-      <button className='Add-to-bag' > add to bag </button>
+    <div className='Dropdown-Parent'>
+      <div className='OV-dropdowns'>
+        <select>
+        <option value=''> size </option>
+        </select>
+        <select>
+        <option value=''> quantity </option>
+        </select>
+      </div>
+        <button className='Add-to-bag' > add to bag </button>
     </div>
     )
 }
