@@ -312,11 +312,6 @@ body {
   color: rgb(168, 206, 255)
 }
 
-.OV-dropdowns {
-  padding: 3px;
-  width: 115px;
-  height: 19px;
-}
 
 .OV-Rating {
   padding: 3px;
@@ -378,6 +373,12 @@ body {
   bottom: 62px;
 }
 
+.OV-Style-Name {
+  padding: 3px;
+  position: relative;
+  left: 62%;
+  bottom: 345px;
+}
 
 .OV-Styles {
   /* four thumbs per row */
@@ -394,9 +395,19 @@ body {
 .Add-to-bag {
   padding: 10px;
   position: absolute;
-  left: 62%;
-  bottom: 100px;
+  width: 100px;
+  left: 10%;
+  top: 30px;
   margin: 5px;
+}
+
+.OV-dropdowns {
+  padding: 10px;
+  width: 115px;
+  height: 19px;
+  position: absolute;
+  left: 62%;
+  bottom: 140px;
 }
 
 .Share-to {

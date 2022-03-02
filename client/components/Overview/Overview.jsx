@@ -10,7 +10,7 @@ import AddToBag from './Add-to-bag.jsx';
 
 const Overview = (props) => {
   // for styles
-  // console.log(props.currentStyle);
+  console.log('reviews',props.reviews);
   const [mainPhoto, setMainPhoto] = useState(props.currentStyle.results[0].photos[0].url);
   const [styleName, setStyleName] = useState(props.currentStyle.results[0].name);
   // for size and quantity
@@ -23,9 +23,10 @@ const Overview = (props) => {
 
   const handleStyle = (style) => {
     // props.setCurrentStyle(style);
-    console.log('STYLE', style);
+    // console.log('STYLE', style);
     setMainPhoto(style.photos[0].url);
-    setStyleName(style.name)
+    setStyleName(style.name);
+    console.log('meow', style.name)
   }
 
   return (
@@ -35,7 +36,7 @@ const Overview = (props) => {
 
       < SelectThumb currentProduct={props.currentProduct} currentStyle={props.currentStyle.results} mainPhoto={mainPhoto} setMainPhoto={setMainPhoto} handleThumb={handleThumb} />
 
-      < SelectStyle currentProduct={props.currentProduct} currentStyle={props.currentStyle.results} handleStyle={handleStyle}/>
+      < SelectStyle currentProduct={props.currentProduct} currentStyle={props.currentStyle.results} styleName={styleName} setStyleName={setStyleName} handleStyle={handleStyle}/>
 
       < ShareOnline />
 
