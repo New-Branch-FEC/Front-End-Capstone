@@ -1,9 +1,8 @@
-/******************** Related Items and Comparisons ********************/
+/******************** Overall Styling ********************/
 
-/* Added shadows to create the "card" effect (because it's pretty) */
+
 .banner-area {
   position: relative;
-
 }
 
 .banner {
@@ -11,7 +10,13 @@
   height: 110px;
   margin: 0;
   padding: 0;
-  /* background-size: cover; */
+}
+
+.footer {
+  width: -webkit-fill-available;
+  height: 200px;
+  margin: 0;
+  padding: 0;
 }
 
 .logo {
@@ -20,15 +25,28 @@
   padding: 0;
   position: absolute;
   z-index: 10;
-  /* background-size: cover; */
+}
+
+.search-bar {
+  height: 20px;
+  width: 22%;
+  top: 33px;
+  right: 0;
+  position: absolute;
+  z-index: 10;
+  padding-right: 36px;
+}
+
+.magnifying-glass {
+  height: 30px;
+  top: 22px;
+  right: 0;
+  padding-right: 4px;
+  position: absolute;
+  z-index: 10;
 }
 
 .title {
-  /* height: 110px;
-  margin: 0;
-  padding: 0;
-  position: absolute;
-  z-index: 10; */
   height: 110px;
     margin: 0;
     padding: 0;
@@ -44,7 +62,49 @@
     -webkit-text-stroke:#F8F4F6 1px;
 }
 
+.page-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+  align-items: center;
+}
 
+.widget {
+  padding: 2px;
+}
+
+h1 {
+  height: 30px;
+  /* margin: 0;
+  padding: 0;
+  position: absolute; */
+  z-index: 10;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-style: oblique;
+  color: #bc9098;
+  font-size: 45px;
+  margin-left: 55px;
+  margin-bottom: 50px;
+  display: flex;
+  -webkit-text-stroke:#F8F4F6 1px;
+}
+
+.embellishment {
+  width: -webkit-fill-available;
+  /* height: 110px;
+  position: absolute; */
+  transform: scaleY(1.5);
+  z-index: -1;
+  top: 111px;
+  width: -webkit-fill-available;
+  height: 74px;
+  position: relative;
+}
+
+/******************** Related Items and Comparisons ********************/
+
+/* Added shadows to create the "card" effect (because it's pretty) */
 .card {
   box-shadow: 0 4px 3px 0 rgba(0,0,0,0.2);
   transition: 0.3s;
@@ -66,7 +126,7 @@
 
 /* Added some padding inside the card info container */
 .container {
-  background-color: #bc9098;
+  background-color: #D0B2B5;
   padding: 5px 16px;
   overflow: hidden;
   margin-top: -7px;
@@ -81,7 +141,7 @@
   padding: 10px;
   margin: 4px, 4px;
   /* background-color: #08c708; */
-  width: 1272px;
+  width: 1264px;
   overflow-y: visible;
   white-space: nowrap;
   /* padding: 10px;*/
@@ -115,7 +175,18 @@
   top: 6%;
   height: 558px;
   position: absolute;
-  width: 131px;
+  width: 54px;
+}
+
+.left-fade-out {
+  position: absolute;
+  z-index: 10;
+  left: 0;
+  top: 6%;
+  height: 558px;
+  position: absolute;
+  width: 54px;
+  transform: scaleX(-1);
 }
 
 /* Specifies that all img tags in all elements with class "star-images" will have this styling */
@@ -132,11 +203,12 @@
 
 .clickable-img img {
   width: 300px;
-  height: 471px;
+  height: 360px;
   object-fit: cover;
   align-self: center;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
+  cursor: pointer;
 }
 
 /*  position:relative on card is what the button below should consider its boundaries */
@@ -195,7 +267,6 @@
   justify-content: space-between;
 }
 
-/* TODO: make this display three columns */
 .comparison-modal-content .modal-grid {
   /* display: flex;
   white-space: pre-line;
@@ -237,31 +308,45 @@ body {
   background-color: #F8F4F6;
 }
 
+/* changed this in the App.js in order to refer to this item- is this right?*/
+.RR-header {
+  width: 1268px
+}
 
 .column-L {
   float: left;
-  width: 25%;
-  border: dashed;
+  width: 300px;
+  box-shadow: 0 4px 3px 0 rgb(0 0 0 / 20%);
+  transition: 0.3s;
+  border-color: rgb(0, 0, 0);
+  border-width: 0.1em;
   border-radius: 12px;
+  border-radius: 12px;
+
 }
 
 .column-R {
   float: right;
   width: 73%;
-  border: dashed;
+  box-shadow: 0 4px 3px 0 rgb(0 0 0 / 20%);
+  transition: 0.3s;
+  border-color: rgb(0, 0, 0);
+  border-width: 0.1em;
+  border-radius: 12px;
   border-radius: 12px;
 
 }
 
 .RR-sidebar {
   padding: 3px;
-  background-color:  #bc9098;
+  background-color:  #D0B2B5;
   border-radius: 12px;
 }
 
 .RR-ratings-list {
-  padding: 3px;
-  background-color: #bc9098;
+  padding: 10px;
+  width: 73%;
+  background-color:#D0B2B5;
   border-radius: 12px;
 }
 
@@ -316,7 +401,7 @@ body {
 .OV-Rating {
   padding: 3px;
   position: relative;
-  left: 62%;
+  left: 65%;
   top: 85px;
   margin-bottom: 5px;
 }
@@ -324,7 +409,7 @@ body {
 .OV-Category {
   padding: 3px;
   position: relative;
-  left: 62%;
+  left: 65%;
   top: 85px;
   margin-bottom: 5px;
 }
@@ -332,7 +417,7 @@ body {
 .OV-Name {
   padding: 3px;
   position: relative;
-  left: 62%;
+  left: 65%;
   top: 85px;
   margin-bottom: 5px;
 }
@@ -340,7 +425,7 @@ body {
 .OV-Default-Price {
   padding: 3px;
   position: relative;
-  left: 62%;
+  left: 65%;
   top: 85px;
   margin-bottom: 5px;
 }
@@ -355,10 +440,10 @@ body {
 /* parents have relative positions, things that go into it are absolute */
 .Photo-Parent {
   position: relative;
+  width: 1200px
 }
 
 .OV-Main-Photo {
-  padding: 3px;
   object-fit: scale-down;
   width: 400px;
   height: 600px;
@@ -368,16 +453,42 @@ body {
 }
 
 .Thumb-Parent {
-  position: relative;
+  /* position: relative;
+  left: 80px;
+  bottom: 20px;
+
+  border-radius: 12px;
+  box-shadow: 0 4px 3px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  border-color: rgb(0, 0, 0);
+  border-width: .1em;
+  cursor: pointer; */
+}
+
+/* On mouse-over, added a deeper shadow (because it's pretty) */
+.OV-Main-Photo:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
 
 .OV-Thumbnails {
-  padding: 3px;
+  margin: 6px;
   object-fit: cover;
   width: 68px;
   height: 90px;
   position: relative;
   display: list-item;
+  bottom: 615px;
+
+  border-radius: 12px;
+  box-shadow: 0 4px 3px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  border-color: rgb(0, 0, 0);
+  border-width: .1em;
+  cursor: pointer;
+}
+
+.OV-Thumbnails {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
   left: 20%;
   bottom: 62px;
 }
@@ -396,12 +507,23 @@ body {
 
 .OV-Styles {
   /* four thumbs per row */
-  padding: 3px;
   width: 55px;
   height: 55px;
   border-radius: 50%;
   object-fit: cover;
   position: relative;
+  bottom: 850px;
+
+
+  box-shadow: 0 4px 3px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  border-color: rgb(0, 0, 0);
+  border-width: .1em;
+  cursor: pointer;
+}
+
+.OV-Styles {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
   bottom: 345px;
 }
 
@@ -410,14 +532,14 @@ body {
   padding: 10px;
   position: absolute;
   width: 100px;
-  left: 15px;
+  left: 42px;
   bottom: 190px;
   margin: 5px;
 }
 
 .Dropdown-Parent {
   position: relative;
-  left: 62%
+  left: 62%;
 }
 
 .OV-dropdowns {
@@ -426,12 +548,13 @@ body {
   height: 19px;
   position: absolute;
   bottom: 240px;
+  left: 37px;
 }
 
 .Share {
   position: relative;
   bottom: 500px;
-  left: 62%;
+  left: 65%;
 }
 
 .Share-to {

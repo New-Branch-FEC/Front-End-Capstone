@@ -5,7 +5,8 @@ import RatingsSidebar from './Ratings-sidebar.jsx';
 
 const RatingsAndReviews = (props) => {
   return (
-    <div className="row RR-header">
+    <div className="RR-header">
+      <img className="embellishment" src="http://localhost:3000/assets/sectionEmbellishmentClean.png"></img>
       <h1>Ratings and Reviews</h1>
       <RatingsList currentProduct={props.currentProduct} reviews={props.reviews} />
       <RatingsSidebar currentProduct={props.currentProduct} reviews={props.reviews} reviewsMeta={props.reviewsMeta}/>
