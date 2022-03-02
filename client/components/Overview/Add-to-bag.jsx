@@ -37,7 +37,7 @@ const AddToBag = (props) => {
         <option value=''> quantity </option>
         </select>
       </div>
-        <button className='Add-to-bag' onClick={() => window.confirm('added to bag!')}> add to bag </button>
+        <button className='Add-to-bag' onClick={() => confirm('added to bag!')}> add to bag </button>
     </div>
     )
 }
