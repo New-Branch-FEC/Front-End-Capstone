@@ -70,22 +70,22 @@ const RatingsSidebar = (props) => {
             <div className="RR-star-percent">{oneStarPercentFull}%</div>
 
           </div><br></br>
-          <section class="bar-graph bar-graph-horizontal bar-graph-one">
-            <div class="bar-one">
-              <span class="year">🌟🌟🌟🌟🌟</span>
-              <div class="bar" data-percentage={fiveStarPercentFull}></div>
+          <section className="bar-graph bar-graph-horizontal bar-graph-one">
+            <div className="bar-one">
+              <span className="year">5 Stars</span>
+              <div className="bar" data-percentage={fiveStarPercentFull}></div>
             </div>
-            <div class="bar-two">
-              <span class="year">🌟🌟🌟🌟</span>
-              <div class="bar" data-percentage={fourStarPercentFull}></div>
+            <div className="bar-two">
+              <span className="year">4 Stars</span>
+              <div className="bar" data-percentage={fourStarPercentFull}></div>
             </div>
-            <div class="bar-three">
-              <span class="year">🌟🌟🌟</span>
-              <div class="bar" data-percentage={threeStarPercentFull}></div>
+            <div className="bar-three">
+              <span className="year">3 Stars</span>
+              <div className="bar" data-percentage={threeStarPercentFull}></div>
             </div>
-            <div class="bar-four">
-             <span class="year">🌟🌟</span>
-             <div class="bar" data-percentage={twoStarPercentFull}></div>
+            <div className="bar-four">
+             <span className="year">2 Stars</span>
+             <div className="bar" data-percentage={twoStarPercentFull}></div>
             </div>
           </section>
           <div className="RR-characteristics">
