@@ -4,7 +4,7 @@ const SelectStyle = (props) => {
 
   // create an object that has all of the styles for the particular product
   const stylesArray = [];
-  // console.log('STYLE INFO', props.currentStyle)
+
 
   for (let i = 0; i < props.currentStyle.length; i++) {
     let current = props.currentStyle[i];
@@ -14,8 +14,11 @@ const SelectStyle = (props) => {
   // iterate over currentStyles to get each photo for styles
     // props.currentStyle[index].photos[0].thumbnail_url
 
+
+  // add cumulative stars from terri's component (<Stars REVIEWS={props.reviews} />)
   return (
     <div>
+      <div className='OV-Style-Name'>Style: '{props.styleName}'</div>
       {stylesArray.map((style, index) => (
         <img className='OV-Styles' key={index} src={style.photos[0].thumbnail_url} onClick={() => props.handleStyle(style)} ></img>
       ))

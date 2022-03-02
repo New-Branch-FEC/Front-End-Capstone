@@ -312,49 +312,44 @@ body {
   color: rgb(168, 206, 255)
 }
 
-.OV-dropdowns {
-  padding: 3px;
-  width: 115px;
-  height: 19px;
-}
 
 .OV-Rating {
   padding: 3px;
   position: relative;
-  left: 500px;
-  top: 140px;
-  font-weight: bolder;
+  left: 62%;
+  top: 85px;
+  margin-bottom: 5px;
 }
 
 .OV-Category {
   padding: 3px;
   position: relative;
-  left: 500px;
-  top: 140px;
-  font-weight: bolder;
+  left: 62%;
+  top: 85px;
+  margin-bottom: 5px;
 }
 
 .OV-Name {
   padding: 3px;
   position: relative;
-  left: 500px;
-  top: 140px;
-  font-weight: bolder;
+  left: 62%;
+  top: 85px;
+  margin-bottom: 5px;
 }
 
 .OV-Default-Price {
   padding: 3px;
   position: relative;
-  left: 500px;
-  top: 140px;
-  font-weight: bolder;
+  left: 62%;
+  top: 85px;
+  margin-bottom: 5px;
 }
 
 .OV-Description {
   padding: 3px;
   position: relative;
-  top: 650px;
-  font-weight: bolder;
+  top: 575px;
+  left: 15%;
 }
 
 .OV-Main-Photo {
@@ -362,9 +357,9 @@ body {
   object-fit: scale-down;
   width: 400px;
   height: 600px;
-  position: relative;
-  left: 80px;
-  bottom: 20px
+  position: absolute;
+  left: 30%;
+  bottom: 4%;
 }
 
 .OV-Thumbnails {
@@ -374,9 +369,16 @@ body {
   height: 90px;
   position: relative;
   display: list-item;
-  bottom: 615px;
+  left: 20%;
+  bottom: 62px;
 }
 
+.OV-Style-Name {
+  padding: 3px;
+  position: relative;
+  left: 62%;
+  bottom: 345px;
+}
 
 .OV-Styles {
   /* four thumbs per row */
@@ -386,14 +388,33 @@ body {
   border-radius: 50%;
   object-fit: cover;
   position: relative;
-  left: 500px;
-  bottom: 850px;
+  left: 62%;
+  bottom: 325px;
 }
 
 .Add-to-bag {
-  color: forestgreen
+  padding: 10px;
+  position: absolute;
+  width: 100px;
+  left: 10%;
+  top: 30px;
+  margin: 5px;
+}
+
+.OV-dropdowns {
+  padding: 10px;
+  width: 115px;
+  height: 19px;
+  position: absolute;
+  left: 62%;
+  bottom: 140px;
 }
 
 .Share-to {
-  color: red
+  padding: 10px;
+  position: relative;
+  bottom: 500px;
+  left: 62%;
+  border-radius: 50%;
+  margin: 5px
 }
