@@ -1,11 +1,9 @@
 import React, { useState, useEffect }from 'react';
 
 const SelectThumb = (props) => {
-  //populate small photos into an object so we can access them correctly
-  const stylesObject = {};
   const photosObject = {};
+
   props.currentStyle.forEach(style => {
-    stylesObject[style.name] = style;
     photosObject[style.name] = style.photos;
   })
 
@@ -26,7 +24,6 @@ const SelectThumb = (props) => {
             )
           )}
         </div>
-        <Add-to-bag stylesObject={stylesObject} />
       </div>
   )
 }

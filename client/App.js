@@ -307,7 +307,8 @@ const App = () => {
                   }
               }
             }
-      ]})
+        ]
+    })
 
     useEffect(() => {
         axios.get(`/products/${currentProductID}/styles/`)
