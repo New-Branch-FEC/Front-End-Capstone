@@ -12,7 +12,7 @@ const Overview = (props) => {
 
   const [mainPhoto, setMainPhoto] = useState(props.currentStyle.results[0].photos[0].url);
   const [thumbnails, setThumbnails] = useState(props.currentStyle.results[0].photos)
-  const [styleName, setStyleName] = useState(props.currentStyle.results.name);
+  const [styleName, setStyleName] = useState(props.currentStyle.results[0].name);
 
   const handleThumb = (item) => {
     setMainPhoto(item.url);
@@ -24,10 +24,6 @@ const Overview = (props) => {
     setStyleName(style.name);
   }
 
-
-  // useEffect(() => {
-
-  // })
 
   return (
   <div>

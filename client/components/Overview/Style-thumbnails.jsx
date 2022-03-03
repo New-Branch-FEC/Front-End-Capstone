@@ -14,4 +14,5 @@ const SelectThumb = (props) => {
       </div>
   )
 }
+
 export default SelectThumb;

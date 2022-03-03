@@ -318,7 +318,7 @@ const App = () => {
         .catch((err) => {
             console.log('you have no style', err)
         })
-    }, [])
+    }, [currentProductID])
 
   const [outfit, setOutfit] = useState([37314, 37315, 37320]);
 
