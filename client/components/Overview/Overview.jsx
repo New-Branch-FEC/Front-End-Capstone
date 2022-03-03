@@ -10,35 +10,33 @@ import AddToBag from './Add-to-bag.jsx';
 
 const Overview = (props) => {
 
-  const stylesObject = {};
-  props.currentStyle.results.forEach(style => {
-    stylesObject[style.name] = style.photos;
-  })
-
-  // console.log('PROPS', props.currentStyle);
-  // console.log('STYLES OBJECT', stylesObject);
-
-  const [mainPhoto, setMainPhoto] = useState("https://images.unsplash.com/photo-1501088430049-71c79fa3283e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80");
-  const [styleName, setStyleName] = useState(props.currentStyle.results[0].name);
+  const [mainPhoto, setMainPhoto] = useState(props.currentStyle.results[0].photos[0].url);
+  const [thumbnails, setThumbnails] = useState(props.currentStyle.results[0].photos)
+  const [styleName, setStyleName] = useState(props.currentStyle.results.name);
 
   const handleThumb = (item) => {
     setMainPhoto(item.url);
   }
 
   const handleStyle = (style) => {
-    console.log('style', style);
+    setThumbnails(style.photos);
     setMainPhoto(style.photos[0].url);
     setStyleName(style.name);
   }
+
+
+  // useEffect(() => {
+
+  // })
 
   return (
   <div>
     <div>
       < ProductInformation currentProduct={props.currentProduct} currentStyle={props.currentStyle} reviews={props.reviews}/>
 
-      < SelectThumb currentProduct={props.currentProduct} currentStyle={props.currentStyle.results} mainPhoto={mainPhoto} setMainPhoto={setMainPhoto} handleThumb={handleThumb} />
+      < SelectThumb currentProduct={props.currentProduct} currentStyle={props.currentStyle.results} mainPhoto={mainPhoto} setMainPhoto={setMainPhoto} thumbnails={thumbnails} setThumbnails={setThumbnails} handleThumb={handleThumb} />
 
-      < SelectStyle currentProduct={props.currentProduct} currentStyle={props.currentStyle.results} setCurrentStyle={props.setCurrentStyle} styleName={styleName} setStyleName={setStyleName} handleStyle={handleStyle}/>
+      < SelectStyle currentProduct={props.currentProduct} currentStyle={props.currentStyle} setCurrentStyle={props.setCurrentStyle} styleName={styleName} setStyleName={setStyleName} handleStyle={handleStyle}/>
 
       < ShareOnline />
 

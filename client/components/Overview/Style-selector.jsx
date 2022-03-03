@@ -4,11 +4,11 @@ const SelectStyle = (props) => {
 
   const stylesArray = [];
 
-  for (let i = 0; i < props.currentStyle.length; i++) {
-    let current = props.currentStyle[i];
+  for (let i = 0; i < props.currentStyle.results.length; i++) {
+    let current = props.currentStyle.results[i];
     stylesArray.push(current);
   }
-  console.log('stylesArray', stylesArray)
+  // console.log('stylesArray', stylesArray)
 
   return (
     <div className='Style-Parent'>
