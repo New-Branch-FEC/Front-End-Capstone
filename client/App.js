@@ -313,11 +313,12 @@ const App = () => {
         axios.get(`/products/${currentProductID}/styles/`)
         .then((res) => {
             setCurrentStyle(res.data);
+            console.log("this is the current style", res.data)
         })
         .catch((err) => {
             console.log('you have no style', err)
         })
-    }, [])
+    }, [currentProductID])
 
   const [outfit, setOutfit] = useState([37314, 37315, 37320]);
 

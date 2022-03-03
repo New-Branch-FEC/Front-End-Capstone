@@ -10,18 +10,6 @@ const Card = (props) => {
 
   if(props.relatedProductID !== undefined) {
 
-    // // set modal toggle function
-    // const [showModalStatus, setShowModalStatus] = useState(false);
-
-    // const showModal = () => {
-    //   setShowModalStatus(prev => !prev); // this should toggle it back and forth
-    //   return (
-    //     <>
-    //   <Comparison showModalStatus={showModalStatus} setShowModalStatus={setShowModalStatus} showModal={showModal}/>
-    //     </>
-    //   )
-    // }
-
     // to render related products array
     const [cardProduct, setCardProduct] = useState(null);
 
@@ -125,17 +113,17 @@ const Card = (props) => {
   // TODO: add an onClick event to the className="comparison-button"
   return (
     <div className="card">
-      <img className="comparison-button" src="http://localhost:3000/assets/deleteButton.png" onClick={() => removeOutfit(cardOutfitProduct.id)}/>
-        <div className="clickable-img" onClick={() => {props.setCurrentProductID(cardOutfitProduct.id) }}>
-          <img src={cardOutfitProduct.image}/>
-        </div>
-      <div className="container">
-        <div>CATEGORY</div>
-        <div>{cardOutfitProduct.name}</div>
-        <div>{`$${cardOutfitProduct.default_price}`}</div>
-        <Stars reviews={cardOutfitProduct.reviews}/>
+    <img className="comparison-button" src="http://localhost:3000/assets/deleteButton.png" onClick={() => removeOutfit(cardOutfitProduct.id)}/>
+      <div className="clickable-img" onClick={() => {props.setCurrentProductID(cardOutfitProduct.id) }}>
+<img src={cardOutfitProduct.image}/>
       </div>
+    <div className="container">
+      <div>CATEGORY</div>
+      <div>{cardOutfitProduct.name}</div>
+      <div>{`$${cardOutfitProduct.default_price}`}</div>
+      <Stars reviews={cardOutfitProduct.reviews}/>
     </div>
+  </div>
   )
 
 }
