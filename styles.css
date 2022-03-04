@@ -307,6 +307,7 @@ h1 {
 body {
   /* padding: 10px; */
   background-color: #F8F4F6;
+  margin: 0;
 }
 
 /* changed this in the App.js in order to refer to this item- is this right?*/
