@@ -47,51 +47,18 @@ const RatingsSidebar = (props) => {
             <Stars reviews={props.reviews} />
           </div>
           <p className="RR-recommends">{recommendValue}% of reviewers recommend this product!</p>
-          <figure className="RR-recommends-chart">
-            <svg role="img" xmlns="http://www.w3.org/2000/svg">
-              <title>Recommended:</title>
-              <desc>This is how many reviewers would recommend this product</desc>
-              <circle className="circle-background" />
-              <circle className="circle-foreground" />
-            </svg>
-            <figcaption>{recommendValue}% of reviewers recommend this product!</figcaption>
-          </figure>
           <div className="RR-stars-graph">
             {/* TODO: turn values into visual representation based on highest number = 100% full bar */}
             <li>5 stars count: {fiveStarQuantity}</li>
-            <div className="RR-star-percent">{fiveStarPercentFull}%</div>
             <li>4 stars count: {fourStarQuantity}</li>
-            <div className="RR-star-percent">{fourStarPercentFull}%</div>
             <li>3 stars count: {threeStarQuantity}</li>
-            <div className="RR-star-percent">{threeStarPercentFull}%</div>
             <li>2 stars count: {twoStarQuantity}</li>
-            <div className="RR-star-percent">{twoStarPercentFull}%</div>
             <li>1 stars count: {oneStarQuantity}</li>
-            <div className="RR-star-percent">{oneStarPercentFull}%</div>
 
           </div><br></br>
-          <section className="bar-graph bar-graph-horizontal bar-graph-one">
-            <div className="bar-one">
-              <span className="year">5 Stars</span>
-              <div className="bar" data-percentage={fiveStarPercentFull}></div>
-            </div>
-            <div className="bar-two">
-              <span className="year">4 Stars</span>
-              <div className="bar" data-percentage={fourStarPercentFull}></div>
-            </div>
-            <div className="bar-three">
-              <span className="year">3 Stars</span>
-              <div className="bar" data-percentage={threeStarPercentFull}></div>
-            </div>
-            <div className="bar-four">
-             <span className="year">2 Stars</span>
-             <div className="bar" data-percentage={twoStarPercentFull}></div>
-            </div>
-          </section>
           <div className="RR-characteristics">
             <br></br>
             <br></br>
-            {/* TODO: conditional rendering for whatever characteristics are present for currentProduct} */}
             { props.reviewsMeta.characteristics.Fit?.value && <p className="RR-characteristics-entry">Fit: {fitValue}, percent full: {Math.round(((fitValue / 5) * 100) * 100) / 100}%</p> }
             { props.reviewsMeta.characteristics.Fit?.value && <img src="https://cdn.iconscout.com/icon/premium/png-256-thumb/graph-2300680-1917645.png" alt="img placeholder"></img> }
             { props.reviewsMeta.characteristics.Length?.value && <p className="RR-characteristics-entry">Length: {lengthValue}, percent full: {Math.round(((lengthValue / 5) * 100) * 100) / 100}%</p> }
