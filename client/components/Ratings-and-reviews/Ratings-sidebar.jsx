@@ -49,12 +49,18 @@ const RatingsSidebar = (props) => {
           <p className="RR-recommends">{recommendValue}% of reviewers recommend this product!</p>
           <div className="RR-stars-graph">
             {/* TODO: turn values into visual representation based on highest number = 100% full bar */}
-            <li>5 stars count: {fiveStarQuantity}</li>
-            <li>4 stars count: {fourStarQuantity}</li>
-            <li>3 stars count: {threeStarQuantity}</li>
-            <li>2 stars count: {twoStarQuantity}</li>
-            <li>1 stars count: {oneStarQuantity}</li>
-
+            <ul>
+              <li>5 stars count: {fiveStarQuantity}</li>
+              <div className="RR-star-percent">{fiveStarPercentFull}%</div>
+              <li>4 stars count: {fourStarQuantity}</li>
+              <div className="RR-star-percent">{fourStarPercentFull}%</div>
+              <li>3 stars count: {threeStarQuantity}</li>
+              <div className="RR-star-percent">{threeStarPercentFull}%</div>
+              <li>2 stars count: {twoStarQuantity}</li>
+              <div className="RR-star-percent">{twoStarPercentFull}%</div>
+              <li>1 stars count: {oneStarQuantity}</li>
+              <div className="RR-star-percent">{oneStarPercentFull}%</div>
+            </ul>
           </div><br></br>
           <div className="RR-characteristics">
             <br></br>
