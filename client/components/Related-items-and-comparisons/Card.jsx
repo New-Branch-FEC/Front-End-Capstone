@@ -18,7 +18,8 @@ const Card = (props) => {
       let cardObject = {};
       axios.get(`/products/${props.relatedProductID}`)
       .then((res) => {
-        cardObject.id = res.data.id
+        cardObject.id = res.data.id;
+        cardObject.category = res.data.category;
         cardObject.name = res.data.name;
         cardObject.altTag= res.data.name;
         cardObject.default_price = res.data.default_price;
@@ -57,7 +58,7 @@ const Card = (props) => {
     <img src={cardProduct.image}/>
           </div>
         <div className="container">
-          <div>CATEGORY</div>
+          <div>{cardProduct.category}</div>
           <div>{cardProduct.name}</div>
           <div>{`$${cardProduct.default_price}`}</div>
           <Stars reviews={cardProduct.reviews}/>
