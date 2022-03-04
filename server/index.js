@@ -4,6 +4,7 @@ const path = require("path");
 const port = process.env.PORT || 3000;
 const {token} = require("../config.js");
 const axios = require("axios");
+const compression = require("compression");
 
 app.listen(port, () => {
    console.log(`The app server is running on port: ${port}`);
@@ -12,6 +13,7 @@ app.listen(port, () => {
 const DIST_DIR = path.join(__dirname, "dist");
 const HTML_FILE = path.join(DIST_DIR, "index.html");
 
+app.use(compression({level: 9})) ;
 app.use(express.json());
 app.use(express.static("public"));
 app.use(express.static("dist"));
