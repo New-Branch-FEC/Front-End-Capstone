@@ -6,7 +6,7 @@ const SelectStyle = (props) => {
     <div className='Style-Parent'>
       <div className='OV-Style-Name'>Style: '{props.styleName}'</div>
       {props.currentStyle.results.map((style, index) => (
-        <img className='OV-Styles' key={index} src={style.photos[0].thumbnail_url} onClick={() => props.handleStyle(style)} ></img>
+        <img className='OV-Styles' alt="product style" key={index} src={style.photos[0].thumbnail_url} onClick={() => props.handleStyle(style)} ></img>
       ))
     }
     </div>

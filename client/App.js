@@ -314,6 +314,7 @@ const App = () => {
         axios.get(`/products/${currentProductID}/styles/`)
         .then((res) => {
             setCurrentStyle(res.data);
+            console.log("this is the current style", res.data)
         })
         .catch((err) => {
             console.log('you have no style', err)
@@ -364,11 +365,11 @@ useEffect(() => {
   return (
      <>
      <div className="banner-area">
-        <img className="logo" src="http://localhost:3000/assets/plainLogo.png"></img>
+        <img className="logo" alt="plain logo" src="http://localhost:3000/assets/plainLogo.png"></img>
         <h1 className="title">NEW BRANCH</h1>
-        <img className="search-bar" src="http://localhost:3000/assets/searchBar.png"></img>
-        <img className="magnifying-glass" src="http://localhost:3000/assets/magnifyGlass.png"></img>
-        <img className="banner" src="http://localhost:3000/assets/Banner3.png"></img>
+        <img className="search-bar" alt="search bar" src="http://localhost:3000/assets/searchBar.png"></img>
+        <img className="magnifying-glass" alt="search bar icon" src="http://localhost:3000/assets/magnifyGlass.png"></img>
+        <img className="banner" alt="banner" src="http://localhost:3000/assets/Banner3.png"></img>
         </div>
      <div className="page-body">
         <Overview className="widget" currentProduct={currentProduct} setCurrentProductID={setCurrentProductID} currentStyle={currentStyle} setCurrentStyle={setCurrentStyle} reviews={reviews} outfit={outfit}/>
@@ -378,7 +379,7 @@ useEffect(() => {
         </div>
         {/* <QuestionsAndAnswers /> */}
         <RatingsAndReviews className="widget" currentProduct={currentProduct} reviews={reviews} reviewsMeta={reviewsMeta}/>
-        <img className="footer" src="http://localhost:3000/assets/cleanFooter.png"></img>
+        <img className="footer" alt="footer" src="http://localhost:3000/assets/cleanFooter.png"></img>
      </div>
      </>
    )

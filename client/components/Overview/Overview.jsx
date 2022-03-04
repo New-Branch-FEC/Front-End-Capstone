@@ -13,6 +13,7 @@ const Overview = (props) => {
   const [mainPhoto, setMainPhoto] = useState(props.currentStyle.results[0].photos[0].url);
   const [thumbnails, setThumbnails] = useState(props.currentStyle.results[0].photos)
   const [styleName, setStyleName] = useState(props.currentStyle.results[0].name);
+  const [sku, setSku] = useState(props.currentStyle.results[0].skus);
 
   const handleThumb = (item) => {
     setMainPhoto(item.url);
@@ -22,8 +23,8 @@ const Overview = (props) => {
     setThumbnails(style.photos);
     setMainPhoto(style.photos[0].url);
     setStyleName(style.name);
+    setSku(style.skus);
   }
-
 
   return (
   <div>
@@ -36,7 +37,7 @@ const Overview = (props) => {
 
       < ShareOnline />
 
-      < AddToBag currentProduct={props.currentProduct} currentStyle={props.currentStyle} />
+      < AddToBag currentProduct={props.currentProduct} currentStyle={props.currentStyle} sku={sku} setSku={setSku}/>
     </div>
   </div>
   )

@@ -10,18 +10,6 @@ const Card = (props) => {
 
   if(props.relatedProductID !== undefined) {
 
-    // // set modal toggle function
-    // const [showModalStatus, setShowModalStatus] = useState(false);
-
-    // const showModal = () => {
-    //   setShowModalStatus(prev => !prev); // this should toggle it back and forth
-    //   return (
-    //     <>
-    //   <Comparison showModalStatus={showModalStatus} setShowModalStatus={setShowModalStatus} showModal={showModal}/>
-    //     </>
-    //   )
-    // }
-
     // to render related products array
     const [cardProduct, setCardProduct] = useState(null);
 
@@ -32,6 +20,7 @@ const Card = (props) => {
       .then((res) => {
         cardObject.id = res.data.id
         cardObject.name = res.data.name;
+        cardObject.altTag= res.data.name;
         cardObject.default_price = res.data.default_price;
         cardObject.fullProductObj =res.data
         return axios.get(`/products/${props.relatedProductID}/styles`)
@@ -61,10 +50,10 @@ const Card = (props) => {
 
       <div className="card">
         <div>
-          <img className="comparison-button" src="http://localhost:3000/assets/clickStar.png" onClick={() => {props.showModal(true), props.setCardProductFeatures(cardProduct.fullProductObj)}}/>
+          <img className="comparison-button" alt="comparison button" src="http://localhost:3000/assets/clickStar.png" onClick={() => {props.showModal(true), props.setCardProductFeatures(cardProduct.fullProductObj)}}/>
         </div>
 
-          <div className="clickable-img" onClick={() => {props.setCurrentProductID(cardProduct.id)}}>
+          <div alt={`${cardProduct.altTag}`} className="clickable-img" onClick={() => {props.setCurrentProductID(cardProduct.id)}}>
     <img src={cardProduct.image}/>
           </div>
         <div className="container">
@@ -98,6 +87,7 @@ const Card = (props) => {
       // console.log(`THIS IS THE ID AND PRICE FOR EACH ${res.data.name}`, res.data.id, res.data.default_price)<- works
       cardOutfitObject.id = res.data.id
       cardOutfitObject.name = res.data.name;
+      cardOutfitObject.altTag =res.data.name;
       cardOutfitObject.default_price = res.data.default_price;
       return axios.get(`/products/${props.outfitID}/styles`)
     })
@@ -125,17 +115,17 @@ const Card = (props) => {
   // TODO: add an onClick event to the className="comparison-button"
   return (
     <div className="card">
-      <img className="comparison-button" src="http://localhost:3000/assets/deleteButton.png" onClick={() => removeOutfit(cardOutfitProduct.id)}/>
-        <div className="clickable-img" onClick={() => {props.setCurrentProductID(cardOutfitProduct.id) }}>
-          <img src={cardOutfitProduct.image}/>
-        </div>
-      <div className="container">
-        <div>CATEGORY</div>
-        <div>{cardOutfitProduct.name}</div>
-        <div>{`$${cardOutfitProduct.default_price}`}</div>
-        <Stars reviews={cardOutfitProduct.reviews}/>
+    <img className="comparison-button" alt="delete button" src="http://localhost:3000/assets/deleteButton.png" onClick={() => removeOutfit(cardOutfitProduct.id)}/>
+      <div className="clickable-img" alt={`${cardOutfitProduct.altTag}`} onClick={() => {props.setCurrentProductID(cardOutfitProduct.id) }}>
+<img src={cardOutfitProduct.image}/>
       </div>
+    <div className="container">
+      <div>CATEGORY</div>
+      <div>{cardOutfitProduct.name}</div>
+      <div>{`$${cardOutfitProduct.default_price}`}</div>
+      <Stars reviews={cardOutfitProduct.reviews}/>
     </div>
+  </div>
   )
 
 }
