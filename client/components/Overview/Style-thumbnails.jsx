@@ -19,10 +19,10 @@ const SelectThumb = (props) => {
 
     return (
       <div className='Photo-Parent'>
-        <img className='OV-Main-Photo' src={props.mainPhoto}/>
+        <img className='OV-Main-Photo' alt="main photo" src={props.mainPhoto}/>
         <div className='Thumb-Parent'>
           {photosArray[0].map((url, index) => (
-            <img className='OV-Thumbnails' key={index} src={url.thumbnail_url} onClick={() => {props.handleThumb(url)}}/>
+            <img className='OV-Thumbnails' alt="product thumbnail" key={index} src={url.thumbnail_url} onClick={() => {props.handleThumb(url)}}/>
             )
           )}
         </div>

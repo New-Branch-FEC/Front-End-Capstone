@@ -24,6 +24,7 @@
   "homepage": "https://github.com/New-Branch-FEC/Front-End-Capstone#readme",
   "dependencies": {
     "axios": "^0.26.0",
+    "compression": "^1.7.4",
     "express": "^4.17.2",
     "file-loader": "^6.2.0",
     "react": "^17.0.2",

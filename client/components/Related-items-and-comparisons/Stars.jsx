@@ -48,125 +48,125 @@ const Stars = (props) => {
   let fifthStar;
 
   if (roundedDownRating === .25) {
-    firstStar = <img src="http://localhost:3000/assets/quarterStar.png" />
-    secondStar = <img src="http://localhost:3000/assets/emptyStar.png" />
-    thirdStar = <img src="http://localhost:3000/assets/emptyStar.png" />
-    fourthStar = <img src="http://localhost:3000/assets/emptyStar.png" />
-    fifthStar = <img src="http://localhost:3000/assets/emptyStar.png" />
+    firstStar = <img alt="star icon" src="http://localhost:3000/assets/quarterStar.png" />
+    secondStar = <img alt="star icon" src="http://localhost:3000/assets/emptyStar.png" />
+    thirdStar = <img alt="star icon" src="http://localhost:3000/assets/emptyStar.png" />
+    fourthStar = <img alt="star icon" src="http://localhost:3000/assets/emptyStar.png" />
+    fifthStar = <img alt="star icon" src="http://localhost:3000/assets/emptyStar.png" />
   } else if (roundedDownRating === .5) {
-    firstStar = <img src="http://localhost:3000/assets/halfStar.png" />
-    secondStar = <img src="http://localhost:3000/assets/emptyStar.png" />
-    thirdStar = <img src="http://localhost:3000/assets/emptyStar.png" />
-    fourthStar = <img src="http://localhost:3000/assets/emptyStar.png" />
-    fifthStar = <img src="http://localhost:3000/assets/emptyStar.png" />
+    firstStar = <img alt="star icon" src="http://localhost:3000/assets/halfStar.png" />
+    secondStar = <img alt="star icon" src="http://localhost:3000/assets/emptyStar.png" />
+    thirdStar = <img alt="star icon" src="http://localhost:3000/assets/emptyStar.png" />
+    fourthStar = <img alt="star icon" src="http://localhost:3000/assets/emptyStar.png" />
+    fifthStar = <img alt="star icon" src="http://localhost:3000/assets/emptyStar.png" />
   } else if (roundedDownRating === .75) {
-    firstStar = <img src="http://localhost:3000/assets/threeQuarterStar.png" />
-    secondStar = <img src="http://localhost:3000/assets/emptyStar.png" />
-    thirdStar = <img src="http://localhost:3000/assets/emptyStar.png" />
-    fourthStar = <img src="http://localhost:3000/assets/emptyStar.png" />
-    fifthStar = <img src="http://localhost:3000/assets/emptyStar.png" />
+    firstStar = <img alt="star icon" src="http://localhost:3000/assets/threeQuarterStar.png" />
+    secondStar = <img alt="star icon" src="http://localhost:3000/assets/emptyStar.png" />
+    thirdStar = <img alt="star icon" src="http://localhost:3000/assets/emptyStar.png" />
+    fourthStar = <img alt="star icon" src="http://localhost:3000/assets/emptyStar.png" />
+    fifthStar = <img alt="star icon" src="http://localhost:3000/assets/emptyStar.png" />
   } else if (roundedDownRating === 1) {
-    firstStar = <img src="http://localhost:3000/assets/fullStar.png" />
-    secondStar = <img src="http://localhost:3000/assets/emptyStar.png" />
-    thirdStar = <img src="http://localhost:3000/assets/emptyStar.png" />
-    fourthStar = <img src="http://localhost:3000/assets/emptyStar.png" />
-    fifthStar = <img src="http://localhost:3000/assets/emptyStar.png" />
+    firstStar = <img alt="star icon" src="http://localhost:3000/assets/fullStar.png" />
+    secondStar = <img alt="star icon" src="http://localhost:3000/assets/emptyStar.png" />
+    thirdStar = <img alt="star icon" src="http://localhost:3000/assets/emptyStar.png" />
+    fourthStar = <img alt="star icon" src="http://localhost:3000/assets/emptyStar.png" />
+    fifthStar = <img alt="star icon" src="http://localhost:3000/assets/emptyStar.png" />
   } else if (roundedDownRating === 1.25) {
-    firstStar = <img src="http://localhost:3000/assets/fullStar.png" />
-    secondStar = <img src="http://localhost:3000/assets/quarterStar.png" />
-    thirdStar = <img src="http://localhost:3000/assets/emptyStar.png" />
-    fourthStar = <img src="http://localhost:3000/assets/emptyStar.png" />
-    fifthStar = <img src="http://localhost:3000/assets/emptyStar.png" />
+    firstStar = <img alt="star icon" src="http://localhost:3000/assets/fullStar.png" />
+    secondStar = <img alt="star icon" src="http://localhost:3000/assets/quarterStar.png" />
+    thirdStar = <img alt="star icon" src="http://localhost:3000/assets/emptyStar.png" />
+    fourthStar = <img alt="star icon" src="http://localhost:3000/assets/emptyStar.png" />
+    fifthStar = <img alt="star icon" src="http://localhost:3000/assets/emptyStar.png" />
   } else if (roundedDownRating === 1.5) {
-    firstStar = <img src="http://localhost:3000/assets/fullStar.png" />
-    secondStar = <img src="http://localhost:3000/assets/halfStar.png" />
-    thirdStar = <img src="http://localhost:3000/assets/emptyStar.png" />
-    fourthStar = <img src="http://localhost:3000/assets/emptyStar.png" />
-    fifthStar = <img src="http://localhost:3000/assets/emptyStar.png" />
+    firstStar = <img alt="star icon" src="http://localhost:3000/assets/fullStar.png" />
+    secondStar = <img alt="star icon" src="http://localhost:3000/assets/halfStar.png" />
+    thirdStar = <img alt="star icon" src="http://localhost:3000/assets/emptyStar.png" />
+    fourthStar = <img alt="star icon" src="http://localhost:3000/assets/emptyStar.png" />
+    fifthStar = <img alt="star icon" src="http://localhost:3000/assets/emptyStar.png" />
   } else if (roundedDownRating === 1.75) {
-    firstStar = <img src="http://localhost:3000/assets/fullStar.png" />
-    secondStar = <img src="http://localhost:3000/assets/threeQuarterStar.png" />
-    thirdStar = <img src="http://localhost:3000/assets/emptyStar.png" />
-    fourthStar = <img src="http://localhost:3000/assets/emptyStar.png" />
-    fifthStar = <img src="http://localhost:3000/assets/emptyStar.png" />
+    firstStar = <img alt="star icon" src="http://localhost:3000/assets/fullStar.png" />
+    secondStar = <img alt="star icon" src="http://localhost:3000/assets/threeQuarterStar.png" />
+    thirdStar = <img alt="star icon" src="http://localhost:3000/assets/emptyStar.png" />
+    fourthStar = <img alt="star icon" src="http://localhost:3000/assets/emptyStar.png" />
+    fifthStar = <img alt="star icon" src="http://localhost:3000/assets/emptyStar.png" />
   } else if (roundedDownRating === 2.0) {
-    firstStar = <img src="http://localhost:3000/assets/fullStar.png" />
-    secondStar = <img src="http://localhost:3000/assets/fullStar.png" />
-    thirdStar = <img src="http://localhost:3000/assets/emptyStar.png" />
-    fourthStar = <img src="http://localhost:3000/assets/emptyStar.png" />
-    fifthStar = <img src="http://localhost:3000/assets/emptyStar.png" />
+    firstStar = <img alt="star icon" src="http://localhost:3000/assets/fullStar.png" />
+    secondStar = <img alt="star icon" src="http://localhost:3000/assets/fullStar.png" />
+    thirdStar = <img alt="star icon" src="http://localhost:3000/assets/emptyStar.png" />
+    fourthStar = <img alt="star icon" src="http://localhost:3000/assets/emptyStar.png" />
+    fifthStar = <img alt="star icon" src="http://localhost:3000/assets/emptyStar.png" />
   } else if (roundedDownRating === 2.25) {
-    firstStar = <img src="http://localhost:3000/assets/fullStar.png" />
-    secondStar = <img src="http://localhost:3000/assets/fullStar.png" />
-    thirdStar = <img src="http://localhost:3000/assets/quarterStar.png" />
-    fourthStar = <img src="http://localhost:3000/assets/emptyStar.png" />
-    fifthStar = <img src="http://localhost:3000/assets/emptyStar.png" />
+    firstStar = <img alt="star icon" src="http://localhost:3000/assets/fullStar.png" />
+    secondStar = <img alt="star icon" src="http://localhost:3000/assets/fullStar.png" />
+    thirdStar = <img alt="star icon" src="http://localhost:3000/assets/quarterStar.png" />
+    fourthStar = <img alt="star icon" src="http://localhost:3000/assets/emptyStar.png" />
+    fifthStar = <img alt="star icon" src="http://localhost:3000/assets/emptyStar.png" />
   } else if (roundedDownRating === 2.5) {
-    firstStar = <img src="http://localhost:3000/assets/fullStar.png" />
-    secondStar = <img src="http://localhost:3000/assets/fullStar.png" />
-    thirdStar = <img src="http://localhost:3000/assets/halfStar.png" />
-    fourthStar = <img src="http://localhost:3000/assets/emptyStar.png" />
-    fifthStar = <img src="http://localhost:3000/assets/emptyStar.png" />
+    firstStar = <img alt="star icon" src="http://localhost:3000/assets/fullStar.png" />
+    secondStar = <img alt="star icon" src="http://localhost:3000/assets/fullStar.png" />
+    thirdStar = <img alt="star icon" src="http://localhost:3000/assets/halfStar.png" />
+    fourthStar = <img alt="star icon" src="http://localhost:3000/assets/emptyStar.png" />
+    fifthStar = <img alt="star icon" src="http://localhost:3000/assets/emptyStar.png" />
   } else if (roundedDownRating === 2.75) {
-    firstStar = <img src="http://localhost:3000/assets/fullStar.png" />
-    secondStar = <img src="http://localhost:3000/assets/fullStar.png" />
-    thirdStar = <img src="http://localhost:3000/assets/threeQuarterStar.png" />
-    fourthStar = <img src="http://localhost:3000/assets/emptyStar.png" />
-    fifthStar = <img src="http://localhost:3000/assets/emptyStar.png" />
+    firstStar = <img alt="star icon" src="http://localhost:3000/assets/fullStar.png" />
+    secondStar = <img alt="star icon" src="http://localhost:3000/assets/fullStar.png" />
+    thirdStar = <img alt="star icon" src="http://localhost:3000/assets/threeQuarterStar.png" />
+    fourthStar = <img alt="star icon" src="http://localhost:3000/assets/emptyStar.png" />
+    fifthStar = <img alt="star icon" src="http://localhost:3000/assets/emptyStar.png" />
   } else if (roundedDownRating === 3) {
-    firstStar = <img src="http://localhost:3000/assets/fullStar.png" />
-    secondStar = <img src="http://localhost:3000/assets/fullStar.png" />
-    thirdStar = <img src="http://localhost:3000/assets/fullStar.png" />
-    fourthStar = <img src="http://localhost:3000/assets/emptyStar.png" />
-    fifthStar = <img src="http://localhost:3000/assets/emptyStar.png" />
+    firstStar = <img alt="star icon" src="http://localhost:3000/assets/fullStar.png" />
+    secondStar = <img alt="star icon" src="http://localhost:3000/assets/fullStar.png" />
+    thirdStar = <img alt="star icon" src="http://localhost:3000/assets/fullStar.png" />
+    fourthStar = <img alt="star icon" src="http://localhost:3000/assets/emptyStar.png" />
+    fifthStar = <img alt="star icon" src="http://localhost:3000/assets/emptyStar.png" />
   } else if (roundedDownRating === 3.25) {
-    firstStar = <img src="http://localhost:3000/assets/fullStar.png" />
-    secondStar = <img src="http://localhost:3000/assets/fullStar.png" />
-    thirdStar = <img src="http://localhost:3000/assets/fullStar.png" />
-    fourthStar = <img src="http://localhost:3000/assets/quarterStar.png" />
-    fifthStar = <img src="http://localhost:3000/assets/emptyStar.png" />
+    firstStar = <img alt="star icon" src="http://localhost:3000/assets/fullStar.png" />
+    secondStar = <img alt="star icon" src="http://localhost:3000/assets/fullStar.png" />
+    thirdStar = <img alt="star icon" src="http://localhost:3000/assets/fullStar.png" />
+    fourthStar = <img alt="star icon" src="http://localhost:3000/assets/quarterStar.png" />
+    fifthStar = <img alt="star icon" src="http://localhost:3000/assets/emptyStar.png" />
   } else if (roundedDownRating === 3.5) {
-    firstStar = <img src="http://localhost:3000/assets/fullStar.png" />
-    secondStar = <img src="http://localhost:3000/assets/fullStar.png" />
-    thirdStar = <img src="http://localhost:3000/assets/fullStar.png" />
-    fourthStar = <img src="http://localhost:3000/assets/halfStar.png" />
-    fifthStar = <img src="http://localhost:3000/assets/emptyStar.png" />
+    firstStar = <img alt="star icon" src="http://localhost:3000/assets/fullStar.png" />
+    secondStar = <img alt="star icon" src="http://localhost:3000/assets/fullStar.png" />
+    thirdStar = <img alt="star icon" src="http://localhost:3000/assets/fullStar.png" />
+    fourthStar = <img alt="star icon" src="http://localhost:3000/assets/halfStar.png" />
+    fifthStar = <img alt="star icon" src="http://localhost:3000/assets/emptyStar.png" />
   } else if (roundedDownRating === 3.75) {
-    firstStar = <img src="http://localhost:3000/assets/fullStar.png" />
-    secondStar = <img src="http://localhost:3000/assets/fullStar.png" />
-    thirdStar = <img src="http://localhost:3000/assets/fullStar.png" />
-    fourthStar = <img src="http://localhost:3000/assets/threeQuarterStar.png" />
-    fifthStar = <img src="http://localhost:3000/assets/emptyStar.png" />
+    firstStar = <img alt="star icon" src="http://localhost:3000/assets/fullStar.png" />
+    secondStar = <img alt="star icon" src="http://localhost:3000/assets/fullStar.png" />
+    thirdStar = <img alt="star icon" src="http://localhost:3000/assets/fullStar.png" />
+    fourthStar = <img alt="star icon" src="http://localhost:3000/assets/threeQuarterStar.png" />
+    fifthStar = <img alt="star icon" src="http://localhost:3000/assets/emptyStar.png" />
   } else if (roundedDownRating === 4) {
-    firstStar = <img src="http://localhost:3000/assets/fullStar.png" />
-    secondStar = <img src="http://localhost:3000/assets/fullStar.png" />
-    thirdStar = <img src="http://localhost:3000/assets/fullStar.png" />
-    fourthStar = <img src="http://localhost:3000/assets/fullStar.png" />
-    fifthStar = <img src="http://localhost:3000/assets/emptyStar.png" />
+    firstStar = <img alt="star icon" src="http://localhost:3000/assets/fullStar.png" />
+    secondStar = <img alt="star icon" src="http://localhost:3000/assets/fullStar.png" />
+    thirdStar = <img alt="star icon" src="http://localhost:3000/assets/fullStar.png" />
+    fourthStar = <img alt="star icon" src="http://localhost:3000/assets/fullStar.png" />
+    fifthStar = <img alt="star icon" src="http://localhost:3000/assets/emptyStar.png" />
   } else if (roundedDownRating === 4.25) {
-    firstStar = <img src="http://localhost:3000/assets/fullStar.png" />
-    secondStar = <img src="http://localhost:3000/assets/fullStar.png" />
-    thirdStar = <img src="http://localhost:3000/assets/fullStar.png" />
-    fourthStar = <img src="http://localhost:3000/assets/fullStar.png" />
-    fifthStar = <img src="http://localhost:3000/assets/quarterStar.png" />
+    firstStar = <img alt="star icon" src="http://localhost:3000/assets/fullStar.png" />
+    secondStar = <img alt="star icon" src="http://localhost:3000/assets/fullStar.png" />
+    thirdStar = <img alt="star icon" src="http://localhost:3000/assets/fullStar.png" />
+    fourthStar = <img alt="star icon" src="http://localhost:3000/assets/fullStar.png" />
+    fifthStar = <img alt="star icon" src="http://localhost:3000/assets/quarterStar.png" />
   } else if (roundedDownRating === 4.5) {
-    firstStar = <img src="http://localhost:3000/assets/fullStar.png" />
-    secondStar = <img src="http://localhost:3000/assets/fullStar.png" />
-    thirdStar = <img src="http://localhost:3000/assets/fullStar.png" />
-    fourthStar = <img src="http://localhost:3000/assets/fullStar.png" />
-    fifthStar = <img src="http://localhost:3000/assets/halfStar.png" />
+    firstStar = <img alt="star icon" src="http://localhost:3000/assets/fullStar.png" />
+    secondStar = <img alt="star icon" src="http://localhost:3000/assets/fullStar.png" />
+    thirdStar = <img alt="star icon" src="http://localhost:3000/assets/fullStar.png" />
+    fourthStar = <img alt="star icon" src="http://localhost:3000/assets/fullStar.png" />
+    fifthStar = <img alt="star icon" src="http://localhost:3000/assets/halfStar.png" />
   } else if (roundedDownRating === 4.75) {
-    firstStar = <img src="http://localhost:3000/assets/fullStar.png" />
-    secondStar = <img src="http://localhost:3000/assets/fullStar.png" />
-    thirdStar = <img src="http://localhost:3000/assets/fullStar.png" />
-    fourthStar = <img src="http://localhost:3000/assets/fullStar.png" />
-    fifthStar = <img src="http://localhost:3000/assets/threeQuarterStar.png" />
+    firstStar = <img alt="star icon" src="http://localhost:3000/assets/fullStar.png" />
+    secondStar = <img alt="star icon" src="http://localhost:3000/assets/fullStar.png" />
+    thirdStar = <img alt="star icon" src="http://localhost:3000/assets/fullStar.png" />
+    fourthStar = <img alt="star icon" src="http://localhost:3000/assets/fullStar.png" />
+    fifthStar = <img alt="star icon" src="http://localhost:3000/assets/threeQuarterStar.png" />
   } else if (roundedDownRating === 5) {
-    firstStar = <img src="http://localhost:3000/assets/fullStar.png" />
-    secondStar = <img src="http://localhost:3000/assets/fullStar.png" />
-    thirdStar = <img src="http://localhost:3000/assets/fullStar.png" />
-    fourthStar = <img src="http://localhost:3000/assets/fullStar.png" />
-    fifthStar = <img src="http://localhost:3000/assets/fullStar.png" />
+    firstStar = <img alt="star icon" src="http://localhost:3000/assets/fullStar.png" />
+    secondStar = <img alt="star icon" src="http://localhost:3000/assets/fullStar.png" />
+    thirdStar = <img alt="star icon" src="http://localhost:3000/assets/fullStar.png" />
+    fourthStar = <img alt="star icon" src="http://localhost:3000/assets/fullStar.png" />
+    fifthStar = <img alt="star icon" src="http://localhost:3000/assets/fullStar.png" />
   } else {
     console.log("something went wrong with star render!")
   }

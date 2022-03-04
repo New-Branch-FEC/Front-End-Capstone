@@ -242,9 +242,10 @@ h1 {
 .comparison-modal-wrapper {
   width: 460px;
   height: 500px;
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-  background:#EDE0E3;;
-  color: #bc9098;
+  box-shadow: 0 16px 50px 0 rgba(0,0,0,0.2);
+  background: #F8F4F6;
+  color: #7E5D4E;
+  font-family: sans-serif;
   /* grid-template-columns: 1fr 1fr; */
   position: relative;
   z-index: 10;
@@ -306,6 +307,7 @@ h1 {
 body {
   /* padding: 10px; */
   background-color: #F8F4F6;
+  margin: 0;
 }
 
 /* changed this in the App.js in order to refer to this item- is this right?*/
@@ -489,7 +491,7 @@ body {
     width: 0;
   }
   100% {
-    width: 16%;
+    width: var(--to-width: fourStarPercentFull)
   }
 }
 
@@ -528,8 +530,17 @@ body {
   padding: 3px;
   position: relative;
   left: 65%;
-  top: 85px;
+  top: 68px;
   margin-bottom: 5px;
+
+  height: 25px;
+    z-index: 10;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-style: oblique;
+    color: #bc9098;
+    font-size: 45px;
+    display: flex;
+    -webkit-text-stroke: #7E5D4E 1px;
 }
 
 .OV-Default-Price {
@@ -559,7 +570,9 @@ body {
   height: 600px;
   position: absolute;
   left: 30%;
-  top: -14%
+  top: -14%;
+  border-radius: 12px;
+  object-fit: cover;
 }
 
 .Thumb-Parent {
@@ -573,6 +586,8 @@ body {
   border-color: rgb(0, 0, 0);
   border-width: .1em;
   cursor: pointer; */
+  height: 524px;
+  position: relative;
 }
 
 /* On mouse-over, added a deeper shadow (because it's pretty) */
@@ -614,6 +629,11 @@ body {
   text-align: left;
   bottom: 355px;
 }
+
+
+/* .product-info-section {
+  position: relative;
+} */
 
 .OV-Styles {
   /* four thumbs per row */
@@ -663,7 +683,7 @@ body {
 
 .Share {
   position: relative;
-  bottom: 500px;
+  bottom: 445px;
   left: 65%;
 }
 
@@ -671,4 +691,12 @@ body {
   padding: 10px;
   border-radius: 50%;
   margin: 5px
+}
+
+.overview-stars {
+  /* position:static; */
+  position: absolute;
+  padding-left: 782px;
+  position: absolute;
+  padding-top: 63px;
 }

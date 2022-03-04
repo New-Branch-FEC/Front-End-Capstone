@@ -58,17 +58,18 @@ const RatingsSidebar = (props) => {
           </figure>
           <div className="RR-stars-graph">
             {/* TODO: turn values into visual representation based on highest number = 100% full bar */}
-            <li>5 stars count: {fiveStarQuantity}</li>
-            <div className="RR-star-percent">{fiveStarPercentFull}%</div>
-            <li>4 stars count: {fourStarQuantity}</li>
-            <div className="RR-star-percent">{fourStarPercentFull}%</div>
-            <li>3 stars count: {threeStarQuantity}</li>
-            <div className="RR-star-percent">{threeStarPercentFull}%</div>
-            <li>2 stars count: {twoStarQuantity}</li>
-            <div className="RR-star-percent">{twoStarPercentFull}%</div>
-            <li>1 stars count: {oneStarQuantity}</li>
-            <div className="RR-star-percent">{oneStarPercentFull}%</div>
-
+            <ul>
+              <li>5 stars count: {fiveStarQuantity}</li>
+              <div className="RR-star-percent">{fiveStarPercentFull}%</div>
+              <li>4 stars count: {fourStarQuantity}</li>
+              <div className="RR-star-percent">{fourStarPercentFull}%</div>
+              <li>3 stars count: {threeStarQuantity}</li>
+              <div className="RR-star-percent">{threeStarPercentFull}%</div>
+              <li>2 stars count: {twoStarQuantity}</li>
+              <div className="RR-star-percent">{twoStarPercentFull}%</div>
+              <li>1 stars count: {oneStarQuantity}</li>
+              <div className="RR-star-percent">{oneStarPercentFull}%</div>
+            </ul>
           </div><br></br>
           <section className="bar-graph bar-graph-horizontal bar-graph-one">
             <div className="bar-one">
