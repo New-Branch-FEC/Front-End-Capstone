@@ -1,6 +1,13 @@
 import React from 'react';
 
 const RatingsListEntry = (props) => {
+  // const [ratingHelpfulness, setRatingHelpfulness] = useState({
+  //   helpfulness: {props.currentReview.helpfulness}
+  // })
+  // useEffect(() => {
+
+  // })
+  // console.log('ratingHelpfulness: ', ratingHelpfulness);
 
   let localHelpfulness = props.currentReview.helpfulness;
 

@@ -376,7 +376,7 @@ useEffect(() => {
         <RelatedItemsAndComparisons className="widget" setCardProductFeatures={setCardProductFeatures} currentProduct={currentProduct} reviews={reviews} outfit={outfit} setOutfit={setOutfit} relatedProducts={relatedProducts} setRelatedProducts={setRelatedProducts} setCurrentProductID={setCurrentProductID} showModal={showModal}/>
         </div>
         {/* <QuestionsAndAnswers /> */}
-        <RatingsAndReviews className="widget" currentProduct={currentProduct} reviews={reviews} reviewsMeta={reviewsMeta}/>
+        <RatingsAndReviews className="widget" currentProduct={currentProduct} reviews={reviews} reviewsMeta={reviewsMeta} setReviews={setReviews}/>
         <img className="footer" src="http://localhost:3000/assets/cleanFooter.png"></img>
      </div>
      </>

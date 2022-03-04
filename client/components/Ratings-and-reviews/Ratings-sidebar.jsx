@@ -32,78 +32,117 @@ const RatingsSidebar = (props) => {
   let fourStarPercentFull = (Math.round((fourStarQuantity / highestRatingAmount) * 100) / 100) * 100;
   let fiveStarPercentFull = (Math.round((fiveStarQuantity / highestRatingAmount) * 100) / 100) * 100;
 
-  let fitValue= (Math.round(props.reviewsMeta.characteristics.Fit?.value * 100) / 100);
+  let fitValue = (Math.round(props.reviewsMeta.characteristics.Fit?.value * 100) / 100);
   let lengthValue = (Math.round(props.reviewsMeta.characteristics.Length?.value * 100) / 100);
   let comfortValue = (Math.round(props.reviewsMeta.characteristics.Comfort?.value * 100) / 100);
   let qualityValue = (Math.round(props.reviewsMeta.characteristics.Quality?.value * 100) / 100);
-  let sizeValue = (Math.round(props.reviewsMeta.characteristics.Size?.value * 100) /100);
+  let sizeValue = (Math.round(props.reviewsMeta.characteristics.Size?.value * 100) / 100);
 
   return (
     <div className="column-L">
       <div className="RR-sidebar">
-          <div className="RR-star-rating">
-            <p className="RR-average-rating">Average Product Rating:</p>
-            <div>{ratingsAverage}</div><br></br>
-            <Stars reviews={props.reviews} />
-          </div>
-          <p className="RR-recommends">{recommendValue}% of reviewers recommend this product!</p>
-          <figure className="RR-recommends-chart">
-            <svg role="img" xmlns="http://www.w3.org/2000/svg">
-              <title>Recommended:</title>
-              <desc>This is how many reviewers would recommend this product</desc>
-              <circle className="circle-background" />
-              <circle className="circle-foreground" />
-            </svg>
-            <figcaption>{recommendValue}% of reviewers recommend this product!</figcaption>
-          </figure>
-          <div className="RR-stars-graph">
-            {/* TODO: turn values into visual representation based on highest number = 100% full bar */}
-            <li>5 stars count: {fiveStarQuantity}</li>
-            <div className="RR-star-percent">{fiveStarPercentFull}%</div>
-            <li>4 stars count: {fourStarQuantity}</li>
-            <div className="RR-star-percent">{fourStarPercentFull}%</div>
-            <li>3 stars count: {threeStarQuantity}</li>
-            <div className="RR-star-percent">{threeStarPercentFull}%</div>
-            <li>2 stars count: {twoStarQuantity}</li>
-            <div className="RR-star-percent">{twoStarPercentFull}%</div>
-            <li>1 stars count: {oneStarQuantity}</li>
-            <div className="RR-star-percent">{oneStarPercentFull}%</div>
-
-          </div><br></br>
+        <div className="RR-star-rating">
+          <h2 className="RR-average-rating">Average Product Rating:</h2>
+          <div>{ratingsAverage}</div><br></br>
+          <Stars reviews={props.reviews} />
+        </div>
+        <br></br>
+        <div className="RR-stars">
+          <h2>Review Breakdown:</h2>
           <section className="bar-graph bar-graph-horizontal bar-graph-one">
-            <div className="bar-one">
-              <span className="year">5 Stars</span>
-              <div className="bar" data-percentage={fiveStarPercentFull}></div>
+            <div className="bar-one">5 Star Reviews
+              <br></br>
+              <span className="RR-star-count"></span>
+              <div className="bar" data-percentage={fiveStarQuantity}></div>
             </div>
-            <div className="bar-two">
-              <span className="year">4 Stars</span>
-              <div className="bar" data-percentage={fourStarPercentFull}></div>
+            <div className="bar-two">4 Star Reviews
+              <br></br>
+              <span className="RR-star-count"></span>
+              <div className="bar" data-percentage={fourStarQuantity}></div>
             </div>
-            <div className="bar-three">
-              <span className="year">3 Stars</span>
-              <div className="bar" data-percentage={threeStarPercentFull}></div>
+            <div className="bar-three">3 Star Reviews
+              <br></br>
+              <span className="RR-star-count"></span>
+              <div className="bar" data-percentage={threeStarQuantity}></div>
             </div>
-            <div className="bar-four">
-             <span className="year">2 Stars</span>
-             <div className="bar" data-percentage={twoStarPercentFull}></div>
+            <div className="bar-four">2 Star Reviews
+              <br></br>
+              <span className="RR-star-count"></span>
+              <div className="bar" data-percentage={twoStarQuantity}></div>
+            </div>
+            <div className="bar-five">1 Star Reviews
+              <br></br>
+              <span className="RR-star-count"></span>
+              <div className="bar" data-percentage={oneStarQuantity}></div>
             </div>
           </section>
-          <div className="RR-characteristics">
-            <br></br>
-            <br></br>
-            {/* TODO: conditional rendering for whatever characteristics are present for currentProduct} */}
-            { props.reviewsMeta.characteristics.Fit?.value && <p className="RR-characteristics-entry">Fit: {fitValue}, percent full: {Math.round(((fitValue / 5) * 100) * 100) / 100}%</p> }
-            { props.reviewsMeta.characteristics.Fit?.value && <img src="https://cdn.iconscout.com/icon/premium/png-256-thumb/graph-2300680-1917645.png" alt="img placeholder"></img> }
-            { props.reviewsMeta.characteristics.Length?.value && <p className="RR-characteristics-entry">Length: {lengthValue}, percent full: {Math.round(((lengthValue / 5) * 100) * 100) / 100}%</p> }
-            { props.reviewsMeta.characteristics.Length?.value && <img src="https://cdn.iconscout.com/icon/premium/png-256-thumb/graph-2300680-1917645.png" alt="img placeholder"></img> }
-            { props.reviewsMeta.characteristics.Comfort?.value && <p className="RR-characteristics-entry">Comfort: {comfortValue}, percent full: {Math.round(((comfortValue / 5) * 100) * 100) / 100}%</p> }
-            { props.reviewsMeta.characteristics.Comfort?.value && <img src="https://cdn.iconscout.com/icon/premium/png-256-thumb/graph-2300680-1917645.png" alt="img placeholder"></img> }
-            { props.reviewsMeta.characteristics.Quality?.value && <p className="RR-characteristics-entry">Quality: {qualityValue}, percent full: {Math.round(((qualityValue / 5) * 100) * 100) / 100}%</p> }
-            { props.reviewsMeta.characteristics.Quality?.value && <img src="https://cdn.iconscout.com/icon/premium/png-256-thumb/graph-2300680-1917645.png" alt="img placeholder"></img> }
-            { props.reviewsMeta.characteristics.Size?.value && <p className="RR-characteristics-entry">Size: {sizeValue}, percent full: {Math.round(((sizeValue / 5) * 100) * 100) / 100}%</p> }
-            { props.reviewsMeta.characteristics.Size?.value && <img src="https://cdn.iconscout.com/icon/premium/png-256-thumb/graph-2300680-1917645.png" alt="img placeholder"></img> }
-          </div>
         </div>
+        <br></br>
+        <br></br>
+        <section className="bar-graph bar-graph-horizontal bar-graph-one">
+          <div className="bar-six">
+            <h3>% Recommended</h3>
+            <span className="RR-star-count"></span>
+            <div className="bar" data-percentage={recommendValue}></div>
+          </div>
+        </section>
+        <br></br>
+        {/* <div className="circle-wrap">
+          <div className="circle">
+            <div className="mask full">
+              <div className="fill"></div>
+            </div>
+            <div className="mask half">
+              <div className="fill"></div>
+            </div>
+            <div className="inside-circle">
+              {recommendValue}
+            </div>
+          </div>
+        </div> */}
+        <br></br>
+        <div className="RR-characteristics">
+          <h2>Product Characteristics:</h2>
+          {/* percent full: {Math.round(((fitValue / 5) * 100) * 100) / 100}% */}
+          {props.reviewsMeta.characteristics.Fit?.value &&
+            <section className="bar-graph bar-graph-horizontal bar-graph-one">
+              <div className="bar-fit">
+                <h3>Fit: {fitValue} / 5</h3>
+                <span className="RR-star-count"></span>
+                <div className="bar" data-percentage={fitValue}></div>
+              </div>
+            </section>}
+          {/* percent full: {Math.round(((lengthValue / 5) * 100) * 100) / 100}%</p> */}
+          {props.reviewsMeta.characteristics.Length?.value &&
+            <section className="bar-graph bar-graph-horizontal bar-graph-one">
+              <div className="bar-length">
+                <h3>Length: {lengthValue} / 5</h3>
+                <span className="RR-star-count"></span>
+                <div className="bar" data-percentage={lengthValue}></div>
+              </div>
+            </section>}
+          {/* percent full: {Math.round(((comfortValue / 5) * 100) * 100) / 100}%</p> */}
+          {props.reviewsMeta.characteristics.Comfort?.value &&
+            <section className="bar-graph bar-graph-horizontal bar-graph-one">
+              <div className="bar-comfort">
+                <h3>Comfort: {comfortValue} / 5</h3>
+                <span className="RR-star-count"></span>
+                <div className="bar" data-percentage={comfortValue}></div>
+              </div>
+            </section>}
+          {/* percent full: {Math.round(((qualityValue / 5) * 100) * 100) / 100}%</p> */}
+          {props.reviewsMeta.characteristics.Quality?.value &&
+            <section className="bar-graph bar-graph-horizontal bar-graph-one">
+              <div className="bar-quality">
+                <h3>Quality: {qualityValue} / 5</h3>
+                <span className="RR-star-count"></span>
+                <div className="bar" data-percentage={qualityValue}></div>
+              </div>
+            </section>}
+          {/* {props.reviewsMeta.characteristics.Size?.value && <p className="RR-characteristics-entry">Size: {sizeValue}, percent full: {Math.round(((sizeValue / 5) * 100) * 100) / 100}%</p>} */}
+          {/* {props.reviewsMeta.characteristics.Size?.value && <img src="https://cdn.iconscout.com/icon/premium/png-256-thumb/graph-2300680-1917645.png" alt="img placeholder"></img>} */}
+        </div>
+      </div>
     </div>
   )
 };

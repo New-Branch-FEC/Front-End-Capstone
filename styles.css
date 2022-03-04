@@ -322,6 +322,7 @@ body {
   border-width: 0.1em;
   border-radius: 12px;
   border-radius: 12px;
+  background-color:  #D0B2B5;
 
 }
 
@@ -353,14 +354,15 @@ body {
 .RR-list-entry {
   padding: 3px;
   background-color: #EDE0E3;
-  background-color: rgb(241, 241, 241);
   margin-bottom: 20px;
+  border-radius: 12px;
 }
 
 .RR-user-date {
   text-align: right;
   font-size: larger;
   height: 32px;
+  background-color: #D0B2B5;
 }
 
 .RR-feedback {
@@ -379,12 +381,52 @@ body {
   width: 150px;
 }
 
+.RR-star-images {
+  position: relative;
+}
+
 .RR-button {
   padding: 3px;
 }
 
+.RR-add-rating {
+  padding: 3px;
+  border: solid whitesmoke 1px;
+  margin-top: 10px;
+}
+
+.column-form-L {
+  float: left;
+  width: 40%;
+  box-shadow: 0 4px 3px 0 rgb(0 0 0 / 20%);
+  transition: 0.3s;
+  border-color: rgb(0, 0, 0);
+  border-width: 0.1em;
+  border-radius: 12px;
+  border-radius: 12px;
+  background-color:  #D0B2B5;
+
+}
+
+.column-form-R {
+  float: right;
+  width: 55%;
+  box-shadow: 0 4px 3px 0 rgb(0 0 0 / 20%);
+  transition: 0.3s;
+  border-color: rgb(0, 0, 0);
+  border-width: 0.1em;
+  border-radius: 12px;
+  border-radius: 12px;
+
+}
+
 /* Bar Graph Horizontal */
-.bar-graph .year {
+
+.bar {
+  border: white 1px solid;
+}
+
+.bar-graph .RR-star-count {
   -webkit-animation: fade-in-text 2.2s 0.1s forwards;
   -moz-animation: fade-in-text 2.2s 0.1s forwards;
   animation: fade-in-text 2.2s 0.1s forwards;
@@ -392,19 +434,13 @@ body {
 }
 
 .bar-graph-horizontal {
-  max-width: 380px;
+  max-width: 1800px;
 }
 
 .bar-graph-horizontal > div {
   float: left;
   margin-bottom: 8px;
   width: 100%;
-}
-
-.bar-graph-horizontal .year {
-  float: left;
-  margin-top: 18px;
-  width: 50px;
 }
 
 .bar-graph-horizontal .bar {
@@ -429,32 +465,76 @@ body {
 }
 
 .bar-graph-one .bar-one .bar {
-  background-color: #64b2d1;
+  background-color: #dba8b0;
   -webkit-animation: show-bar-one 1.2s 0.1s forwards;
   -moz-animation: show-bar-one 1.2s 0.1s forwards;
   animation: show-bar-one 1.2s 0.1s forwards;
 }
 
 .bar-graph-one .bar-two .bar {
-  background-color: #5292ac;
-  -webkit-animation: show-bar-two 1.2s 0.2s forwards;
-  -moz-animation: show-bar-two 1.2s 0.2s forwards;
-  animation: show-bar-two 1.2s 0.2s forwards;
+  background-color: #a17c82;
+  -webkit-animation: show-bar-two 1.3s 0.2s forwards;
+  -moz-animation: show-bar-two 1.3s 0.2s forwards;
+  animation: show-bar-two 1.3s 0.2s forwards;
 }
 
 .bar-graph-one .bar-three .bar {
-  background-color: #407286;
-  -webkit-animation: show-bar-three 1.2s 0.3s forwards;
-  -moz-animation: show-bar-three 1.2s 0.3s forwards;
-  animation: show-bar-three 1.2s 0.3s forwards;
+  background-color: #c5979f;
+  -webkit-animation: show-bar-three 1.4s 0.3s forwards;
+  -moz-animation: show-bar-three 1.4s 0.3s forwards;
+  animation: show-bar-three 1.4s 0.3s forwards;
 }
 
 .bar-graph-one .bar-four .bar {
-  background-color: #2e515f;
-  -webkit-animation: show-bar-four 1.2s 0.4s forwards;
-  -moz-animation: show-bar-four 1.2s 0.4s forwards;
-  animation: show-bar-four 1.2s 0.4s forwards;
+  background-color: #7e6165;
+  -webkit-animation: show-bar-four 1.5s 0.4s forwards;
+  -moz-animation: show-bar-four 1.5s 0.4s forwards;
+  animation: show-bar-four 1.5s 0.4s forwards;
 }
+
+.bar-graph-one .bar-five .bar {
+  background-color: #5a4447;
+  -webkit-animation: show-bar-five 1.6s 0.4s forwards;
+  -moz-animation: show-bar-five 1.6s 0.4s forwards;
+  animation: show-bar-five 1.6s 0.4s forwards;
+}
+
+.bar-graph-one .bar-six .bar {
+  background-color: #8acc84;
+  -webkit-animation: show-bar-six 1.7s 0.4s forwards;
+  -moz-animation: show-bar-six 1.7s 0.4s forwards;
+  animation: show-bar-six 1.7s 0.4s forwards;
+}
+
+.bar-graph-one .bar-fit .bar {
+  background-color: #da74aa;
+  -webkit-animation: show-bar-fit 1.8s 0.4s forwards;
+  -moz-animation: show-bar-fit 1.8s 0.4s forwards;
+  animation: show-bar-fit 1.8s 0.4s forwards;
+}
+
+.bar-graph-one .bar-length .bar {
+  background-color: #df93bc;
+  -webkit-animation: show-bar-length 1.9s 0.4s forwards;
+  -moz-animation: show-bar-length 1.9s 0.4s forwards;
+  animation: show-bar-length 1.9s 0.4s forwards;
+}
+
+.bar-graph-one .bar-comfort .bar {
+  background-color: #da74aa;
+  -webkit-animation: show-bar-comfort 2.1s 0.4s forwards;
+  -moz-animation: show-bar-comfort 2.1s 0.4s forwards;
+  animation: show-bar-comfort 2.1s 0.4s forwards;
+}
+
+.bar-graph-one .bar-quality .bar {
+  background-color: #d35699;
+  -webkit-animation: show-bar-quality 2.2s 0.4s forwards;
+  -moz-animation: show-bar-quality 2.2s 0.4s forwards;
+  animation: show-bar-quality 2.2s 0.4s forwards;
+}
+
+
 
 /* Bar Graph Horizontal Animations */
 @-webkit-keyframes show-bar-one {
@@ -471,7 +551,7 @@ body {
     width: 0;
   }
   100% {
-    width: 27%;
+    width: 37%;
   }
 }
 
@@ -480,7 +560,7 @@ body {
     width: 0;
   }
   100% {
-    width: 41%;
+    width: 51%;
   }
 }
 
@@ -489,7 +569,61 @@ body {
     width: 0;
   }
   100% {
-    width: 16%;
+    width: 28%;
+  }
+}
+
+@-webkit-keyframes show-bar-five {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 15%;
+  }
+}
+
+@-webkit-keyframes show-bar-six {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 85%;
+  }
+}
+
+@-webkit-keyframes show-bar-fit {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 58%;
+  }
+}
+
+@-webkit-keyframes show-bar-length {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 52%;
+  }
+}
+
+@-webkit-keyframes show-bar-comfort {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 59%;
+  }
+}
+
+@-webkit-keyframes show-bar-quality {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 61%;
   }
 }
 

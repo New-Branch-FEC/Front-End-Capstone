@@ -2,33 +2,38 @@ import React from 'react';
 
 const RatingsForm = (props) => {
 
+  let v = document.getElementById("RRtop")
+
   let clickSubmit = () => {
     alert("Review submitted!");
+    v.scrollIntoView({
+      behavior: "smooth"
+    })
   }
 
   return (
-    <div className="RR-add-rating">Add a Review (form, default hidden)
+    <div className="RR-add-rating">
       <br></br>
       <br></br>
       <label>
-        Username:
+        Username: *
         <input type="text" name="name" /><br></br>
       </label>
       <br></br>
       <label>
-        Your Email:
+        Email: *
         <input type="email" id="email" name="email"></input>
       </label>
       <br></br>
       <br></br>
       <label>
-        🌟 Rating:
+        🌟 Rating: *
         <input type="number" name="rating" min="1" max="5" />
       </label>
       <br></br>
       <label>
         <br></br>
-        Would you recommend this product?
+        Would you recommend this product? *
         <form>
           <input type="radio" id="Yes" name="recommended" value="true" />
           <label htmlFor="Yes">Yes</label>
@@ -37,8 +42,9 @@ const RatingsForm = (props) => {
         </form>
       </label>
       <br></br>
-      <label>Product Characteristics (Select all that apply)
+      <label><h3><strong>Product Characteristics (Select all that apply)</strong></h3>
         <br></br>
+        <div className="column-form-L">
         <form><strong>Product Fit:</strong>
           <br></br>
           <input type="radio" id="fit1" name="fit" value="fit1" />
@@ -81,6 +87,8 @@ const RatingsForm = (props) => {
           <label htmlFor="comfort5">Perfect</label><br></br>
         </form>
         <br></br>
+        </div>
+        <div className="column-form-R">
         <form><strong>Product Quality:</strong>
           <br></br>
           <input type="radio" id="quality1" name="quality" value="quality1" />
@@ -122,7 +130,8 @@ const RatingsForm = (props) => {
           <label htmlFor="size5">A Size Too Big</label><br></br>
         </form>
         <br></br>
-        <label>
+        </div>
+        <label><h3><strong>Write Your Review *</strong></h3>
           <input type="text" size="50" name="summary" placeholder="Write your title here!" />
         </label><br></br>
         <label htmlFor="body">

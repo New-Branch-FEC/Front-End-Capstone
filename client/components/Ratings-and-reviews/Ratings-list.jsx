@@ -25,9 +25,13 @@ const RatingsList = (props) => {
     }
   }
 
+  console.log(props.reviewsMeta)
+
+  let totalReviews = parseInt(props.reviewsMeta.recommended.true) + parseInt(props.reviewsMeta.recommended.false);
+
   return (
     <div className="column-R RR-ratings-list" id="RRtop">
-      <h2>There Are {props.reviews.results.length} Reviews For This Product</h2>
+      <h2>There Are {totalReviews} Reviews For This Product</h2>
       <form>
         <label>Sort by </label>
         <select>
@@ -38,7 +42,7 @@ const RatingsList = (props) => {
       </form>
       <div>
         {props.reviews.results.map((reviews, i) => (
-          <RatingsListEntry reviews={props.reviews} key={i} currentReview={props.reviews.results[i]} />
+          <RatingsListEntry reviews={props.reviews} key={i} currentReview={props.reviews.results[i]} setReviews={props.setReviews} />
         ))}
       </div>
       <div className="RR-more-and-add">
