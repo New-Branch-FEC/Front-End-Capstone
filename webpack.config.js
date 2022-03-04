@@ -9,6 +9,10 @@ module.exports = {
     path: path.resolve("dist"),
     publicPath: "/",
   },
+  devServer: {
+    port: 3000,
+    watchContentBase: true
+  },
   module: {
     rules:[
       {
@@ -35,6 +39,11 @@ module.exports = {
           "sass-loader"
         ],
       },
+      {
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        use: 'file-loader',
+        type: 'asset/resource',
+      }
     ],
   },
   plugins: [
