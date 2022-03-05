@@ -16,6 +16,19 @@
   </p>
 </div>
 
+#### Overview
+
+<img src="https://github.com/New-Branch-FEC/Front-End-Capstone/blob/dev/Overview-Demo.gif" width=60%/>
+
+#### Related Products and Comparison
+
+<img src="https://github.com/New-Branch-FEC/Front-End-Capstone/blob/dev/TeresaGobble-Related-Products.gif" width=60%/>
+
+#### Ratings and Reviews
+
+<img src="https://github.com/New-Branch-FEC/Front-End-Capstone/blob/dev/RRDemo.gif" width=60%/>
+
+
 ### Getting Started
 
 This repository contains a front end implementation for an e-commerce platform. This platform enables the user to examine product details, star products, add them to their cart, compare and review products, ask and answer questions, and organize separate products into an outfit.
