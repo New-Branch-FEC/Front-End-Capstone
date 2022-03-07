@@ -9,24 +9,21 @@ import ShareOnline from './Share-to-socials.jsx';
 import AddToBag from './Add-to-bag.jsx';
 
 const Overview = (props) => {
-  // for styles
-  // console.log('reviews',props.reviews);
-  const [mainPhoto, setMainPhoto] = useState(props.currentStyle.results[0].photos[0].url);
-  const [styleName, setStyleName] = useState(props.currentStyle.results[0].name);
-  // for size and quantity
-  const [sizeAndStock, setSizeAndStock] = useState({});
 
-  // event handler for clicking new image
+  const [mainPhoto, setMainPhoto] = useState(props.currentStyle.results[0].photos[0].url);
+  const [thumbnails, setThumbnails] = useState(props.currentStyle.results[0].photos)
+  const [styleName, setStyleName] = useState(props.currentStyle.results[0].name);
+  const [sku, setSku] = useState(props.currentStyle.results[0].skus);
+
   const handleThumb = (item) => {
     setMainPhoto(item.url);
   }
 
   const handleStyle = (style) => {
-    // props.setCurrentStyle(style);
-    // console.log('STYLE', style);
+    setThumbnails(style.photos);
     setMainPhoto(style.photos[0].url);
     setStyleName(style.name);
-    // console.log('meow', style.name)
+    setSku(style.skus);
   }
 
   return (
@@ -34,13 +31,13 @@ const Overview = (props) => {
     <div>
       < ProductInformation currentProduct={props.currentProduct} currentStyle={props.currentStyle} reviews={props.reviews}/>
 
-      < SelectThumb currentProduct={props.currentProduct} currentStyle={props.currentStyle.results} mainPhoto={mainPhoto} setMainPhoto={setMainPhoto} handleThumb={handleThumb} />
+      < SelectThumb currentProduct={props.currentProduct} currentStyle={props.currentStyle.results} mainPhoto={mainPhoto} setMainPhoto={setMainPhoto} thumbnails={thumbnails} setThumbnails={setThumbnails} handleThumb={handleThumb} />
 
-      < SelectStyle currentProduct={props.currentProduct} currentStyle={props.currentStyle.results} styleName={styleName} setStyleName={setStyleName} handleStyle={handleStyle}/>
+      < SelectStyle currentProduct={props.currentProduct} currentStyle={props.currentStyle} setCurrentStyle={props.setCurrentStyle} styleName={styleName} setStyleName={setStyleName} handleStyle={handleStyle}/>
 
       < ShareOnline />
 
-      < AddToBag currentProduct={props.currentProduct} currentStyle={props.currentStyle} />
+      < AddToBag currentProduct={props.currentProduct} currentStyle={props.currentStyle} sku={sku} setSku={setSku}/>
     </div>
   </div>
   )
