@@ -10,7 +10,7 @@ import RelatedItemsAndComparisons from "./components/Related-items-and-compariso
 import Comparison from "./components/Related-items-and-comparisons/Comparison.jsx"
 
 const App = () => {
-    // setting current product by current product ID, with a default product upon load, "Bright Future Sunglasses"
+    // setting current product by current product ID, with a default product upon load, "Camo Onesie"
     const [currentProductID, setCurrentProductID] = useState(37311);
     const [currentProduct, setCurrentProduct] = useState(
         {
