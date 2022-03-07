@@ -3,18 +3,14 @@ import axios from 'axios';
 import ReactDOM from 'react-dom';
 
 const Stars = (props) => {
-  //  Edge case: if there are no reviews, HIDE the star rating section on each card.
   if (props.reviews.results.length === 0) {
     return (
       <>
-      <div></div>
+        <div></div>
       </>
     )
   }
-  // star needs the product id to pull all reviews for that item (the get request is currently for all reviews)
-  // aggragate star reviews at props.reviews.results[0].rating
 
-  // For each req.body.results.rating, add value to total, and count each rating
   let totalCount = 0;
   let totalOfRatings = 0;
   for (let i = 0; i < props.reviews.results.length; i++) {
@@ -23,23 +19,10 @@ const Stars = (props) => {
   }
 
   // take total and divide by number of reviews to get average rating
-  let average = totalOfRatings/totalCount;
-  // average = 4.8
-
-  // testing
-  // console.log("the length is: ", props.reviews.results.length) <-- 5
-  // console.log("total count is: ", totalCount) <-- 5 (same as array length!)
-  // console.log("total ratings", totalOfRatings) <-- 10
-  // console.log("Average! It is: ", average) <-- 2
-  // console.log("rounded down rating! It is: ", roundedDownRating) <-- 2
+  let average = totalOfRatings / totalCount;
 
   // rounding down to nearest 25th percentile
-  let roundedDownRating = (Math.round(average * 4) / 4) //.toFixed(2);
-
-  // console.log("rounded down star", roundedDownRating)
-  // console.log("rounded down rating", roundedDownRating)
-
-  // There should be a total of 20 star rendering options, populated on the screen depending on the average rating calculation (each star rating image must map to the calculated value in the component)
+  let roundedDownRating = (Math.round(average * 4) / 4)
 
   let firstStar;
   let secondStar;
