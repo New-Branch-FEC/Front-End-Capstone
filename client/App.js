@@ -16,10 +16,8 @@ const Comparison = React.lazy(() => import('./components/Related-items-and-compa
 
 const App = () => {
 
+    // setting current product by current product ID, with a default product upon load, "Camo Onesie"
 
-
-
-    // setting current product by current product ID, with a default product upon load, "Bright Future Sunglasses"
     const [currentProductID, setCurrentProductID] = useState(37311);
     const [currentProduct, setCurrentProduct] = useState(
         {
@@ -43,12 +41,11 @@ const App = () => {
                 }
             ]
         });
+
     // getting current product by current product's id
     useEffect(() => {
         axios.get(`/products/${currentProductID}`)
             .then((res) => {
-                // console.log('res: ', res); <-- working
-                // console.log('res.data', res.data)
                 setCurrentProduct(res.data)
             })
             .catch(err => {
@@ -65,7 +62,6 @@ const App = () => {
             .then((res) => {
                 var noCurrentID = res.data.filter((item) => { return item !== currentProductID });
                 var unique = [... new Set(noCurrentID)];
-                // console.log("unique", unique)
                 setRelatedProducts(unique)
             })
             .catch((err) => {
@@ -214,7 +210,6 @@ const App = () => {
         }
     })
 
-    //   reviewMeta axios.get is not being async yet
     useEffect(() => {
         axios.get(`/reviews/meta?product_id=${currentProductID}`)
             .then((res) => {
@@ -226,7 +221,6 @@ const App = () => {
     }, [currentProductID]);
 
     useEffect(() => {
-        // console.log('current product id changed', currentProductID)
         axios.get(`/reviews?product_id=${currentProductID}`)
             .then((res) => {
                 setReviews(res.data)
@@ -235,17 +229,6 @@ const App = () => {
                 console.log("An error occured while fetching reviews", err);
             })
     }, [currentProductID]);
-
-    //   speculative ReviewModal stuff for Ratings and Reviews
-    //   const [showReviewModalStatus, setShowReviewModalStatus] = useState(false);
-
-    //   const showReviewModal = (value) => {
-    //       if (value === true) {
-    //           setShowReviewModalStatus(true)
-    //       }
-    //   }
-
-    //   const [reviewContents, setReviewContents]
 
     // getting the reviews for the current product by current product's id
 
@@ -328,25 +311,13 @@ const App = () => {
 
     const [outfit, setOutfit] = useState([37314, 37315, 37320]);
 
-    /*
-      // adding to user's outfit array
-
-    /*
-      // do this in file where addToBagProductID click event takes place, Anisah!
-      let addToBagProductID = 'FIX_ME_TO_ADDED_PRODUCTS_ID' //should always be current product's ID, based on the button being on the current item!
-      setOutfit([...outfit, `${addToBagProductID}`]) or
-      setOutfit( outfit.push(${addToBagProductID}) )
-    */
-
     // set modal toggle function
     const [showModalStatus, setShowModalStatus] = useState(false);
 
 
     const showModal = (value) => {
-        // setShowModalStatus(prev => !prev); // this should toggle it back and forth
         if (value === true) {
             setShowModalStatus(true)
-
         }
     }
 
@@ -356,10 +327,8 @@ const App = () => {
     // getting current product by current product's id
 
     useEffect(() => {
-        // console.log(cardProductFeatures)
         axios.get(`/products/${cardProductFeatures}`)
             .then((res) => {
-                // console.log('res: ', res);
                 setCardProductFeatures(res.data)
             })
             .catch(err => {
@@ -397,6 +366,5 @@ const App = () => {
         </>
     )
 };
-
 
 export default App;

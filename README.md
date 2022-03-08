@@ -16,15 +16,17 @@
   </p>
 </div>
 
-### Demo
-
 #### Overview
+
+<img src="https://github.com/New-Branch-FEC/Front-End-Capstone/blob/dev/Overview-Demo.gif" width=60%/>
 
 #### Related Products and Comparison
 
+<img src="https://github.com/New-Branch-FEC/Front-End-Capstone/blob/dev/TeresaGobble-Related-Products.gif" width=60%/>
+
 #### Ratings and Reviews
 
-<img src="https://github.com/New-Branch-FEC/Front-End-Capstone/blob/test/RRDemo.gif" width=60%/>
+<img src="https://github.com/New-Branch-FEC/Front-End-Capstone/blob/dev/RRDemo.gif" width=60%/>
 
 ### Getting Started
 

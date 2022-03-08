@@ -514,6 +514,7 @@ body {
   position: relative;
   left: 65%;
   top: 85px;
+  width: 100px;
   margin-bottom: 5px;
 }
 
@@ -522,6 +523,7 @@ body {
   position: relative;
   left: 65%;
   top: 85px;
+  width: 100px;
   margin-bottom: 5px;
 }
 
@@ -547,6 +549,7 @@ body {
   position: relative;
   left: 65%;
   top: 85px;
+  width: 100px;
   margin-bottom: 5px;
 }
 
@@ -619,7 +622,7 @@ body {
 
 .Style-Parent {
   position: absolute;
-  left: 62%
+  left: 62%;
 }
 
 .OV-Style-Name {
@@ -672,7 +675,7 @@ body {
 }
 
 .OV-dropdowns {
-  padding: 10px;
+  padding: 14px;
   width: 115px;
   height: 19px;
   position: absolute;
