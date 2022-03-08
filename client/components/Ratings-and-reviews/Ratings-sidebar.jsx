@@ -51,25 +51,20 @@ const RatingsSidebar = (props) => {
             {/* TODO: turn values into visual representation based on highest number = 100% full bar */}
             <ul>
               <li>5 stars count: {fiveStarQuantity}</li>
-              <div className="RR-star-percent">{fiveStarPercentFull}%</div>
               <li>4 stars count: {fourStarQuantity}</li>
-              <div className="RR-star-percent">{fourStarPercentFull}%</div>
               <li>3 stars count: {threeStarQuantity}</li>
-              <div className="RR-star-percent">{threeStarPercentFull}%</div>
               <li>2 stars count: {twoStarQuantity}</li>
-              <div className="RR-star-percent">{twoStarPercentFull}%</div>
               <li>1 stars count: {oneStarQuantity}</li>
-              <div className="RR-star-percent">{oneStarPercentFull}%</div>
             </ul>
           </div><br></br>
           <div className="RR-characteristics">
             <br></br>
             <br></br>
-            { props.reviewsMeta.characteristics.Fit?.value && <p className="RR-characteristics-entry">Fit: {fitValue}, percent full: {Math.round(((fitValue / 5) * 100) * 100) / 100}%</p> }
-            { props.reviewsMeta.characteristics.Length?.value && <p className="RR-characteristics-entry">Length: {lengthValue}, percent full: {Math.round(((lengthValue / 5) * 100) * 100) / 100}%</p> }
-            { props.reviewsMeta.characteristics.Comfort?.value && <p className="RR-characteristics-entry">Comfort: {comfortValue}, percent full: {Math.round(((comfortValue / 5) * 100) * 100) / 100}%</p> }
-            { props.reviewsMeta.characteristics.Quality?.value && <p className="RR-characteristics-entry">Quality: {qualityValue}, percent full: {Math.round(((qualityValue / 5) * 100) * 100) / 100}%</p> }
-            { props.reviewsMeta.characteristics.Size?.value && <p className="RR-characteristics-entry">Size: {sizeValue}, percent full: {Math.round(((sizeValue / 5) * 100) * 100) / 100}%</p> }
+            { props.reviewsMeta.characteristics.Fit?.value && <p className="RR-characteristics-entry">Fit: {fitValue}</p> }
+            { props.reviewsMeta.characteristics.Length?.value && <p className="RR-characteristics-entry">Length: {lengthValue}</p> }
+            { props.reviewsMeta.characteristics.Comfort?.value && <p className="RR-characteristics-entry">Comfort: {comfortValue}</p> }
+            { props.reviewsMeta.characteristics.Quality?.value && <p className="RR-characteristics-entry">Quality: {qualityValue}</p> }
+            { props.reviewsMeta.characteristics.Size?.value && <p className="RR-characteristics-entry">Size: {sizeValue}</p> }
           </div>
         </div>
     </div>
