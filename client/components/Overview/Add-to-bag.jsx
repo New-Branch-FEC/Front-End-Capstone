@@ -2,47 +2,34 @@ import React, { useState, useEffect } from 'react';
 const axios = require('axios');
 
 const AddToBag = (props) => {
-    const resultsArray = props.currentStyle.results;
-    let sizes = [];
-    let quantity = [];
-
-    resultsArray.forEach(style => {
-      let availableSizesAndQuantity = style.skus;
-      Object.keys(availableSizesAndQuantity).forEach(style => {
-        quantity.push(availableSizesAndQuantity[style].quantity);
-        sizes.push(availableSizesAndQuantity[style].size);
-    })
-  })
-
-    for (let i = 0; i < resultsArray.length; i++) {
-      let availableSizesAndQuantity = resultsArray[i].skus;
-      Object.keys(availableSizesAndQuantity).forEach(style => {
-        quantity[style] = availableSizesAndQuantity[style].quantity
-        sizes[style] = availableSizesAndQuantity[style].size;
-      });
-
-    }
-
-    // console.log('MEOW????', quantity, sizes);
-      // WE HAVE TURNED IT INTO AN ARRAYYYYYYY
-        // NOW WE MUST MAP IT IN THE OPTIONS
 
     return (
     <div className='Dropdown-Parent'>
       <div className='OV-dropdowns'>
         <select>
-        <option value=''> size </option>
+        <option value=''> XS </option>
+        <option value=''> S </option>
+        <option value=''> M </option>
+        <option value=''> L </option>
+        <option value=''> XL </option>
         </select>
         <select>
-        <option value=''> quantity </option>
+        <option value=''> 1 </option>
+        <option value=''> 2 </option>
+        <option value=''> 3 </option>
+        <option value=''> 4 </option>
+        <option value=''> 5 </option>
+        <option value=''> 6 </option>
+        <option value=''> 7 </option>
+        <option value=''> 8 </option>
+        <option value=''> 9 </option>
+        <option value=''> 10 </option>
+        <option value=''> 11 </option>
         </select>
       </div>
-        <button className='Add-to-bag' > add to bag </button>
+        <button className='Add-to-bag' onClick={() => confirm('added to bag!')}> add to bag </button>
     </div>
     )
 }
 
 export default AddToBag;
-
-{/* // each option should be mapped over! prop drill styles endpoint down
-// props.//.results.skus.id.size */}

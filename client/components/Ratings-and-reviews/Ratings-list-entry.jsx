@@ -53,35 +53,35 @@ const RatingsListEntry = (props) => {
     let fifthStar;
 
     if (props.currentReview.rating === 1) {
-      firstStar = <img src="http://localhost:3000/assets/fullStar.png" />
-      secondStar = <img src="http://localhost:3000/assets/emptyStar.png" />
-      thirdStar = <img src="http://localhost:3000/assets/emptyStar.png" />
-      fourthStar = <img src="http://localhost:3000/assets/emptyStar.png" />
-      fifthStar = <img src="http://localhost:3000/assets/emptyStar.png" />
+      firstStar = <img alt="star rating icon" src="http://localhost:3000/assets/fullStar.png" />
+      secondStar = <img alt="star rating icon" src="http://localhost:3000/assets/emptyStar.png" />
+      thirdStar = <img alt="star rating icon" src="http://localhost:3000/assets/emptyStar.png" />
+      fourthStar = <img alt="star rating icon" src="http://localhost:3000/assets/emptyStar.png" />
+      fifthStar = <img alt="star rating icon" src="http://localhost:3000/assets/emptyStar.png" />
     } else if (props.currentReview.rating === 2) {
-      firstStar = <img src="http://localhost:3000/assets/fullStar.png" />
-      secondStar = <img src="http://localhost:3000/assets/fullStar.png" />
-      thirdStar = <img src="http://localhost:3000/assets/emptyStar.png" />
-      fourthStar = <img src="http://localhost:3000/assets/emptyStar.png" />
-      fifthStar = <img src="http://localhost:3000/assets/emptyStar.png" />
+      firstStar = <img alt="star rating icon" src="http://localhost:3000/assets/fullStar.png" />
+      secondStar = <img alt="star rating icon" src="http://localhost:3000/assets/fullStar.png" />
+      thirdStar = <img alt="star rating icon" src="http://localhost:3000/assets/emptyStar.png" />
+      fourthStar = <img alt="star rating icon" src="http://localhost:3000/assets/emptyStar.png" />
+      fifthStar = <img alt="star rating icon" src="http://localhost:3000/assets/emptyStar.png" />
     } else if (props.currentReview.rating === 3) {
-      firstStar = <img src="http://localhost:3000/assets/fullStar.png" />
-      secondStar = <img src="http://localhost:3000/assets/fullStar.png" />
-      thirdStar = <img src="http://localhost:3000/assets/fullStar.png" />
-      fourthStar = <img src="http://localhost:3000/assets/emptyStar.png" />
-      fifthStar = <img src="http://localhost:3000/assets/emptyStar.png" />
+      firstStar = <img alt="star rating icon" src="http://localhost:3000/assets/fullStar.png" />
+      secondStar = <img alt="star rating icon" src="http://localhost:3000/assets/fullStar.png" />
+      thirdStar = <img alt="star rating icon" src="http://localhost:3000/assets/fullStar.png" />
+      fourthStar = <img alt="star rating icon" src="http://localhost:3000/assets/emptyStar.png" />
+      fifthStar = <img alt="star rating icon" src="http://localhost:3000/assets/emptyStar.png" />
     } else if (props.currentReview.rating === 4) {
-      firstStar = <img src="http://localhost:3000/assets/fullStar.png" />
-      secondStar = <img src="http://localhost:3000/assets/fullStar.png" />
-      thirdStar = <img src="http://localhost:3000/assets/fullStar.png" />
-      fourthStar = <img src="http://localhost:3000/assets/fullStar.png" />
-      fifthStar = <img src="http://localhost:3000/assets/emptyStar.png" />
+      firstStar = <img alt="star rating icon" src="http://localhost:3000/assets/fullStar.png" />
+      secondStar = <img alt="star rating icon" src="http://localhost:3000/assets/fullStar.png" />
+      thirdStar = <img alt="star rating icon" src="http://localhost:3000/assets/fullStar.png" />
+      fourthStar = <img alt="star rating icon" src="http://localhost:3000/assets/fullStar.png" />
+      fifthStar = <img alt="star rating icon" src="http://localhost:3000/assets/emptyStar.png" />
     } else if (props.currentReview.rating === 5) {
-      firstStar = <img src="http://localhost:3000/assets/fullStar.png" />
-      secondStar = <img src="http://localhost:3000/assets/fullStar.png" />
-      thirdStar = <img src="http://localhost:3000/assets/fullStar.png" />
-      fourthStar = <img src="http://localhost:3000/assets/fullStar.png" />
-      fifthStar = <img src="http://localhost:3000/assets/fullStar.png" />
+      firstStar = <img alt="star rating icon" src="http://localhost:3000/assets/fullStar.png" />
+      secondStar = <img alt="star rating icon" src="http://localhost:3000/assets/fullStar.png" />
+      thirdStar = <img alt="star rating icon" src="http://localhost:3000/assets/fullStar.png" />
+      fourthStar = <img alt="star rating icon" src="http://localhost:3000/assets/fullStar.png" />
+      fifthStar = <img alt="star rating icon" src="http://localhost:3000/assets/fullStar.png" />
     } else {
       console.log("something went wrong with star render!")
     }
