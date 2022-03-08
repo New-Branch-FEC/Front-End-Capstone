@@ -1,6 +1,11 @@
 # Bundle packages (both bundle.js and index.html in dist)
 
 dist/bundle.js
+dist/client_components_Overview_Overview_jsx.bundle.js
+dist/client_components_Ratings-and-reviews_Ratings-and-reviews_jsx.bundle.js
+dist/client_components_Related-items-and-comparisons_Comparison_jsx.bundle.js
+dist/client_components_Related-items-and-comparisons_RelatedItemsAndComparisons_jsx.bundle.js
+dist/client_components_Related-items-and-comparisons_Stars_jsx.bundle.js
 
 # Node modules
 

@@ -1,16 +1,23 @@
 import React, { useState, useEffect } from "react";
 import axios from 'axios';
 import ReactDOM from 'react-dom';
+import { Suspense, lazy } from 'react';
 
 //components
 import QuestionsAndAnswers from "./components/Questions-and-answers/Questions-and-answers.jsx";
-import Overview from "./components/Overview/Overview.jsx";
-import RatingsAndReviews from "./components/Ratings-and-reviews/Ratings-and-reviews.jsx";
-import RelatedItemsAndComparisons from "./components/Related-items-and-comparisons/RelatedItemsAndComparisons.jsx";
-import Comparison from "./components/Related-items-and-comparisons/Comparison.jsx"
+// import Overview from "./components/Overview/Overview.jsx";
+const Overview = React.lazy(() => import('./components/Overview/Overview.jsx'));
+// import RatingsAndReviews from "./components/Ratings-and-reviews/Ratings-and-reviews.jsx";
+const RatingsAndReviews = React.lazy(() => import('./components/Ratings-and-reviews/Ratings-and-reviews.jsx'));
+// import RelatedItemsAndComparisons from "./components/Related-items-and-comparisons/RelatedItemsAndComparisons.jsx";
+const RelatedItemsAndComparisons = React.lazy(() => import('./components/Related-items-and-comparisons/RelatedItemsAndComparisons.jsx'));
+// import Comparison from "./components/Related-items-and-comparisons/Comparison.jsx"
+const Comparison = React.lazy(() => import('./components/Related-items-and-comparisons/Comparison.jsx'));
 
 const App = () => {
+
     // setting current product by current product ID, with a default product upon load, "Camo Onesie"
+
     const [currentProductID, setCurrentProductID] = useState(37311);
     const [currentProduct, setCurrentProduct] = useState(
         {
@@ -224,6 +231,7 @@ const App = () => {
     }, [currentProductID]);
 
     // getting the reviews for the current product by current product's id
+
     const [currentStyle, setCurrentStyle] = useState(
         {
             "product_id": "37311",
@@ -306,6 +314,7 @@ const App = () => {
     // set modal toggle function
     const [showModalStatus, setShowModalStatus] = useState(false);
 
+
     const showModal = (value) => {
         if (value === true) {
             setShowModalStatus(true)
@@ -316,6 +325,7 @@ const App = () => {
     const [cardProductFeatures, setCardProductFeatures] = useState(currentProductID);
 
     // getting current product by current product's id
+
     useEffect(() => {
         axios.get(`/products/${cardProductFeatures}`)
             .then((res) => {
@@ -336,13 +346,21 @@ const App = () => {
                 <img className="banner" alt="banner" src="http://localhost:3000/assets/Banner3.png"></img>
             </div>
             <div className="page-body">
-                <Overview className="widget" currentProduct={currentProduct} setCurrentProductID={setCurrentProductID} currentStyle={currentStyle} setCurrentStyle={setCurrentStyle} reviews={reviews} outfit={outfit} />
-                <div className="comparison-and-modal-container">
-                    <Comparison className="widget" currentProduct={currentProduct} showModalStatus={showModalStatus} setShowModalStatus={setShowModalStatus} showModal={showModal} cardProductFeatures={cardProductFeatures} />
-                    <RelatedItemsAndComparisons className="widget" setCardProductFeatures={setCardProductFeatures} currentProduct={currentProduct} reviews={reviews} outfit={outfit} setOutfit={setOutfit} relatedProducts={relatedProducts} setRelatedProducts={setRelatedProducts} setCurrentProductID={setCurrentProductID} showModal={showModal} />
-                </div>
-                {/* <QuestionsAndAnswers /> */}
-                <RatingsAndReviews className="widget" currentProduct={currentProduct} reviews={reviews} reviewsMeta={reviewsMeta} />
+                <Suspense fallback={<h1>Loading Page</h1>}>
+                    <Suspense fallback={<h2>Loading Product Overview</h2>}>
+                        <Overview className="widget" currentProduct={currentProduct} setCurrentProductID={setCurrentProductID} currentStyle={currentStyle} setCurrentStyle={setCurrentStyle} reviews={reviews} outfit={outfit} />
+                    </Suspense>
+                    <Suspense fallback={<h2>Loading Product Comparison</h2>}>
+                        <div className="comparison-and-modal-container">
+                            <Comparison className="widget" currentProduct={currentProduct} showModalStatus={showModalStatus} setShowModalStatus={setShowModalStatus} showModal={showModal} cardProductFeatures={cardProductFeatures} />
+                            <RelatedItemsAndComparisons className="widget" setCardProductFeatures={setCardProductFeatures} currentProduct={currentProduct} reviews={reviews} outfit={outfit} setOutfit={setOutfit} relatedProducts={relatedProducts} setRelatedProducts={setRelatedProducts} setCurrentProductID={setCurrentProductID} showModal={showModal} />
+                        </div>
+                    </Suspense>
+                    {/* <QuestionsAndAnswers /> */}
+                    <Suspense fallback={<h2>Loading Product Ratings</h2>}>
+                        <RatingsAndReviews className="widget" currentProduct={currentProduct} reviews={reviews} reviewsMeta={reviewsMeta} />
+                    </Suspense>
+                </Suspense>
                 <img className="footer" alt="footer" src="http://localhost:3000/assets/cleanFooter.png"></img>
             </div>
         </>
